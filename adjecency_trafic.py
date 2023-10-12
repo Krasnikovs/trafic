@@ -7,85 +7,122 @@ import matplotlib.pyplot as plt
 class Vehicle():
     def __init__(
         self,
-        name: str,
+        id: int,
         vehicle_vctr: np.array,
         inArea: Optional[bool] = None,
-        round: Optional[int] = None
+        round: Optional[int] = None,
+        cycle: Optional[int] = None,
+        position: Optional[str] = None,
+        corner_count: Optional[int] = None,
     ):
-        self.name = name
+        self.id = id
         self.vehicle_vctr = vehicle_vctr    
         self.inArea = inArea
         self.round = round
+        self.cycle = cycle
+        self.postion = position
+        self.corner_count = corner_count
     
     def info(self):
-        print(self.name, self.vehicle_vctr, self.inArea, self.round)
+        print(self.id, self.vehicle_vctr, self.inArea)
+
+    def car_info(self):
+        self.id, self.vehicle_vctr, self.inArea, self.round
 
 class AdjTrafic():
     def __init__(
             self, 
             vehicle_space: Optional[bool] = True,
     ):
-        self.vehicle_space = vehicle_space
+        self.vehicle_space = vehicle_space,
     
     def inital_setup(self):
         self.corners = [[0 for x in range(3)] for y in range(5)]
-        self.vehicles = [None for x in range(10)]
+        self.vehicles = [None for x in range(100)]
+        self.vehicle_count = 0
+        self.initial_corner = [0 for x in range(100)]
 
-    def create_vehicle(self, cycle):
-        self.vehicle_vctr = [ran.randint(0, 128), ran.randint(0, 128)]
-        vehicle_name = "aa" + str(self.vehicle_vctr[0])
-        print(cycle)
-        self.vehicles[cycle] = Vehicle(
-            name = vehicle_name,
-            vehicle_vctr = self.vehicle_vctr,
-            inArea = True,
-            round = cycle,
-        )
+    def create_vehicle(self, cycle, cycle1):
+        self.vehicle_count += 1
+        if self.vehicle_count <= 10:
+            self.vehicle_vctr = [ran.randint(0, 128), ran.randint(0, 128)]
 
-        self.position(cycle)
+            self.vehicles[cycle] = Vehicle(
+                id = cycle + 1,
+                vehicle_vctr = self.vehicle_vctr,
+                inArea = True,
+            )
+        
+
+            self.position(cycle)
 
     def position(self, cycle):
-        new_corner = ran.randint(0, 4)
+        self.initial_corner[cycle] = ran.randint(0, 4)
+
+        if self.corners[self.initial_corner[cycle]][0] == 0:
+            self.vehicles[cycle].position = str(self.initial_corner[cycle]) + '0'
+            self.corners[self.initial_corner[cycle]][0] = self.vehicles[cycle].id
+            self.vehicles[cycle].corner = self.initial_corner[cycle]
+            self.vehicles[cycle].corner_count = 0
+            self.vehicles[cycle].info()
+            print('New corner:', self.initial_corner[cycle], 0)
+            return
         
-        if self.corners[new_corner][0] == 0:
-            self.corners[new_corner][0] = self.vehicles[cycle]
+        elif self.corners[self.initial_corner[cycle]][1] == 0:
+            self.vehicles[cycle].position = str(self.initial_corner[cycle]) + '1'
+            self.corners[self.initial_corner[cycle]][1] = self.vehicles[cycle].id
+            self.vehicles[cycle].corner = self.initial_corner[cycle]
+            self.vehicles[cycle].corner_count = 1
             self.vehicles[cycle].info()
-            print('New corner:', new_corner, 0)
+            print('New corner:', self.initial_corner[cycle], 1)
             return
-        elif self.corners[new_corner][1] == 0:
-            self.corners[new_corner][1] = self.vehicles[cycle]
+        
+        elif self.corners[self.initial_corner[cycle]][2] == 0:
+            self.vehicles[cycle].position = str(self.initial_corner[cycle]) + '2'
+            self.corners[self.initial_corner[cycle]][2] = self.vehicles[cycle].id
+            self.vehicles[cycle].corner = self.initial_corner[cycle]
+            self.vehicles[cycle].corner_count = 2
             self.vehicles[cycle].info()
-            print('New corner:', new_corner, 1)
+            print('New corner:', self.initial_corner[cycle], 2)
             return
-        elif self.corners[new_corner][2] == 0:
-            self.corners[new_corner][2] = self.vehicles[cycle]
-            self.vehicles[cycle].info()
-            print('New corner:', new_corner, 2)
-            return
+        
         else:
-            print('tt')
+            print('no space for new car', self.initial_corner[cycle])
             return
         
     
-    def change_corner(self, cycle1):
-        new_corner = ran.randint(0, 5)
+    def change_position(self, cycle1):
+        
+        for i in range(cycle + 1):
+            if self.vehicles[i] == None:
+                return
+            elif self.vehicles[i] != None:
+                new_corner = ran.randint(0, 5)
 
-        if cycle1 > 0:
-            if new_corner == 5:
-                self.vehicle_space = False
-                self.vehicles[cycle] = None
-                return
-            elif self.corners[new_corner][0] == 0:
-                self.corners[new_corner][0] = self.vehicles[cycle]
-                return
-            elif self.corners[new_corner][1] == 0:
-                self.corners[new_corner][1] = self.vehicles[cycle]
-                return
-            elif self.corners[new_corner][2] == 0:
-                self.corners[new_corner][2] = self.vehicles[cycle]
-                return
-            else:
-                return
+                if new_corner > 4:
+                    print('vehicle gone', self.vehicles[i].id)
+                    self.corners[self.initial_corner[i]][self.vehicles[i].corner_count]
+                    self.vehicles[i] = None
+                    self.vehicle_count -= 1
+                    return
+                                    
+                elif self.corners[new_corner][0] == 0:
+                    self.corners[new_corner][0] = self.vehicles[i].id
+                    self.corners[self.initial_corner[i]][self.vehicles[i].corner_count] = 0
+                    self.vehicles[i].info()
+                    return
+                    
+                elif self.corners[new_corner][1] == 0:
+                    self.corners[new_corner][1] = self.vehicles[i].id
+                    self.corners[self.initial_corner[i]][self.vehicles[i].corner_count] = 0
+                    self.vehicles[i].info()
+                    return
+                    
+                elif self.corners[new_corner][2] == 0:
+                    self.corners[new_corner][2] = self.vehicles[i].id
+                    self.corners[self.initial_corner[i]][self.vehicles[i].corner_count] = 0
+                    self.vehicles[i].info()
+                    return
 
     def travel_time(self):
         self.time_table = np.array([
@@ -162,22 +199,22 @@ class AdjTrafic():
         else:
             print('sad')
 
-trafic = AdjTrafic()    
+    def check(self):
+        print(self.corners)
+
+
+trafic = AdjTrafic()
 
 cycle = 0
 cycle1 = 0
 trafic.inital_setup()
-while cycle < 10:
-    print('Cycle:', cycle)
-    if trafic.vehicle_space == True:
-        print('True')
-        trafic.create_vehicle(cycle)
-    else:
-        print('False')
-    trafic.change_corner(cycle1)
-    trafic.check_space()
+while True:
+    print('Cycle:', cycle, cycle1)
+    trafic.create_vehicle(cycle, cycle1)
+    trafic.change_position(cycle1)
+
     cycle += 1
-    if cycle == 10:
-        cycle = 0
+    if (cycle % 10) == 0:
         cycle1 += 1
+    trafic.check()
     time.sleep(1)
