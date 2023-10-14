@@ -66,8 +66,7 @@ class AdjTrafic():
             self.vehicles[cycle].corner = self.vehicles[cycle].last_corner
             self.vehicles[cycle].corner_count = 0
             self.vehicles[cycle].info()
-            print('New corner:', self.vehicles[cycle].last_corner, 0)
-            return
+            print('First corner:', self.vehicles[cycle].last_corner, self.vehicles[cycle].corner_count, cycle)
         
         elif self.corners[self.vehicles[cycle].last_corner][1] == 0:
             self.vehicles[cycle].position = str(self.vehicles[cycle].last_corner) + '1'
@@ -75,8 +74,8 @@ class AdjTrafic():
             self.vehicles[cycle].corner = self.vehicles[cycle].last_corner
             self.vehicles[cycle].corner_count = 1
             self.vehicles[cycle].info()
-            print('New corner:', self.vehicles[cycle].last_corner, 1)
-            return
+            print('First corner:', self.vehicles[cycle].last_corner, self.vehicles[cycle].corner_count, cycle)
+    
         
         elif self.corners[self.vehicles[cycle].last_corner][2] == 0:
             self.vehicles[cycle].position = str(self.vehicles[cycle].last_corner) + '2'
@@ -84,11 +83,14 @@ class AdjTrafic():
             self.vehicles[cycle].corner = self.vehicles[cycle].last_corner
             self.vehicles[cycle].corner_count = 2
             self.vehicles[cycle].info()
-            print('New corner:', self.vehicles[cycle].last_corner, 2)
-            return
+            print('First corner:', self.vehicles[cycle].last_corner, self.vehicles[cycle].corner_count, cycle)
+
         
         else:
             print('no space for new car', self.vehicles[cycle].last_corner)
+            self.vehicles[cycle].last_corner = None
+            self.vehicles[cycle] = None
+            self.vehicle_count -= 1
             return
         
     
@@ -101,6 +103,7 @@ class AdjTrafic():
 
                     if self.new_corner > 4:
                         print('vehicle gone', self.vehicles[i].id)
+                        print(self.vehicles[i].id, self.vehicles[i].last_corner, self.vehicles[i].corner_count, i)
                         self.corners[self.vehicles[i].last_corner][self.vehicles[i].corner_count] = 0
                         self.vehicles[i] = None
                         self.vehicle_count -= 1
@@ -110,6 +113,7 @@ class AdjTrafic():
 
                     elif self.corners[self.new_corner][0] == 0:
                         self.corners[self.new_corner][0] = self.vehicles[i].id
+                        print(self.vehicles[i].id, self.vehicles[i].last_corner, self.vehicles[i].corner_count, i)
                         self.corners[self.vehicles[i].last_corner][self.vehicles[i].corner_count] = 0
                         print('vehicle moved',)
                         self.vehicles[i].info()
@@ -119,6 +123,7 @@ class AdjTrafic():
                         
                     elif self.corners[self.new_corner][1] == 0:
                         self.corners[self.new_corner][1] = self.vehicles[i].id
+                        print(self.vehicles[i].id, self.vehicles[i].last_corner, self.vehicles[i].corner_count, i)
                         self.corners[self.vehicles[i].last_corner][self.vehicles[i].corner_count] = 0
                         print('vehicle moved',)
                         self.vehicles[i].info()
@@ -128,6 +133,7 @@ class AdjTrafic():
                         
                     elif self.corners[self.new_corner][2] == 0:
                         self.corners[self.new_corner][2] = self.vehicles[i].id
+                        print(self.vehicles[i].id, self.vehicles[i].last_corner, self.vehicles[i].corner_count, i)
                         self.corners[self.vehicles[i].last_corner][self.vehicles[i].corner_count] = 0
                         print('vehicle moved',)
                         self.vehicles[i].info()
@@ -141,13 +147,14 @@ class AdjTrafic():
 
     def travel_time(self, i):
         self.time_table = np.array([
-            [0, 7, 5, 6, 5],
-            [7, 0, 8, 3, 4],
-            [5, 8, 0, 9, 1],
-            [6, 3, 9, 0, 1],
-            [5, 4, 1, 1, 0],
+            [0, 2, 5, 8, 7],
+            [2, 0, 6, 9, 4],
+            [5, 6, 0, 8, 7],
+            [8, 9, 8, 0, 2],
+            [7, 4, 7, 2, 0],
         ])
         
+
         print(self.time_table[self.vehicles[i].last_corner][self.new_corner])
         # self.rec[self.turn] = np.log(self.time_table[self.current_corner][self.new_corner])
 
@@ -173,7 +180,7 @@ class AdjTrafic():
         #     self.lgnorm()
 
 
-    def lgnorm(self):
+    def lgnormDistribution(self):
         mean = sum(self.recording) / len(self.recording)
         aaa = [0] * (len(self.recording))
         for i in range(len(self.recording)):
@@ -229,5 +236,10 @@ while True:
     cycle += 1
     if (cycle % 10) == 0:
         cycle1 += 1
+        cycleContuation = input()
+        if cycleContuation == 'c':
+            pass
+        elif cycleContuation == 's':
+            break
     trafic.check()
     time.sleep(1)
