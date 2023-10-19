@@ -43,7 +43,7 @@ class AdjTrafic():
     
     def inital_setup(self):
         self.corners = [[0 for x in range(3)] for y in range(5)]
-        self.vehicles = [None for x in range(100)]
+        self.vehicles = [None for x in range(1000)]
         self.vehicle_count = 0
         
 
@@ -55,7 +55,7 @@ class AdjTrafic():
             id = cycle + 1,
             vehicle_vctr = self.vehicle_vctr,
             inArea = False,
-            travel_colletion = [0] * 100
+            travel_colletion = [0] * 1000
         )
         if self.vehicle_count <= 10:
 
@@ -148,7 +148,7 @@ class AdjTrafic():
                         self.vehicles[vehicle_cycle].last_corner = self.new_corner
                 
             elif self.vehicles[vehicle_cycle].inArea == False:
-                print('non exist')
+                pass
         self.vehicle_cycle = vehicle_cycle
         self.cycle = cycle1 + 1
         print(self.vehicle_cycle)
@@ -179,17 +179,17 @@ class AdjTrafic():
             for i in range(self.vehicle_cycle):
                 if self.vehicles[i] != None:
                     if self.vehicles[i].travel_colletion[e] > 0:
-                        print(self.vehicles[i].travel_colletion[e], 'colletion', i, e)
+                        print(self.vehicles[i].travel_colletion[e], 'colletion', self.vehicles[i].id)
                         self.recording[i][e] = self.vehicles[i].travel_colletion[e]
 
-                elif self.vehicles[i] == None:
-                    print('wow')
-                    for e in range(i, self.vehicle_cycle):
-                        if self.vehicles[e] != None:
-                            self.vehicles[i] = self.vehicles[e]
-                            # print(self.vehicles[i], 'e')
-                        else:
-                            return
+                # elif self.vehicles[i] == None:
+                #     print('wow')
+                #     for e in range(i, self.vehicle_cycle):
+                #         if self.vehicles[e] != None:
+                #             self.vehicles[i] = self.vehicles[e]
+                #             # print(self.vehicles[i], 'e')
+                #         else:
+                #             return
                 # if self.recording[i][e] == 0 and i != self.vehicle_cycle - 1:
                 #     self.recording[i][e] = self.recording[i + 1][e]
         
@@ -205,35 +205,114 @@ class AdjTrafic():
         logmean = [0] * self.vehicle_cycle
         mean = [0] * self.vehicle_cycle
         for i in range(self.vehicle_cycle):
-            logmean[i] = np.log(sum(self.recording[i])) / len(self.recording[i])
-            mean[i] = sum(self.recording[i]) / len(self.recording[i])
-            print(logmean[i], mean)
+            for e in range(self.cycle):
+                if sum(self.recording[i]) != 0:
+                    logmean[i] = np.log10(sum(self.recording[i])) / len(self.recording[i])
+                    mean[i] = sum(self.recording[i]) / len(self.recording[i])
+                else:
+                    logmean[i] = 0
+                    mean[i] = 0
         
-        simbol_mean = sum(logmean) / len(logmean)
-        
-        mean_simbol = sum(mean)**2 / len(mean)
-        print(mean_simbol)
-        for i in range(len(mean)):
-            a = np.sqrt(mean_simbol - mean[i]**2) * np.sqrt(len(mean))
+        for i in range(self.vehicle_cycle):
+            for j in range(self.vehicle_cycle - i - 1):
+                if mean[j] < mean[j + 1]:
+                    sub = mean[j + 1]
+                    mean[j + 1] = mean[j]
+                    mean[j] = sub
+                if logmean[j] < logmean[j + 1]:
+                    sub = logmean[j + 1]
+                    logmean[j + 1] = logmean[j]
+                    logmean[j] = sub
 
-        print(a, simbol_mean)
+
+        for i in range(self.vehicle_cycle):
+            if mean[i] == 0:
+                new_mean = [0] * (i)
+                for j in range(i):
+                    new_mean[j] = mean[j]
+                break
+
+        for i in range(self.vehicle_cycle):
+            if logmean[i] == 0:
+                new_logmean = [0] * (i)
+                for j in range(i):
+                    new_logmean[j] = logmean[j]
+                break
+        
+        # for i in range(len(new_mean)):
+        #     for j in range(len(new_mean) - i - 1):
+        #         if new_mean[j] > new_mean[j + 1]:
+        #             sub = new_mean[j + 1]
+        #             new_mean[j + 1] = new_mean[j]
+        #             new_mean[j] = sub
+        #         if new_logmean[j] < new_logmean[j + 1]:
+        #             sub = new_logmean[j + 1]
+        #             new_logmean[j + 1] = new_logmean[j]
+        #             new_logmean[j] = sub
+        mean_pov = [0] * len(new_mean)
+        for i in range(len(new_mean)):
+            mean_pov[i] = new_mean[i]**2
+        
+        print(new_mean)
+        logmu = sum(new_logmean) / len(new_logmean)
+        mu = round(sum(new_mean) / len(new_mean), 4)
+        mean_simbol = (new_logmean - logmu)**2
+
+        sigma = round(np.sqrt((sum(mean_pov) / len(new_mean)) - mu**2), 4)
+
+        logsigma = np.sqrt(sum(mean_simbol) / len(new_mean))
+        
+
+        
+
+        e = 2.71828
+        # print(logmu, logsigma, e)
+        # Y = logmu + logsigma*Z
+        
+        # print('x:', X, 'y:', Y)
         # aaa = [0] * (len(self.recording))
         # for i in range(len(self.recording)):
         #     aaa[i] = (self.recording[i] - mean)**2
         # sigma = np.sqrt(sum(aaa) / (len(aaa)))
-        # s = np.random.lognormal(mean, sigma, 1000)
-
-        # count, bins, ignored = plt.hist(s, 100, density=True, align="mid")
-
-        # x = np.linspace(min(bins), max(bins), 10000)
-        # pdf = (np.exp(-(np.log(x) - mean)**2 / (2 * sigma**2))
-        #     / (x * sigma * np.sqrt(2 * np.pi)))
 
         
+        
+        # logmu = sum(np.log(x)) / len(x)
+        # logsigma = np.sqrt(sum((np.log(x) - logmu)**2) / len(x))
+        
+        # print('z', Z, 'logmu', logmu, 'sigma', logsigma)
+        # pdf = (np.exp(-(np.log(x) - mu)**2 / (2 * sigma**2))
+        #     / (x * sigma * np.sqrt(2 * np.pi)))
+        # Y = logmu + Z * logsigma
+        # X1 = (e ** logmu)
+        # X2 = e ** Z
+        # X3 = X2 ** logsigma
+        s = np.random.lognormal(logmu, logsigma, 10)
 
-        # plt.plot(x, pdf, linewidth=2, color="r")
-        # plt.axis("tight")
-        # plt.show()
+        # a, aaa, aa = plt.hist(s, 100, density = True, align = 'mid')
+        print('Log:', logmu, logsigma, new_logmean)
+        print(mu, sigma, new_mean, s)
+
+        x = np.linspace(min(new_logmean) +1, max(new_logmean) + 3, 10000)
+        print('x', x)
+        Z = (x - mu) / sigma
+        # Z = (x - mu)**2 / sigma
+        # logmu = sum(np.log(x)) / len(x)
+        # logsigma = np.sqrt(sum((np.log(x) - logmu)**2) / len(x))
+                
+        # print('z', Z, 'logmu', logmu, 'sigma', logsigma)
+        pdf = (np.exp(-(np.log(x) - logmu)**2 / (2 * logsigma**2))
+            / (x * logsigma * np.sqrt(2 * np.pi)))
+        
+        
+        # pdf1 = e ** (logmu + logsigma * Z)
+        # print('pdf', pdf1)
+        
+        plt.plot(x, pdf, linewidth=2, color="r")
+        plt.axis("tight")
+        plt.show()
+
+
 
     def check_space(self):
         print('checking space', cycle)
