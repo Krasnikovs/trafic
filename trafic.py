@@ -37,6 +37,12 @@ class Vehicle():
         else:
             self.rem = Graph.time_table[self.position][self.next_goal]
 
+    def vehicle_info(self):
+        print(self.vehicle_vctr, end='')
+        print(' Next', self.next_goal + 1, end='')
+        # print(' rem:', self.rem)
+        pass
+
 
 class Graph():
     episodes = 20
@@ -54,10 +60,18 @@ class Graph():
         for position in range(7):
             print('V' + str(position + 1) + ': ' if position < 6 else 'R:')
             for car in Vehicle.cars:
-                if car != 0 and car.position == position:
+                if car.position == position:
                     print(str(car.vehicle_vctr))
                 else:
                     print(end='')
+
+    def get_corner():
+        position = int(input('Enter the vertex number: '))
+        print('V' + str(position) + ': ' if position < 6 else 'R:')
+        for car in Vehicle.cars:
+            if car.position == position - 1:
+                print(str(car.vehicle_vctr))
+        pass
 
     def create_vehicles():
         Vehicle.cars.append(Vehicle(
@@ -68,12 +82,11 @@ class Graph():
         Vehicle.cars[Vehicle.caramount].next_stop()
 
 
-graph = Graph()
 
-for episodes in range(graph.episodes):
+for episodes in range(Graph.episodes):
     if Vehicle.caramount == -1:
         for Vehicle.caramount in range(5):
-            graph.create_vehicles()
+            Graph.create_vehicles()
     for car in Vehicle.cars:
         if car.lifetime == 0:
             Vehicle.cars.remove(car)
@@ -82,6 +95,5 @@ for episodes in range(graph.episodes):
         else:
             car.step()
             car.lifetime -= 1
-    graph.get_cars()
+    Graph.get_cars()
         #
-
