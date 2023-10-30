@@ -1,6 +1,6 @@
 import numpy as np
 import random as ran
-
+import paho.mqtt.client as mqtt
 
 class Vehicle():
     cars = []
@@ -55,6 +55,8 @@ class Graph():
         [6, 5, 4, 9, 7, 0],
     ])
 
+    client = mqtt.Client()
+
     #(cars: list[Vehicle]) -> dict[int, Vehicle]
     def get_cars():
         for position in range(7):
@@ -64,6 +66,14 @@ class Graph():
                     print(str(car.vehicle_vctr))
                 else:
                     print(end='')
+
+    def get_vehicles(self):
+        for position in range(7):
+            for car in Vehicle.cars:
+                if car.position == position:
+                    self.client.connect('127.0.0.1', 1883)
+                    self.client.publish('vctr', str(car.vehicle_vctr))
+        pass
 
     def get_corner():
         position = int(input('Enter the vertex number: '))
@@ -95,5 +105,5 @@ for episodes in range(Graph.episodes):
         else:
             car.step()
             car.lifetime -= 1
-    Graph.get_cars()
+    Graph.get_vehicles()
         #
