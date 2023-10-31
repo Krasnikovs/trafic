@@ -1,6 +1,6 @@
 import numpy as np
 import random as ran
-import paho.mqtt.client as mqtt
+from paho.mqtt import client as mqtt
 
 class Vehicle():
     cars = []
@@ -55,8 +55,7 @@ class Graph():
         [6, 5, 4, 9, 7, 0],
     ])
 
-    client = mqtt.Client()
-
+        
     #(cars: list[Vehicle]) -> dict[int, Vehicle]
     def get_cars():
         for position in range(7):
@@ -67,13 +66,16 @@ class Graph():
                 else:
                     print(end='')
 
-    def get_vehicles(self):
+    def get_vehicles(client):
         for position in range(7):
             for car in Vehicle.cars:
                 if car.position == position:
-                    self.client.connect('127.0.0.1', 1883)
-                    self.client.publish('vctr', str(car.vehicle_vctr))
-        pass
+                    result = client.publish('vctr', str(car.vehicle_vctr))
+                    if result[0] == 0:
+                        print(f'Sent')
+                    else:
+                        print(f'Failed')
+                    client.publish('intersection', car.position)
 
     def get_corner():
         position = int(input('Enter the vertex number: '))
@@ -91,7 +93,22 @@ class Graph():
         
         Vehicle.cars[Vehicle.caramount].next_stop()
 
+    def connect():
+        def on_connect(client, userdate, flags, rc):
+            if rc == 0:
+                print('Suc')
+            else:
+                print('Failed and', rc)
+        client_id = f'publish-{ran.randint(0, 1000)}'
+        client = mqtt.Client(client_id)
+        client.username_pw_set(username = 'edi', password = 'ediedi123')
+        client.on_connect = on_connect
+        client.connect('localhost', 1883)
+        return client
 
+
+client = Graph.connect()
+client.loop_start()
 
 for episodes in range(Graph.episodes):
     if Vehicle.caramount == -1:
@@ -105,5 +122,7 @@ for episodes in range(Graph.episodes):
         else:
             car.step()
             car.lifetime -= 1
-    Graph.get_vehicles()
+    
+    Graph.get_vehicles(client)
         #
+client.loop_stop()
