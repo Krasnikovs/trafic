@@ -1,6 +1,7 @@
 import numpy as np
 import random as ran
 from paho.mqtt import client as mqtt
+import paho.mqtt.publish as publish
 
 class Vehicle():
     cars = []
@@ -70,12 +71,25 @@ class Graph():
         for position in range(7):
             for car in Vehicle.cars:
                 if car.position == position:
-                    result = client.publish('vctr', str(car.vehicle_vctr))
+
+                    vctr = [
+                        {'topic':'data/vctr', 'payload': str(car.vehicle_vctr)}, 
+                        {'topic': 'data/position', 'payload': car.position}
+                    ]
+                    result = client.publish(
+                        vctr
+                    )
+
                     if result[0] == 0:
                         print(f'Sent')
                     else:
                         print(f'Failed')
-                    client.publish('intersection', car.position)
+
+                    # position = {'position': car.position}
+                    # client.publish(
+                    #     topic = 'data/mess', 
+                    #     payload = position
+                    # )
 
     def get_corner():
         position = int(input('Enter the vertex number: '))
@@ -101,7 +115,7 @@ class Graph():
                 print('Failed and', rc)
         client_id = f'publish-{ran.randint(0, 1000)}'
         client = mqtt.Client(client_id)
-        client.username_pw_set(username = 'edi', password = 'ediedi123')
+        # client.username_pw_set(username = 'edi', password = 'ediedi123')
         client.on_connect = on_connect
         client.connect('localhost', 1883)
         return client
