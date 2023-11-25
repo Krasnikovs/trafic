@@ -1,0 +1,165 @@
+<div id="Topics" class="tabcontent" style="display: none">
+	
+		<!-- <div class="col-md-2"> -->
+			<aside class="main-sidebar">
+				<div class="box-header with-border roboto" style="text-align: center;width: 100%">
+					<h3 class="box-title">Topics</h3>
+					<span id="search-topic" class="pull-right fa fa-search" style="pointer-events: auto;" onclick="searchTopic('search-topic');"></span>
+				</div>
+				<div class="box-header with-border roboto" id="topic-search-cont" style="text-align: center;width: 100%;display: none;">
+					<input id="search-text" class="btn-search" placeholder="Search.." type="text" style="border: 0;outline: 0;background: transparent;border-bottom: 1px solid black;width: 140px;">
+					<span id="search-topic" type="submit" class="fa fa-search" style="pointer-events: auto;" onclick="showSearchedTopic(this);"></span>
+					<span id="search-cancel" class="pull-right fa fa-close" style="pointer-events: auto;" onclick="searchTopic('search-cancel')"></span>
+				</div>
+				<div class="slimScrollDiv" style="position: relative; overflow: auto; width: auto; height: 500px;">
+					<div class="sidebar" id="scrollspy" style="height: auto; overflow: auto; width: auto;">
+						<ul class="nav sidebar-menu" id="topic-list" style="color: rgb(255, 255, 255); border-left: 3px solid rgb(51, 122, 183); border-top-color: rgb(51, 122, 183); border-right-color: rgb(51, 122, 183); border-bottom-color: rgb(51, 122, 183);"></ul>
+					</div>
+				</div>
+				<div>
+					<ul class="pagination pagination-sm no-margin pull-right" id="topic-pagination"></ul>
+				</div>
+			</aside>
+	<!-- <div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-10"> -->
+			<div class="content-wrapper" style="margin-left:232px;min-height: 916px;">
+				<section class="content-header">
+					<div class="row lato">
+						<div class="col-12">
+							<div class="info-box mb-3 bg-white">
+								<span class="info-box-icon">
+									<i class="fa fa-circle-o-notch"></i>
+								</span>
+								<div class="info-box-content">
+									<span class="info-box-text">Topic:&nbsp;&nbsp;
+										<b id=selected-topic></b>
+									</span>
+									<span class="info-box-text">
+										Total Messages:&nbsp;&nbsp;
+										<b id="topic-pub-msg-cnt">0</b>
+									</span>
+									<div class="progress">
+										<div class="progress-bar" style="width: 100%"></div>
+									</div>
+									<span class="info-box-text">
+										Messages in last hour:&nbsp;&nbsp;
+										<b id="topic-pub-hr-msg-cnt">0</b>
+									</span>
+								</div>
+							</div>
+						</div>
+						<!-- <div class="col-12 col-sm-6 col-md-6">
+							<div class="info-box mb-3 bg-success ">
+								<span class="info-box-icon">
+									<i class="fa fa-circle-o-notch"></i>
+								</span>
+								<div class="info-box-content">
+									<span class="info-box-text">Received Message Count</span>
+									<span class="info-box-number">
+										<b id="topic-sub-msg-cnt">0</b> Total Message Count
+									</span>
+									<div class="progress">
+										<div class="progress-bar" style="width: 100%"></div>
+									</div>
+									<span class="progress-description">
+										<b id="topic-sub-hr-msg-cnt">1</b> Last 1 Hr Message Count
+									</span>
+								</div>
+							</div>
+						</div> -->
+					</div>
+					<div class="row">
+						<div class="box">
+							<div class="box-header roboto">
+								<h3 class="box-title">Devices creating Events</h3>
+								<div class="box-tools">
+									<ul class="pagination pagination-sm no-margin pull-right" id="topic-pub-pagi">
+									</ul>
+								</div>
+							</div>
+							<div class="box-body no-padding lato">
+								<nav class="navbar">
+									<ul class="nav navbar-nav">
+										<li>
+											<a href="#" id="all-pub" style="background-color: #ecf0f5;" class="tablinks pub-status" onclick="publisherStatusModifier(2, this);">
+												<script>localizehtml("all-pub" , "%all" , "All");</script>
+												<span class="sr-only">(current)</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" id="active-pub" class="tablinks pub-status" onclick="publisherStatusModifier(1, this);">
+												<script>localizehtml("active-pub","%active","Active");</script>
+											</a>
+										</li>
+										<li>
+											<a href="#" id="inactive-pub" class="tablinks pub-status" onclick="publisherStatusModifier(0, this);">
+												<script>localizehtml("inactive-pub","%inactive","Inactive");</script>
+											</a>
+										</li>
+									</ul>
+								</nav>
+								<table class="table">
+									<thead class="text-info">
+										<tr>
+											<th style="text-align: center;">Device Id</th>
+											<th style="text-align: center;">IP</th>
+											<th style="text-align: center;">Status</th>
+											<th style="text-align: center;">Time</th>
+										</tr>
+									</thead>
+									<tbody id="pub-dev" class="nostyle"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="box">
+							<div class="box-header roboto">
+								<h3 class="box-title">Devices listening to Command</h3>
+								<div class="box-tools">
+									<ul class="pagination pagination-sm no-margin pull-right" id="topic-sub-pagi">
+									</ul>
+								</div>
+							</div>
+							<div class="box-body no-padding lato">
+								<nav class="navbar">
+									<ul class="nav navbar-nav">
+										<li>
+											<a href="#" id="all-sub" style="background-color: #ecf0f5;" class="tablinks sub-status" onclick="subscriberStatusModifier(2, this)">
+												<script>localizehtml("all-sub" , "%all" , "All");</script>
+												<span class="sr-only">(current)</span>
+											</a>
+										</li>
+										<li>
+											<a href="#" id="active-sub" class="tablinks sub-status" onclick="subscriberStatusModifier(1, this)">
+												<script>localizehtml("active-sub","%active","Active");</script>
+											</a>
+										</li>
+										<li>
+											<a href="#" id="inactive-sub" class="tablinks sub-status" onclick="subscriberStatusModifier(0, this)">
+												<script>localizehtml("inactive-sub","%inactive","Inactive");</script>
+											</a>
+										</li>
+									</ul>
+								</nav>
+								<table class="table">
+									<thead>
+										<tr>
+											<th style="text-align: center;">Device Id</th>
+											<th style="text-align: center;">IP</th>
+											<th style="text-align: center;">Status</th>
+											<th style="text-align: center;">Time</th>
+										</tr>
+									</thead>
+									<tbody id="sub-dev"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		<!-- </div> -->
+	</div>
+</div>
+<script src="{{ static_url("js/topic.js") }}"></script>

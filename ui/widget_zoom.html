@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MQTTRoute</title>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="/static/css/adminlte.min.css">
+	<link rel="stylesheet" href="/static/css/font-awesome.css">
+	<link rel="stylesheet" href="/static/css/daterangepicker.css">
+  	<link rel="stylesheet" href="/static/fonts/LATO/Lato/latofonts.css">
+  	<link rel="stylesheet" href="/static/fonts/roboto/style.css">
+  	<link rel="stylesheet" href="/static/css/style.css">
+
+	<style type="text/css">
+
+.card-body {
+	padding: 0px;
+}
+.nav-item > i{
+  color:rgba(255,255,255,.75);
+}
+.nav-item > i:active{
+  color:white;
+}
+.nav-item > i:hover{
+  color:#F3CA5E;;
+} 
+.nav-item > a{
+  color:rgba(255,255,255,.75);
+}
+.nav-item > a:active{
+  color:white;
+}
+.nav-item > a:hover{
+  color:#F3CA5E;;
+} 
+.widget_header{
+  cursor:grab;
+}
+.widget_header:active{
+  cursor:move;
+}
+.modal-header{
+	background-color: #eee;
+}
+.placetext{
+  font-family: 'LatoWeb'!important;
+  font-size: 1.5em!important;
+  opacity:0.5!important;
+  text-align: center!important;
+  top:15%!important;
+}
+.p_icon{
+  opacity: 1!important;
+    -moz-animation: p_icon 2s infinite;
+  -webkit-animation: p_icon 2s infinite;
+  animation: p_icon 2s infinite;
+}
+@keyframes p_icon {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+.sort-highlight{
+  text-align: center!important;
+  border: 2px dashed #000!important;
+  background-color: rgba(255,255,255,.75)!important;
+}
+
+</style>
+</head>
+<body class="hold-transition layout-top-nav" style="background:#eee">
+	<div class="wrapper">
+		<nav id="main_nav" class="main-header navbar-expand-md navbar"style="background-color:#000044;">
+			<div class="container-fluid">
+
+				<a href="#" class="navbar-brand">
+					<img src="/static/images/b-white.png" alt="Bevywise" class="brand-image">
+				</a>
+				<ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+					<li class="nav-item">
+						<i class="fa fa-arrow-left" style="font-size:20px; cursor:pointer" data-toggle="tooltip" title="Back" onclick="window.history.back(); return false;"></i>
+					</li>&nbsp;&nbsp;&nbsp;
+					<!-- <li class="nav-item">
+						<a href="/logout" class="fa fa-power-off" data-toggle="tooltip" title="Logout" style="font-size:20px; cursor:pointer"></a>
+					</li> -->
+
+				</ul>
+
+			</div>
+		</nav>
+	</div>
+	<div class="container-fluid">
+		<div class="row connectedSortable mt-4" id="widgets"></div>
+	</div>	
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/jquery-ui.min.js"></script>
+	<script src="/static/js/bootstrap.bundle.min.js"></script>
+	<script src="/static/js/jquery.knob.min.js"></script>
+	<script src="/static/js/canvas-gauge.js"></script>
+	<script src="/static/js/plotly-latest.min.js"></script>
+	<script src="/static/js/csv_expoter.js"></script>
+	<script src="/static/js/widget.js"></script>
+	<script src="/static/js/widget_edit.js"></script>
+	<script src="/static/js/gauges.js"></script>
+	<script src="/static/js/charts.js"></script>
+	<script src="/static/js/state_widget.js"></script>
+	<script src="/static/js/websocket.js"></script>
+	<script src="/static/js/daterangepicker.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var hashurl = window.location.pathname;
+			var dashboard_id = hashurl.split("/");
+			getWidgetsfull(dashboard_id[2])
+		});
+	</script>
+
+
+	<div class="modal fade" id="create-widget-extract-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title roboto text-dark" id="exampleModalLabel">Export</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body lato">
+            <form id="widget-extract-form" action="javascript: exportWidgetData()">
+				<input type="hidden" name="device">
+				<input type="hidden" name="topic">
+				<input type="hidden" name="key">
+				<label for="name">From Date</label>
+				<input type="text" name="gt" class="form-control" required="">
+				<label for="email">To Date</label>
+				<input type="text" name="lt" class="form-control" required="">
+              <div class="mt-2">
+                <button class="btn btn-sm btn-secondary pull-right ml-3" class="close" data-dismiss="modal" aria-label="Close"> Cancel </button>
+                <button type="submit" class="btn btn-sm btn-warning pull-right">  Create </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

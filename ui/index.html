@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MQTTRoute</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="dist/css/adminlte.min.css">
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
+	<style type="text/css">
+		.bg-dark {
+			background-color: #021231;
+			color: white;
+		}
+		.bg-cont {
+			background-color: #0f2f6d;
+			color: white;
+		}
+	</style>
+</head>
+<body class="hold-transition layout-top-nav">
+	<div class="wrapper">
+		<nav class="main-header navbar navbar-expand-md navbar-light navbar-white bg-cont">
+			<div class="container-fluid">
+				<a href="#" class="navbar-brand">
+					<img src="dist/img/AdminLTELogo.png" alt="Logo" class="brand-image" style="opacity: .8">
+					<span class="brand-text font-weight-light">MQTTRoute</span>
+				</a>
+				<button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse order-3" id="top-navbar">
+				<!-- Left navbar links -->
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a href="#" class="nav-link">Dashboard</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Device</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Topic</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Rule Engine</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Security</a>
+						</li>
+						<li class="nav-item">
+							<a href="#" class="nav-link">Help</a>
+						</li>
+					</ul>
+				</div>
+				<ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+					<li class="nav-item">
+						<a href="/logout" class="fa fa-power-off"></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+		<div class="sidebar">
+			<nav class="mt-2">
+				<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					<li class="nav-item has-treeview">
+						<a href="#" class="nav-link active">
+							<i class="nav-icon fas fa-tachometer-alt"></i>
+							<p>Dashboard<i class="right fas fa-angle-left"></i></p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="pages/widgets.html" class="nav-link">
+							<i class="nav-icon fas fa-th"></i>
+							<p>Widgets<span class="right badge badge-danger">New</span></p>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+		<section>
+			{% include 'dashboard.html' %}
+		</section>
+	</div>
+</body>
+</html>

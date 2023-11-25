@@ -1,0 +1,99 @@
+<html>
+
+
+<!--      TOUR TAB START    -->
+
+<div id="Tour" name="Tour" class="  mt-5 page page-tour" data-ride="carousel"  >	
+	<div id ="step0" style="display: none">
+		<h1 class="align text-center"><span id=welcome name=welcome>Welcome to Bevywise MQTTRoute</span></h1>
+		<h4  style="text-align:center;font-weight:600;margin-bottom: 20px;overflow:hidden; font-size: 26px;"><span id=fasthigh name=fasthigh>The Fastest & highly extendable MQTT Broker</span></h4>
+		<p style="margin-left: 25%" class="sub-align"><span id=connectcli name=connectcli>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Connect your MQTT clients to the Bevywise MQTTBroker running in local machine </span></p>
+		<p style="margin-left: 25%" class="sub-align" style="text-align:center;"><span id=start_down name=start_down>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Started by downloading MQTT Clients for your Operating System.</span></p>
+		<div  class="btn-align" style="margin-left: 75%">
+		<button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step2" id=down_cli name=down_cli onclick="next(1)"> Download Clients</button>
+		</div>
+	</div>
+	<div  id="step1" style="display: none"  >
+	   <h1 class="align text-center mb20"id=down_pa name=down_pa>Download & connect  Clients</h1>
+
+	   <h4 style="text-align:center;font-weight:600;margin-bottom:20px;overflow:hidden; font-size: 26px;"id=conn_cli name=conn_cli>Connect your clients to the MQTT Broker or download it from the tab <a style="cursor:pointer" id='clients' name=clients class="tablinks" >MQTT Clients</a></h4>
+
+	   <p  class="sub-align"><span id=os name=os>You will have the clients for Windows , Linux , Mac  & ESP. Looking for some other clients, contact</span>&nbsp;&nbsp;<a href="https://bevywise.com/support.html" target="_blank" id=supp name=supp>Support</a></p>
+
+	   <p  class="sub-align"><span id=conn_details name=conn_details>Use the following Broker details to connect.</span></p>
+
+	   <p  class="sub-align"><span id=bro_add name=bro_add>Broker  address - localhost</span></p>
+	   <p  class="sub-align"><span id=bro_port name=bro_port>Broker Port - 1883</span></p>
+	   <p  class="sub-align"><span id=tls_port name=tls_port> TLS/SSL Broker Port - 8883</span></p>
+	    <div class="btn-align" style="float:right;">
+	    <button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step1" style="margin-right:7px" id=introbut name=intobut onclick="prev(1)">Introduction</button>
+	    <button type="button" class="btn btn-outline-primary pull-right bg-white"data-value="step3" id=confbut name=confbut onclick="next(2)">Configure Rules</button>
+	    </div>
+	</div>
+	<div  id="step2" style="display: none"  >
+	      <h1 class="align text-center mb20" id=conf_rule name=conf_rule>Configure Rules</h1>
+	      <h4  style="font-weight:600;text-align:center;margin-bottom:20px;overflow:hidden; font-size: 26px;" id=rules name=rules>Rules help you enable powerful M2M Communication between Devices.</h4>
+	      <p  class="sub-align"><span id=event_rul name=event_rul>Event based rules based on Message, Topic & Client.</span></p>
+	      <p  class="sub-align"><span id=timer_rul name=timer_rul>Timer based rules to automate scheduled events.</span></p>
+	     <h4  style="font-weight:600;text-align:center;margin-top:20px;overflow:hidden" id=vis name=vis>Visit<a style="cursor: pointer;" id=ruletabhead name=ruletabhead class="tablinks" >Message Rules</a><span id=confmsg name=confmsg>and configure Messages now.</h4>
+	        <div  class="btn-align" style="float:right">
+	        <button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step2" style="margin-right:7px" id=downcli_but name=downcli_but onclick="prev(2)">Download Clients</button>
+	        <button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step4" id=view_data name=view_data onclick="next(3)">View Data</button>
+	        </div>
+	</div>
+	<div  id="step3" style="display: none"  >    
+		<h1 class="align text-center mb20" id=view_dash name=view_dash>View Dashboard  & Device Details</h1>
+		<p  class="sub-align"><span id=dash name=dash>The Dashboard will give a quick view of what is happening with the device connected to the MQTTRoute.</span></p>
+		<p  class="sub-align"><span id=indiv name=indiv>The individual device details can be seen by visiting the Devices tab. The connection status and the messages published will be dynamically update.</span></p> 
+		<div class="btn-align" style="float:right">
+			<button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step3" style="margin-right:7px" id=conf_but name=conf_but onclick="prev(3)">Configure Rules</button>
+			<button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step5" id=advint name=advint onclick="next(4)">Advanced Integration</button>
+		</div>
+	</div>
+	<div  id="step4" style="display: none" >
+		<h1 class="align text-center mb20" id=get name=get>Get More out of the MQTT Broker</h1>
+		<h4 style="text-align:center;font-weight:600;margin-bottom:20px;overflow:hidden; font-size: 26px;" id=routcap name=routcap>MQTTRoute is capable of doing much more than just handing MQTT Messages. </h4>
+		<ul  class="sub-align" style="list-style-type: none;margin-left:5px;" >
+		<li><span id=com name=com>Complete MQTT Support</span></li>
+		<li><span id=tls_support name=tls_support>TLS / SSL Support</span></li>
+		<li><span id=mqtt_auth name=mqtt_auth>MQTT Authentication</span></li>
+		<li><span id=intbig name=intbig>Integrate with any Big Data Engine</span> <a href="https://github.com/bevywise-networks/mqttroute-elasticsearch-connector" target="_blank">Elastic Search</a> | <a href="https://github.com/bevywise-networks/mqttroute-mongodb-connector/" target="_blank"">Mongo DB</a> | <a href="https://www.bevywise.com/blog/introducing-ready-use-mqttroute-plugin/" target="_blank">Custom Store</a></li>
+		<li><span id=visual name=visual>Visualize Data with</span><a href="https://www.bevywise.com/blog/mqtt-broker-tableau-integration-data-analysis/" target="_blank"">Tableau</a> | <a href="https://www.bevywise.com/blog/visualize-iot-data-elasticsearch/" target="_blank">Elastic Search</a></li>
+		<li><span id=restapi name=restapi>RESTful API to manage your Devices</span></li>
+		<li><span id=uicust name=uicust>UI Customization & Live Updates on interface</span></li>
+		<li><a href="https://www.bevywise.com/blog/localize-mqtt-broker-language/" target="_blank" id=locali name=locali>Localize to your language</a></li>
+		<li><span id=allos name=allos>Support for Linux, Mac, Windows / Windows Server , Raspberry PI</span></li>
+		<li><a href="https://www.bevywise.com/blog/integrate-mqtt-broker-application/" target="_blank" id=clointe name=clointe>Closer Integration with your Application</a></li>
+		</ul> 
+		<div  class="btn-align" style="float:right">
+		<button type="button" class="btn btn-outline-primary pull-right bg-white" data-value="step4" style="margin-right:7px" id=viewbut name=viewbut onclick="prev(3)">View Data</button>
+
+		<a style="cursor:pointer" id=dbtab name=dbtab class="tablinks" >
+		<button type="button" onclick="next(0);" class="btn btn-outline-primary pull-right bg-white" id=godash name=godash>Finish</button></a>
+		</div>
+	</div>
+</div>
+<script >
+function next(a)
+{
+	console.log("#step"+(a))
+	if(a==0)
+	{
+	$("#step4").css('display','none')
+
+	}
+	else
+	{
+	$("#step"+(a-1)).css('display','none')
+	}
+	$("#step"+a).css('display','block');
+}
+function prev(a)
+{
+	console.log("#step"+(a-1))
+	$("#step"+(a-1)).css('display','block')
+	$("#step"+a).css('display','none');
+}
+</script>
+
+</html>

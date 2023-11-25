@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MQTTRoute</title>
+	  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+	<link rel="stylesheet" href="/static/css/adminlte.min.css">
+	<link rel="stylesheet" href="/static/css/font-awesome.css">
+	<link rel="stylesheet" href="/static/css/daterangepicker.css">
+
+	<style type="text/css">
+		/*.bg-dark {
+			background-color: #021231;
+			color: white;
+		}
+		.bg-cont {
+			background-color: #0f2f6d;
+			color: white;
+		}*/
+		.active-navbar {
+		  background-color: blue;
+		  color: white;
+		}		
+		.active-navbar > a {
+			color: white;
+		}
+		.card-body {
+			padding: 0px;
+		}
+
+
+
+		.bg {
+			background-color: rgba(0,0,0,0.1);
+		}
+	</style>
+	
+</head>
+<body class="hold-transition layout-top-nav">
+	<div class="wrapper">
+
+		<nav   class="main-header navbar-expand-md navbar navbar-light bg-white" id="second-navbar">
+			<div class="container-fluid">
+				<button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#top-navbar-2" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse order-3" id="top-navbar-2">
+				<!-- Left navbar links -->
+					<ul class="navbar-nav">
+						<li class="nav-item" id="mqtt-navbar" >
+							<a href="#" class="nav-link">MQTT Dashboard</a>
+						</li>
+						<!-- <li class="nav-item pull-right" data-toggle="modal" data-target="#dashboard-modal">
+							<a href="#" class="nav-link fa fa-plus-circle" style="position:absolute;right:10px;"></a>
+						</li> -->
+						<!-- <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto"> -->
+					<li class="nav-item dropleft pull-right" style="position:absolute;right:10px;">
+						<a class="nav-link dropleft-toggle" title="Create Dashboard/ Widget" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus-circle"></i>
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" data-toggle="modal" data-target="#dashboard-modal">Create Dashboard</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" data-toggle="modal" data-target="#widget-modal" style="display: none;"> Create Widget </a>
+						</div>
+						</li>
+				<!-- </ul> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<section class="container-fluid">
+			{% include 'widget_dashboard.html' %}
+			{% include 'widget.html' %}
+		</section>
+
+	</div>
+
+	<script src="/static/js/jquery.min.js"></script>
+	<script src="/static/js/jquery-ui.min.js"></script>
+	<script src="/static/js/bootstrap.bundle.min.js"></script>
+	<script src="/static/js/jquery.knob.min.js"></script>
+	<script src="/static/js/canvas-gauge.js"></script>
+	<!-- script src="static/js/plotly-latest.min.js"></script> -->
+
+
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+	<!-- <script src="plugins/moment/moment.min.js"></script> -->
+	<script src="/static/js/daterangepicker.js"></script>
+	<script src="/static/js/adminlte.js"></script>
+	<script src="/static/js/csv_expoter.js"></script>
+	<script src="/static/js/dashboard.js"></script>
+	<script src="/static/js/extend-widget.js"></script>
+	<script src="/static/js/widget_edit.js"></script>
+	<script src="/static/js/gauges.js"></script>
+	<script src="/static/js/charts.js"></script>
+	<script src="/static/js/state_widget.js"></script>
+
+	<script src="/static/js/extend-websocket.js"></script>
+	
+</body>
+</html>

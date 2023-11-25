@@ -1,0 +1,16 @@
+# MQTTRoute systemd service file
+
+[Unit]
+Description=MQTTRoute run as a service
+
+[Service]
+User=root
+ExecStart=/opt/Bevywise/MQTTRoute/bin/runbroker.sh
+PIDFile=/opt/Bevywise/MQTTRoute/bin/Broker.pid
+ExecStop=/opt/Bevywise/MQTTRoute/bin/stopbroker.sh
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
+Alias=MQTTRoute.service

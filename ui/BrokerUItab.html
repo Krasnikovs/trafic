@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MQTTRoute</title>
+	  
+	<link rel="stylesheet" href="static/css/adminlte.min.css">
+	<link rel="stylesheet" href="static/css/font-awesome.css">
+	<link rel="stylesheet" href="static/css/daterangepicker.css">
+	<link rel="stylesheet" href="static/fonts/LATO/Lato/latofonts.css">
+    <link rel="stylesheet" href="static/fonts/roboto/style.css">
+    <link rel="stylesheet" href="static/css/style.css">  
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+<style>
+	.card-body {
+	padding: 0px;
+	}
+	body{
+		background-color: #F1F1F1;
+	}
+	.sec-nav-font > li > a{
+		/*font-weight:bold!important;*/
+		font-family:'LatoWeb'!important;
+		font-size:1em;
+		color:#444444!important;
+	}	
+	.sec-nav-font > li > a:hover{
+		/*font-weight:bold!important;*/
+		font-family:'LatoWeb'!important;
+		font-size:1em;
+		color:#6C757D!important;
+	}
+	.icon {
+		-webkit-transform: rotate(0deg);
+		-webkit-transition: -webkit-transform 1s ease-in-out;
+	}
+	.icon:hover {
+		-webkit-transform: rotate(360deg);
+		-webkit-transition: -webkit-transform 1s ease-in-out;
+	}
+	.icon-size{
+		font-size: 1.1em!important;
+	}	
+ul.secnav {
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.navcontainer{
+	overflow-x: hidden;
+}
+
+.navcontainer:hover{
+	overflow-x: auto;
+}
+
+ul.secnav li {
+    display: inline-block;
+    float: none;
+}
+
+@media only screen and (max-width: 767px) {
+  #widget_settings1 {
+    display: none!important;
+  }
+  /*.event-card-css{
+  	max-height: 300px!important;
+  	overflow: auto!important;
+  }*/
+}
+
+
+/*	INFO BOX ICON CSS  */
+
+
+.info-box .info-box-icon {
+    display: block;
+    font-size: 1.8rem!important;
+    text-align: center;
+    width: 0px!important; 
+    padding-left: 8%!important;
+    padding-right: 8%!important;
+}
+
+.close-btn{
+  font-size: 1.5em!important;
+  padding: 0px!important;
+  color: #b8babd;
+}
+
+.close-btn:hover{
+   color: #343a40!important;
+}
+</style>
+</head>
+
+<body class="hold-transition layout-top-nav">
+	
+	<div class="wrapper">
+		<nav id="trial" class="bg-white" style="display:none"> 
+			<div class="row m-auto">
+			<div class="col-sm-10 col-10">
+			<span class="lato">You are using free version of MQTT Route.  Please <b><a href="https://www.bevywise.com/mqtt-broker/pricing.html" target="_blank">UPGRADE</a></b>&nbsp; your license.</span></div>
+			<div class="col-sm-2 col-2 m-auto"><a class="float-right text-danger mr-1" style="margin-top:1%; margin-bottom:1%; font-size: .9em; cursor:pointer;" id="navbtn">Close</a></div>    
+			</div>
+		</nav>
+
+	<nav id="main_nav" class="main-header navbar-expand-md navbar p-0 lato shadow border-bottom" style="background-color:#30465f; z-index: 10;">
+			<div class="container-fluid">
+
+			<a href="#" class="navbar-brand">
+				<img src="static/images/b-white.png" alt="Logo" class="brand-image">
+			</a>
+
+				<div class="navbar-collapse order-3" id="top-navbar">
+				<!-- Left navbar links -->
+					<ul class="navbar-nav text-center" id="desktop-bar">
+						<li class="nav-item page-dashboard-nav" id="dblink">
+							<a href="#" class="nav-link different icon-size" onclick="javascript:remove_max();"><i class="fa fa-dashboard mr-2 icon-size" style="color:#9cd21a;"></i>Dashboard</a>
+						</li>
+						<li class="nav-item page-device-nav" id="devicelink">
+							<a href="#page-device" class="nav-link different icon-size"><i class="fa fa-microchip mr-2 icon-size" style="color:#F3CA5E;"> </i>Devices</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a href="#page-topic" class="nav-link">Topic</a>
+						</li> -->
+						<li class="nav-item page-topic1-nav" id="topic1link">
+							<a href="#page-topic1" class="nav-link different icon-size"><i class="fa fa-code-fork mr-2 icon-size" style="color:#66ff8c;"></i>Topics</a>
+						</li>
+						<li class="nav-item page-rule-nav" id="rulelink">
+							<a href="#page-rule" class="nav-link different icon-size"><i class="fa fa-random mr-2 icon-size" style="color:#c07adf;"> </i>Rules</a>
+						</li>
+						<li class="nav-item page-security-nav" id="securitylink">
+							<a href="#page-security" class="nav-link different icon-size"><i class="fa fa-shield mr-2 icon-size" style="color:#e87091;"> </i>Security</a>
+						</li>
+						<!-- <li class="nav-item">
+							<a href="#page-widget-dashboard" class="nav-link">Dashboard</a>
+						</li> -->
+						<li class="nav-item page-error-log-nav" id="loglink">
+							<a href="#page-error-log" class="nav-link different icon-size"><i class="fa fa-exclamation-triangle mr-2 icon-size" style="color:#43a99a;"> </i>Device Log</a>
+						</li>
+						<!-- <li class="nav-item page-tour-nav" id="tourlink">
+							<a href="#page-tour" class="nav-link"><i class="fa fa-info-circle"> </i> Tour</a>
+						</li> -->
+						<!--
+						<li class="nav-item page-client-nav" id="clientlink">
+							<a href="#page-client" class="nav-link different icon-size"><i class="fa fa-file-o mr-2 icon-size" style="color:#f18072;"> </i>Clients</a>
+						</li>
+					-->
+					</ul>
+				</div>
+
+				<ul class="order-1 order-md-3 navbar-nav navbar-no-expand pull-right lato">
+
+					<li class="nav-item dropleft m-2" id="user-login-settings" style="margin-right:1em!important;">
+						<a class="nav-link dropleft-toggle icon" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog mt-1 icon-size"></i>
+						</a>
+						<div class="dropdown-menu mt-5" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="javascript: getreset();"> <i class="fa fa-lock text-primary"> </i>&nbsp; Change Password</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="/logout" onclick="return confirm('Do you want to logout?');"> <i class="fa fa-power-off text-danger"> </i>&nbsp; Logout</a>
+						</div>
+						</li>
+<!-- 						<li class="nav-item m-2 d-none" id="mobile-bar1">
+	 						<a class="nav-link" href="javascript:mobileSidebar();" id="open-menu1" style="font-size: 18px; border: none;"><i class="fa fa-bars text-light" style="margin-top: 30%;"></i>
+	 						</a>
+							<a class="nav-link d-none" href="javascript:sidebarClose();" id="close-menu1"><i class="fa fa-times text-danger" style="margin-top: 30%;"></i></a>	 						 						
+	 					</li> -->						
+						<li class="nav-item d-none" id="pushmenu" style="display:none">
+ 							<a class="nav-link navbar-toggler order-1" data-toggle="collapse" data-target="#top-navbar" aria-controls="top-navbar" aria-expanded="false" aria-label="Toggle navigation" href="#" style="font-size: 18px; border: none;"><i class="fa fa-bars text-dark icon-size" style="margin-top: 30%"></i></a>
+ 						</li>
+				</ul>
+
+			</div>
+		</nav>
+
+		<!-- Linear Progressbar Indicator -->
+
+<!-- <div class="progress" id="progress-load">
+  <div class="indeterminate"></div>
+</div> -->
+
+		<nav class="main-header navbar-expand-md navbar" style="background-color:#fff;padding: 0px; z-index:1" id="second-navbar">
+
+			<div class="container-fluid navcontainer border-bottom" style="background-color: aliceblue;">
+
+			<a href="javascript:remove_max();" class="navbar-brand second_logo p-0 m-0 ml-1" style="display: none;">
+				<img src="static/images/Bevywise-login.png" width="80%">
+				<!-- <span class="brand-text lato text-green font-weight-bold"></span> -->
+			</a>
+
+				<ul class="order-1 order-md-3 navbar-nav navbar-no-expand pull-right lato">			
+
+					<li class="nav-item" id="user-login-settings" style="display:none;">
+							<!-- <a class="nav-link" href="/logout" title="Logout"> <i class="fa fa-power-off text-danger"> </i></a> -->
+
+							<a class="nav-link" href="javascript:settingsOpen();"><i class="fa fa-ellipsis-v text-dark"></i></a>
+
+					</li>
+
+<!-- 					<li class="nav-item m-2 d-none" id="mobile-bar" style="display: none!important;">
+ 						<a class="nav-link navbar-toggler order-1" href="javascript:mobileSidebar();" style="font-size: 18px; border: none;" id="open-menu"><i class="fa fa-bars text-dark" style="margin-top: 30%;"></i></a>
+ 						<a class="nav-link navbar-toggler order-1 d-none" href="javascript:sidebarClose();" id="close-menu" style="font-size: 18px; border: none;"><i class="fa fa-times text-danger" style="margin-top: 30%;"></i></a> 						
+ 					</li>	 -->					
+
+				</ul>			
+
+				<div class="collapse navbar-collapse order-3" id="top-navbar-2">
+					<ul class="secnav navbar-nav sec-nav-font border-top" style="max-height: 180px;overflow: auto;">						
+						<li class="nav-item dashboard-navbar dashboard-navbar-active">
+							<a href="#" class="nav-link" data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" onclick="javascript:remove_max();" style="letter-spacing: 1px;">MQTT DASHBOARD</a>							
+						</li>
+						<li class="nav-item lato" id="mqtt-navbar" style="background-color: transparent!important;display:none">
+							<a class="nav-link" title="Create Dashboard/ Widget" href="#" role="button" style="cursor: pointer;color:blue!important" onclick="javascript:plan_check();"><i class="fa fa-plus mr-2 pr-1" style="font-size: 0.8em;"></i>Dashboard
+							</a>
+						</li>						
+					</ul>
+				</div>
+		
+			</div>
+				
+			<!-- <a class="nav-link navbar-toggler order-1 " id="" data-toggle="collapse" data-target="#top-navbar-2" aria-controls="top-navbar-2" aria-expanded="false" aria-label="Toggle navigation" href="#" style="font-size: 18px; border: none;"><i class="fa fa-bars text-dark" style="margin-top: 30%;"></i></a> -->				
+
+			<a href="#" class="navbar-brand second_logo text-dark ml-2 dash-title" data-toggle="collapse" data-target="#top-navbar-2" aria-controls="top-navbar-2" aria-expanded="false" aria-label="Toggle navigation" style="display: none;font-size: .95em!important;">
+				<i class="fa fa-bars"></i>
+				<span class="brand-text text-primary lato ml-2" id="dash-title">MQTTDashboard</span>
+			</a>
+
+				<ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto pull-right">
+
+					<li class="nav-item dropleft lato dash_dropdown ml-3 mr-3">
+						<a class="nav-link dropleft-toggle" title="Create Dashboard/ Widget" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-plus text-dark"></i>
+						</a>
+						<div class="dropdown-menu mt-1" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" style="cursor: pointer;" onclick="javascript:plan_check();"> <i class="fa fa-dashboard text-primary"></i>&nbsp; Dashboard</a>
+
+							<a class="dropdown-item" data-toggle="modal" data-target="#widget-modal" style="display: none; cursor: pointer;"> <i class="fa fa-bar-chart text-success"></i>&nbsp; Widget </a>
+						</div>
+					</li>
+
+					<li class="nav-item dropleft lato d-none second_navbar pl-2 mr-2" id="widget_settings1">
+						<a class="nav-link dropleft-toggle mr-2" title="Settings" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-ellipsis-v text-dark"></i>
+						</a>
+						<div class="dropdown-menu mt-1" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item extract_full" title="Maximize" onclick="javascript:getfullwidget_init();" style="cursor:pointer"> <i class="fa fa-window-maximize text-primary"></i>&nbsp; Maximize Window</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" title="Delete Dashboard" onclick="javascript:deleteDashboard();" style="cursor:pointer"> <i class="fa fa-times text-danger"></i>&nbsp; Delete Dashboard</a>
+						</div>
+					</li>							
+
+					<li class="nav-item" id="pushmenu" style="display:none">
+
+					<div class="d-inline-flex" style="display: inline-flex;">	
+
+						<a class="dropdown-item mt-1" data-toggle="modal" data-target="#widget-modal" title="Add Widget" style="display: none; cursor: pointer;"><i class="fa fa-plus"></i></a>
+
+						<a class="dropdown-item mt-1 d-none" title="Delete Dashboard" onclick="javascript:deleteDashboard();" style="cursor:pointer" id="deldash-btn"> <i class="fa fa-trash text-danger"></i></a>
+
+					</div>
+ 					</li>
+				</ul>
+		</nav>
+
+		<!-- Linear Progressbar Indicator -->
+<!-- 
+<div class="progress" id="progress-load">
+  <div class="indeterminate"></div>
+</div> -->
+
+		
+
+<div class="modal fade" id="password-modal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      	<h4 class="modal-title roboto" id="changepwdLabel">Change Password</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#password-modal').removeAttr('style', 'display: block')"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body lato">
+        <form action="javascript: changePassword()">
+          <div class="form-group">
+            <label class="control-label">Current Password:</label>
+            <input type="password" class="form-control" id="oldpassword"  required autofocus>
+          </div>
+          <div class="form-group">
+            <label class="control-label">New Password:</label>
+            <input type="password" class="form-control" id="newpassword"  required>
+          </div>
+          <div class=text-center>
+            <button class="btn btn-sm btn-warning">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- MOBILE VIEW MENU SIDEBAR -->
+
+
+<div id="mobile-sidebar" class="menuside">
+
+	<div class="row m-auto text-dark" style="background: #dddddd75;">
+    <h5 class="mt-2 mb-0 lato col-10">Settings</h5>
+    <a class="m-auto col-2 text-center text-dark font-weight-bold close-btn" href="javascript:settingsClose();">&times;</a>
+  </div>
+
+<!-- Sidebar Menu -->
+<nav class="secondary-sidebar lato">
+	<ul class="navbar-nav">
+		<li class="nav-item p-1">
+			<a class="dropdown-item text-primary" href="javascript: getreset();"> <i class="fa fa-lock text-primary"> </i>&nbsp; Change Password</a>
+		</li>
+		<li class="nav-item p-1">
+			<a class="dropdown-item text-danger" href="/logout" onclick="return confirm('Do you want to logout?');"> <i class="fa fa-power-off text-danger"> </i>&nbsp; Logout</a>
+		</li>						
+	</ul>                 
+</nav>
+<!-- /.sidebar-menu -->
+
+
+
+</div>
+
+</div>
+
+
+
+
+
+		<section class="container-fluid">
+			{% include 'dashboard.html' %}
+			{% include 'device.html' %}
+			{% include 'topic.html' %}
+			{% include 'rule.html' %}
+			{% include 'security.html' %}
+			{% include 'single_device.html' %}
+			{% include 'widget_dashboard.html' %}
+			{% include 'widget.html' %}
+			{% include 'errorlog.html' %}
+			{% include 'tour.html' %}
+			{% include 'clients.html' %}
+		</section>
+
+	</div>
+
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/jquery-ui.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="static/js/jquery-ui-touch/jquery.ui.touch-punch.min.js"></script>
+	<script src="static/js/bootstrap.bundle.min.js"></script>
+	<script src="static/js/jquery.knob.min.js"></script>
+	<script src="static/js/canvas-gauge.js"></script>
+	
+	<!-- script src="static/js/plotly-latest.min.js"></script> -->
+
+	<script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+	<!-- <script src="plugins/moment/moment.min.js"></script> -->
+	<script src="static/js/daterangepicker.js"></script>
+	<script src="static/js/adminlte.js"></script>
+	<script src="static/js/csv_expoter.js"></script>
+	<script src="static/js/dashboard.js"></script>
+	<script src="static/js/widget.js"></script>
+	<script src="static/js/widget_edit.js"></script>
+	<script src="static/js/gauges.js"></script>
+	<script src="static/js/charts.js"></script>
+	<script src="static/js/state_widget.js"></script>
+	<script src="static/js/device_list.js"></script>
+	<script src="static/js/device.js"></script>
+	<script src="static/js/rule_engine.js"></script>
+	<script src="static/js/topicpage.js"></script>
+	<script src="static/js/errorlog.js"></script>
+	<script src="static/js/global.js"></script>
+	<script type="application/javascript">
+        set_wsport("{{wsport}}");
+    </script>
+	<script src="static/js/websocket.js"></script>
+<script>
+
+
+//MOBILE SIDEBAR OPEN CLOSE FUNCTION
+
+$('body').click(function(){
+  settingsClose();
+});
+
+function settingsOpen() {
+
+  document.getElementById("mobile-sidebar").style.width = "50%";
+    
+}
+
+function settingsClose() {
+  document.getElementById("mobile-sidebar").style.width = "0";
+}
+
+
+// END SIDEBAR
+
+
+	function widgetmodalClose(){
+		document.getElementById("widget-form").reset();
+		initWidgetModal(this);
+	}
+	
+$(function(){
+	// alert(screen.width + "x" + screen.height);
+
+  if ($(window).width() <= 992) {
+    $('#mobile-bar').removeClass('d-none');
+    $('#desktop-bar').addClass('d-none');    
+  }
+  else {
+    $('#mobile-bar').addClass('d-none');
+  }
+
+});
+
+
+// Mobile view touch Drag and Drop.
+
+function touchHandler(event) {
+    var touch = event.changedTouches[0];
+
+var simulatedEvent = document.createEvent("MouseEvent");
+    simulatedEvent.initMouseEvent({
+    touchstart: "mousedown",
+    touchmove: "mousemove",
+    touchend: "mouseup"
+}[event.type], true, true, window, 1,
+    touch.screenX, touch.screenY,
+    touch.clientX, touch.clientY, false,
+    false, false, false, 0, null);
+
+touch.target.dispatchEvent(simulatedEvent);
+event.preventDefault();
+}
+
+function init() {
+    document.addEventListener("touchstart", touchHandler, true);
+    document.addEventListener("touchmove", touchHandler, true);
+    document.addEventListener("touchend", touchHandler, true);
+    document.addEventListener("touchcancel", touchHandler, true);
+}
+
+$('.widget').draggable();
+
+</script>
+
+</body>
+</html>

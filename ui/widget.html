@@ -1,0 +1,389 @@
+<div class="mt-1 page page-widget" style="display: none;">
+<!-- 	<div class="row d-none">
+
+		<p style="display: none;" id="full_widget_icon"></p>
+		<i class="fa fa-times text-danger pull-right ml-4" title="Delete Dashboard" onclick="deleteDashboard();" style="font-size:20px; cursor:pointer"></i>
+		<i class="fa fa-window-maximize extract_full text-primary pull-right ml-4" title="Maximize" onclick="getfullwidget_init();" style="font-size:20px; cursor:pointer"></i>	
+		<i class="fa fa-compress compress_full pull-right"  onclick="getwidget_init();" style="font-size:25px;cursor:pointer;display:none"></i>	
+	</div> -->
+<!-- 	<div id="full_w" class=row>
+	</div> -->
+
+		<div class="col-lg-12 col-md-12 col-sm-12 text-center lato" id="dash-status">
+			
+			<h2 class="mt-5" style="opacity: .5;">No widgets found!</h4>
+
+			<!-- <h5 class="mt-5" style="opacity: .5">Click <i class="fa fa-plus" style="font-size:.8em"></i> icon to create widget</h5>
+ -->
+ 				<h5 class="mt-5">
+ 						<h5 style="opacity: .5">Add widget</h5>
+ 					<a href="#" data-toggle="modal" data-target="#widget-modal">
+ 						<i class="fa fa-plus-square" style="font-size: 3em;opacity: .5"></i>
+ 					</a>
+ 				</h5>
+
+		</div>
+
+	<div class="row connectedSortable" id="maheshkumar">
+		<div class="col-lg-2 col-12" id="widget-creater" style="display: none;">
+			<div class="small-box bg-primary" style="cursor: pointer;" data-toggle="modal" id ="widget_create_modal" data-target="#widget-modal">
+				<div class="inner text-center">
+					<h5><i class="fa fa-plus-circle"></i></h5>
+					<p>Create Widget</p>
+				</div>
+				<a class="small-box-footer"><i class="fa fa-clock-o clock"></i></a>
+			</div>
+		</div>
+	</div>
+	<!-- <div class="row">
+		<div class="col-12" id ="widget-creater-del">
+			<button class="btn btn-danger" onclick="deleteDashboard();"> Delete </button>
+		</div>
+	</div> -->
+</div>
+
+
+
+<div class="modal fade" id="widget-modal" tabindex="-1" role="dialog" aria-labelledby="widget-modal-label" aria-hidden="true">
+	<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title roboto" id="widget-modal-label">Create widget</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="widgetmodalClose();">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body lato">
+				<form id="widget-form" action="javascript: createWidget()">
+					<div class="form-group">
+						<label> Widget Type </label>
+							<select class='form-control' name='type' onchange="initWidgetModal(this);" required>
+								<option value="select">--SELECT--</option>
+								<option value="text">Text</option>
+								<option value="color">Color</option>
+								<option value="line_chart">Line chart</option>
+								<option value="bar_chart">Bar chart</option>
+								<option value="gauge">Gauge chart</option>
+								<!-- <option value="donut">Donut chart</option> -->
+								<option value="vertical_gauge">Vertical gauge</option>
+								<option value="horizontal_gauge">Horizontal gauge</option>
+								<option value="led">Led light</option>
+								<option value="switch">Switch</option>
+						</select>
+					</div>
+					<div>
+						<datalist id="device-selector"></datalist>
+						<datalist id="widget-key-selector"></datalist>
+					</div>
+					
+					<div class="row  case-3" style="display: none;">
+						<div class="form-group col-md-4">
+							<label> Title </label>
+						</div>
+						<div class="form-group col-md-4 col-6">
+						
+							<select class='form-control' name='chrttype' name="chrttype" required>
+								<option value="live">Live</option>
+								<option value="history">Historical</option>
+								</select>
+
+						</div>
+					</div>
+
+					
+					<div class="row case case-1 case-2 case-3" style="display: none;">
+						<div class="form-group col-md-4">
+							<label> Title </label>
+							<input type='text' class='form-control' name='name' required autocomplete='off'>
+						</div>
+						<div class="form-group col-md-4 col-6">
+							<label> Device </label>
+							<input class='form-control' name='device' list="device-selector" onchange="loadTopics();getSubTopic_widget();" autocomplete='off' required>
+						</div>
+						<div class="form-group col-md-4 col-6">
+							<label> Topic </label>
+							<select class='form-control' name='topic' onchange="loadKey();" autocomplete='off' id="topic-selector" required></select>
+						</div>
+					</div>
+
+					<div class="widget-keys case case-1 case-3" style="display: none;">
+						<div class="row">
+							<div class='form-group col-md-4 col-6'>
+								<label> Key </label>
+								<select class='form-control' onchange="addKey(this);" name='key' id="cwidget-key-selector" autocomplete="off"></select>
+							</div>
+							<div class="form-group col-md-4 col-6">
+								<label > Subtitle </label>
+								<input type='text' class='form-control' autocomplete='off' name='sub_title'>
+							</div>
+							<div class="form-group col-md-2 col-6">
+								<label class="unit"> Unit </label>
+								<input type="text" list="widget-unit-selector" class="form-control" autocomplete="off" name="unit">
+							</div>
+							<div class="form-group col-md-1 col-3 text-center">
+								<label> Color </label><br>
+								<input class="color" type="color" name="offset_color" value="#ffffff">
+							</div>
+							<div class="col-md-1 col-3 text-center">
+								<label></label>
+								<span class="fa fa-close text-danger clokey mt-4 pt-2" style="font-size:20px; margin-top:15%" onclick='$(this).parent().parent().remove();'></span>
+							</div>
+							<!-- <div class="col-md-1 w_key">
+								<label> Add </label>
+								<a class="btn btn-md btn-block btn-outline-primary" data-toggle="tooltip" title="Add-Key" onclick="addkey(this);$(this).attr('onclick', 'removeKey(this);')">
+									<i class="fa fa-plus nav-icon add_key_icon"></i>
+								</a>
+							</div> -->
+						</div>
+					</div>
+					<!-- <div>
+						<div class="form-group widget-key" style="display: none;">
+							<label> Key </label>
+							<input class="form-control" name='key' list="widget-key-selector" autocomplete="off" required>
+						</div>
+					</div> -->
+
+					<div class="max-min case case-1" style="display: none;">
+						<div class="row">
+							<div class="form-group col-md-6 col-6">
+								<label> Minimum </label>
+								<input type='number' step="0.01" class='form-control' name='minval' autocomplete='off'>
+							</div>
+
+							<div class="form-group col-md-6 col-6">
+								<label> Maximum </label>
+								<input type='number' step="0.01" class='form-control' name='maxval' autocomplete='off'>
+							</div>
+						</div>
+					</div>
+
+					<div class="offset case case-1" style="display: none;">
+						<div class="row">
+							<div class="form-group col-md-6 col-6">
+								<label> Offset </label>
+								<input type='number' step="0.01" class='form-control' onchange="addKey(this);" name='offset' autocomplete='off'>
+							</div>
+							<div class="form-group col-md-4 col-6">
+								<label> Subtitle </label>
+								<input type='text' class='form-control' name='sub_title' autocomplete='off' disabled="">
+							</div>
+							<div class="form-group col-md-1 col-2">
+								<label> Color </label><br>
+								<input type='color' class='' name='offset_color' value="#ffffff">
+							</div>
+							<div class="col-md-1 col-2 text-center">
+								<label></label><br>
+								<span class="fa fa-close text-danger mt-2" style="font-size:20px; margin-top:15%" onclick='$(this).parent().parent().remove();'></span>
+							</div>		
+							<!-- <div class="col-md-1">
+								<label> Add </label>
+								<a class="btn btn-md btn-block btn-primary" data-toggle="tooltip" title="Add offset" href="javascript:console.log('hello');" onclick="addOffset(this);$(this).attr('onclick', 'removeOffset(this);')">
+									<i class="fa fa-plus nav-icon add_key_icon"></i></a>
+							</div> -->
+						</div>
+					</div>
+
+					<div class="form-group sub-topic case case-2" style="display: none;">
+						<label> Subscribe Topic </label>
+						<select id='widget-subtopic-selector'class='form-control' name='sub_topic'></select>
+					</div>
+
+					<div class="status case case-2" style="display: none;">
+						<div class="row">
+							<div class="form-group col-md-5 col-6">
+								<label> Active </label>
+								<input type='text' class='form-control' name='act_msg' autocomplete="off">
+							</div>
+							<div class="form-group col-md-1 col-6 text-center">
+								<label> Color </label><br>
+								<input type='color' name='act_msg_color' value="#32CD32">
+							</div>
+							<div class="form-group col-md-5 col-6">
+								<label> Inactive </label>
+								<input type='text' class='form-control' name='inact_msg' autocomplete="off">
+							</div>
+							<div class="form-group col-md-1 col-6 text-center">
+								<label>Color </label><br>
+								<input type='color' name='inact_msg_color' value="#ff0000">
+							</div>
+						</div>
+					</div>
+					<div class="mt-3">
+						<button type="button" class="btn btn-sm btn-secondary pull-right ml-2" data-dismiss="modal">Close</button>
+
+						<button type="submit" class="btn btn-sm btn-warning pull-right">Create</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div style="display: none;">
+		<form id="widget-edit-base-form" class="mt-3 mb-5 ml-3 mr-3 lato" action="javascript:updateWidget()">
+			<div>
+				<label> Widget Type </label>
+				<select class='form-control textbox1' name='type' onchange="widgetFormBuilder($(this).val());" required disabled>
+					<option value="select">--SELECT--</option>
+					<option value="text">Text</option>
+					<option value="color">Color</option>
+					<option value="line_chart">Line chart</option>
+					<option value="bar_chart">Bar chart</option>
+					<option value="gauge">Gauge</option>
+					<option value="donut">Donut chart</option>
+					<option value="vertical_gauge">Vertical gauge</option>
+					<option value="horizontal_gauge">Horizontal gauge</option>
+					<option value="led">Led light</option>
+					<option value="switch">Switch</option>
+				</select>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-12 col-md-12">
+					<label> Title </label>
+					<input type='text' class='form-control textbox1' name='name' required autocomplete='off'>
+				</div>
+				<div class="col-sm-6 col-md-6 col-6">
+					<label> Device </label>
+					<select class='form-control textbox1' name='device' id="widget-device-edit" onchange="getWidgetTopicList();edit_SubTopic_widget();" required></select>
+				</div>
+				<div class="col-sm-6 col-md-6 col-6">
+					<label> Topic </label>
+					<select class='form-control textbox1' name='topic' id="widget-topic-edit" onclick="getWidgetKeyList();" autocomplete='off' required></select>
+				</div>
+			</div>
+
+			<div class="widget-keys">
+				<div class="form-group row">
+					<div class='col-md-6 col-sm-12 col-6'>
+						<label> Key </label>
+						<input class='form-control' name='key' list="widget-key-selector" autocomplete="off">
+					</div>
+					<div class="col-md-6 col-sm-12 col-6">
+						<label > Subtitle </label>
+						<input type='text' class='form-control textbox1' autocomplete='off' name='sub_title'>
+					</div>
+					<div class="col-md-3 col-sm-12 col-6">
+						<label class="unit"> Unit </label>
+						<input type="text" list="widget-unit-selector" class="form-control textbox1 unit" autocomplete="off" name="unit">
+					</div>
+					<div class="col-md-3 col-sm-12 col-3 text-center">
+						<label> Color </label><br>
+						<input class="color" type="color" name="offset_color" value="#ffffff">
+					</div>
+					<div class="col-md-6 w_key col-sm-12 col-3 text-center">
+						<label> Add </label>
+						<a class="btn btn-sm btn-block btn-outline-dark bg-white" data-toggle="tooltip" title="Add-Key" onclick="addkey(this);$(this).attr('onclick', 'removeKey(this);')">
+							<i class="fa fa-plus nav-icon add_key_icon text-warning"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div>
+				<div class="form-group widget-key">
+					<label> Key </label>
+					<input class="form-control" name='key' list="widget-key-selector" autocomplete="off" required>
+				</div>
+			</div>
+
+			<div class="max-min">
+				<div class="row">
+					<div class="col-md-6 col-sm-12 col-6">
+						<label> Minimum </label>
+						<input type='number' step="0.01" class='form-control textbox1' name='minval' autocomplete='off'>
+					</div>
+
+					<div class="col-md-6 col-sm-12 col-6">
+						<label> Maximum </label>
+						<input type='number' step="0.01" class='form-control textbox1' name='maxval' autocomplete='off'>
+					</div>
+				</div>
+			</div>
+
+			<div class="widget-offset-edit">
+				<div class="row">
+					<div class="col-md-3 col-sm-12 col-6">
+						<label> Offset </label>
+						<input type='number' step="0.01" class='form-control textbox1' name='offset' autocomplete='off'>
+					</div>
+					<div class="col-md-3 col-sm-12 col-6">
+						<label> Subtitle </label>
+						<input type='text' class='form-control textbox1' name='sub_title' autocomplete='off' disabled="">
+					</div>
+					<div class="col-md-3 col-sm-12 col-6">
+						<label> Color </label><br>
+						<input type='color' class='textbox1' name='offset_color' value="#ffffff">
+					</div>
+					<div class="col-md-3 col-sm-12 col-6">
+						<label> Add </label>
+						<a class="btn btn-sm btn-block btn-outline-dark bg-white" data-toggle="tooltip" title="Add offset" href="javascript:console.log('hello');" onclick="addOffset(this);$(this).attr('onclick', 'removeOffset(this);')">
+							<i class="fa fa-plus nav-icon add_key_icon text-warning"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div style="display: none;">
+				<label> Subscribe Topic </label>
+				<select id='edit-widget-subtopic'class='form-control' name='sub_topic'></select>
+			</div>
+
+			<div class="act_div" style="display: none;">
+				<div class="row">
+					<div class="col-md-10 col-sm-6 col-6">
+						<label> Active </label>
+						<input type='text' class='form-control textbox1' name='act_msg' autocomplete="off">
+					</div>
+					<div class="col-md-2 mt-4 pt-3 col-sm-6 col-6 text-center">
+						<label> Color </label>
+						<input type='color' name='act_msg_color' value="#32CD32">
+					</div>
+					<div class="col-md-10 col-sm-6 col-6">
+						<label> Inactive </label>
+						<input type='text' class='form-control textbox1' name='inact_msg' autocomplete="off">
+					</div>
+					<div class="col-md-2 mt-4 pt-3 col-sm-6 col-6 text-center">
+						<label> Color </label>
+						<input type='color' name='inact_msg_color' value="#ff0000">
+					</div>
+				</div>
+			</div>
+
+			<div class="mt-5 mb-5">
+				<button class="btn btn-sm btn-warning pull-right ml-3" type="submit"> Save Changes </button>
+			</div>
+		</form>
+		<button class="btn btn-sm btn-secondary pull-right ml-3" style="color: white;" onclick="close_edit()"> Cancel </button>
+	</div>
+
+	<div class="modal fade" id="create-widget-extract-model" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        
+        <div class="modal-content">
+          <div class="modal-header">
+          	<h5 class="roboto">Export data</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          
+          <div class="modal-body lato">
+		        <form id="widget-extract-form" action="javascript: exportWidgetData()">
+							<input type="hidden" name="device">
+							<input type="hidden" name="topic">
+							<input type="hidden" name="key">
+							<label for="name">From Date</label>
+							<input type="date" name="gt" class="form-control" required="">
+							<label for="email">To Date</label>
+							<input type="date" name="lt" class="form-control" required="">
+			        <div class="mt-2">
+			          <button class="btn btn-sm btn-secondary pull-right ml-3" class="close" data-dismiss="modal" aria-label="Close"> Cancel </button>
+			          <button type="submit" class="btn btn-sm btn-warning pull-right">  Create </button>
+			        </div>
+		        </form>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+

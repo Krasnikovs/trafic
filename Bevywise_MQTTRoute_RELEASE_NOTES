@@ -1,0 +1,53 @@
+Bevywise MQTTRoute  - RELEASE NOTES
+
+-------------------------------------------------------------------------------
+Date: January 15, 2023
+Version 4.0
+Updates:
+* Upgraded to Python 3.11
+* Refined conf files
+* Upgraded support for High Availability 
+* Support for Configurable TLS/SSL Cerificates 
+* Added Binary Support for MQTT Payload. Only for Linux build.
+* Added support for Live/Historical data in Widgets
+* Standardized the REST API URLs and their responses.
+* Added REST APIs for:Get List of devices,Get all subscriptions,Get last 10 publish messages,Get last 10 sent commands,Get Will topic
+
+Fixes:
+* Added retain deletion on receiving empty payload
+* Fixed # subscription
+* Disconnected an existing client, if another client connects with same ClientId.
+* If CLEAR_SESSION=DISABLED in conf, then cs is set as 1 by default. 
+* If Clean Session flag is set, then old session is cleared.
+* Fixed incrementing the Client Count, when the limit is reached.
+* Fixed packetId generation.
+* Fixed MySQL dbpool issue.
+* Fixed to set the correct session present flag in CONNACK
+
+Known Issues:
+* Binary Support for MQTT Payload does not work in Windows.
+-------------------------------------------------------------------------------
+
+Date: April 29, 2021
+Version: 3.2
+* SYS topics implementation
+* High Availability support
+* Logging for Broker
+* Publish and subscribe topic pages in UI
+* Clean the queue from UI
+* Added Switch Widget in Client UI
+* Custom Auth fixes
+* Simulator connection issue fix
+* Validation fixes in Create dashboard and widget UI.
+-------------------------------------------------------------------------------
+
+Date: August 12, 2021
+Version: 3.3
+* Linux run as a service added 
+* windows run as a service added 
+* windows crash report generation added
+* postgres database connection error fix
+* Mobile UI enhancement
+* Android Application available in Playstore (App name: MQTTRoute)
+* MQTTSN-Gateway Crash fix
+-------------------------------------------------------------------------------

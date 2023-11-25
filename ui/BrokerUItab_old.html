@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<html ng-app="JSONedit">
+<head>
+<title id="tit">Bevywise - MQTT Dashboard, MQTT Broker</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="MQTT Broker is a perfect middleware that is build with enterprise level functionality and quality with complete support for MQTT and flexible to integrate anytging thirdparty application or storage"/>
+    <meta name="keywords" content="MQTT Broker , MQTTRoute , MQTT Broker Trial , online MQTT Broker, MQTT Dashboard , connect MQTT Clinets"/>
+    <meta name="author" content="" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="MQTT Broker，MQTT仪表板，在线MQTT代理，MQRoute"/>
+    <meta property="og:image" content="http://cn.mqttroute.com/static/images/Enterprise-MQTT-Broker.png"/>
+    <meta property="og:url" content="http://cn.mqttroute.com"/>
+    <meta property="og:site_name" content="MQTT Broker, Enterprise MQTT Broker , MQTTRoute , Online MQTT Broker"/>
+    <meta property="og:description" content="MQTT Broker is a perfect middleware that is build with enterprise level functionality and quality with complete support for MQTT and flexible to integrate anytging thirdparty application or storage"/> 
+    <meta name="twitter:title" content="MQTT Broker, MQTT Dashboard, Online MQTT Broker,  MQTTRoute"/>
+    <meta name="twitter:image" content="http://cn.mqttroute.com/static/images/Enterprise-MQTT-Broker.png"/>
+    <meta name="twitter:url" content="http://cn.mqttroute.com/"/>
+    <meta name="twitter:card" content="summary" />
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125176268-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-125176268-1');
+  </script>
+
+
+<script src="{{ static_url("js/jquery.js") }}"></script>
+<script src="{{ static_url("js/brokerscript.js") }}"></script>
+<script src="{{ static_url("js/jquery-ui.js") }}"></script>
+
+<link rel="stylesheet" href="{{ static_url("css/jquery-ui.css") }}">
+<link rel=stylesheet type=text/css href="{{ static_url("css/iot.css") }}">
+<link rel=stylesheet type=text/css href="{{ static_url("css/datatable.css") }}">
+  <link rel="stylesheet" href="{{ static_url("css/AdminLTE.min.css") }}">
+  <link rel="stylesheet" href="{{ static_url("css/bootstrap.min.css") }}">
+  <link rel="stylesheet" href="{{ static_url("css/skin/_all-skins.min.css") }}">
+
+  <script type="text/javascript" src="{{ static_url("js/json2.min.js") }}""></script>
+<script type="text/javascript" src="{{ static_url("js/l10n.min.js") }}""></script>
+<script type="text/javascript" src="{{ static_url("js/localizations.js") }}"></script>
+<script  src="{{ static_url("js/app.min.js") }}"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel=stylesheet type=text/css href="{{ static_url("css/bootstrap.css") }}">
+  <link rel=stylesheet type=text/css href="{{ static_url("css/daterangepicker.css") }}">
+<script src="{{ static_url("js/moment.min.js") }}"></script>
+<script src="{{ static_url("js/daterangepicker.js") }}"></script>
+<script src="{{ static_url("js/bootstrap.min.js") }}"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+<style type="text/css">
+.stop-network {
+    color: #5ecc72;
+    font-size: 22px;
+    vertical-align: center;
+    margin: 1px 5px 0px 0px;
+}
+.start-network {
+    color: #dd4b39;
+    font-size: 22px;
+    vertical-align: center;
+    margin: 1px 5px 0px 0px;
+}  
+.enabletext {
+    background-color: #43b985;
+    color: #fff;
+}
+.authtext {
+    border-radius: 3px;
+    font-size: 13px;
+    line-height: 160%;
+    padding: 1px 7px;
+    position: relative;
+    top: -4px;
+    display: inline-block;
+}
+.badge {
+    display: inline-block;
+    font-family: arial;
+    min-width: 10px;
+    padding: 3px 7px;
+    font-size: 12px;
+    color: #fff;
+    line-height: 1;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #777777;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    cursor:pointer;
+    position:relative;
+    padding-top:5px;
+}
+.tooltiplogin {
+  position: relative;
+  display: inline-block;
+  /*border-bottom: 1px dotted black;*/
+}
+
+.tooltiplogin .tooltiptextlogin {
+  visibility: hidden;
+  width: 320px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  word-wrap: break-word;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+}
+
+.tooltiplogin .tooltiptextlogin::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+.tooltiplogin:hover .tooltiptextlogin {
+  visibility: visible;
+}
+
+</style>
+<script type="text/javascript">
+if (location.hash) {
+        String.locale = location.hash.substr(1);
+
+}
+else {
+  String.locale = navigator.language
+}
+var localize = function (string, fallback) {
+        //alert(string);
+        var localized = string.toLocaleString();
+        if (localized !== string) {
+                return localized;
+        } else {
+                return fallback;
+        }
+};
+var localizehtml = function (id, string, fallback) {
+        //alert(string);
+        var localized = string.toLocaleString();
+        if (localized == string) {
+          localized = fallback;
+        }
+
+        document.getElementById(id).innerHTML = localized;
+};
+</script>
+<script>localizehtml("tit" , "%title" , "Bevywise MQTTRoute - Manage your Devices");</script>
+<script>
+
+  $( function() {
+    $("#specific_date_txt" ).datepicker();
+  } );
+
+  $("#editdialog" ).dialog({
+  width: 500,
+  height: 400,
+  autoOpen: false,
+  show: {
+    effect: "blind",
+    duration: 500
+  },
+  hide: {
+    effect: "blind",
+    duration: 500
+  }
+}); 
+
+function openDetail(evt, detailName)
+{
+  var v=document.getElementById("auth_conf").value;
+  if (v=='NO')
+  {
+    //document.getElementById("auth-status").style.color = "#5ecc72";
+    //document.getElementById("auth-status").
+    //document.getElementById("auth-status").setAttribute("class", "btn btn-danger");
+    document.getElementById("auth-status").style.backgroundColor = "#d9534f";
+    document.getElementById("auth-status").innerHTML = "Disabled";
+
+  }
+  else
+  {
+    document.getElementById("auth-status").style.backgroundColor = "#43b985";
+    document.getElementById("auth-status").innerHTML = "Enabled";
+  }
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++)
+    {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++)
+    {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    if(JSON.stringify($("#editdialog").css(["display"])) == '{"display":"block"}') {
+      $("#editdialog").dialog("close");
+    }
+    document.getElementById(detailName).style.display = "block";
+    //evt.currentTarget.className += " active";
+    if (detailName=='Dashboard')
+    {
+    	document.getElementById("dbtab").style.color="rgba(0,0,0,0.38)";
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";    	
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("topic").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+    	document.getElementById("clients").style.color="rgb(0,0,0)";
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";
+
+      document.getElementById("editdialog").style="display:none;"
+      document.getElementById("pubd1").style="display:none";
+      document.getElementById("rule_heading").style="display:none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      document.getElementById("editdialog").style.display="none";
+      $("#editdialog").dialog("close");
+      document.getElementById("pubd1").style.display="none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      //getDashboard();
+      $.ajax({
+        url: '/graph/topic_count?curr_time='+new Date().getTime(),
+        type: "GET",
+        dataType: "text",
+        async:false,
+        success: function (msg) {
+          var obj=JSON.parse(msg);
+          var key;
+          var msgratecnt=0;
+          var msgkey=[]
+          var msgrate=0;
+          var ntopic=document.getElementById("active_topic");
+          for (var key in obj) {
+          ntopic.innerHTML=obj[key][1]+"";
+          }
+        },
+        error: function () {}
+      });
+    }
+    if (detailName=='RuleEngine')
+    {
+    	document.getElementById("ruletabhead").style.color="rgba(0,0,0,0.38)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("topic").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+    	document.getElementById("clients").style.color="rgb(0,0,0)";
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";
+      getRuleEngine();
+    }
+    if (detailName=='Devices')
+    {
+    	document.getElementById("devtabhead").style.color="rgba(0,0,0,0.38)";    	
+    	document.getElementById("clients").style.color="rgb(0,0,0)";    	
+    	document.getElementById("topic").style.color="rgb(0,0,0)";  	
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";
+
+      document.getElementById("editdialog").style="display:none;"
+      document.getElementById("pubd1").style="display:none";
+      document.getElementById("rule_heading").style="display:none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      document.getElementById("editdialog").style.display="none";
+      $("#editdialog").dialog("close");
+      document.getElementById("pubd1").style.display="none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      var nn=document.getElementById("d_name").value;
+      var xdetail11=document.getElementById('device'+nn);
+      if (xdetail11)
+      {
+      xdetail11.style.borderLeft="3px solid transparent";
+      xdetail11.style.borderColor="#337ab7";
+      xdetail11.style.color="#000000";
+      }
+    }
+    if (detailName=='Client') {
+    	document.getElementById("clients").style.color="rgba(0,0,0,0.38)";    	
+    	document.getElementById("topic").style.color="rgb(0,0,0)";  	
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";
+
+      document.getElementById("editdialog").style="display:none;"
+      document.getElementById("pubd1").style="display:none";
+      document.getElementById("rule_heading").style="display:none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      document.getElementById("editdialog").style.display="none";
+      $("#editdialog").dialog("close");
+      document.getElementById("pubd1").style.display="none";
+      document.getElementById("dialog_wrapper").style.display="none";
+  }
+  if (detailName=='Topics') {
+    	document.getElementById("topic").style.color="rgba(0,0,0,0.38)";  	
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+    	document.getElementById("clients").style.color="rgb(0,0,0)";
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";
+
+      document.getElementById("editdialog").style="display:none;"
+      document.getElementById("pubd1").style="display:none";
+      document.getElementById("rule_heading").style="display:none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      document.getElementById("editdialog").style.display="none";
+      $("#editdialog").dialog("close");
+      document.getElementById("pubd1").style.display="none";
+      document.getElementById("dialog_wrapper").style.display="none";
+      offsetSetter(0, 1);
+      getTopicMessageCount();
+  } 
+  if (detailName=='Tour')
+  {
+    	document.getElementById("tourtabhead").style.color="rgba(0,0,0,0.38)";  	  	
+    	document.getElementById("clients").style.color="rgb(0,0,0)";    	
+    	document.getElementById("topic").style.color="rgb(0,0,0)";  	
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+  }
+  if (detailName=='Authentication')
+  {
+    	document.getElementById("authentication").style.color="rgba(0,0,0,0.38)";  	
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";  	  	
+    	document.getElementById("clients").style.color="rgb(0,0,0)";    	
+    	document.getElementById("topic").style.color="rgb(0,0,0)";  	
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("errorlog").style.color="rgb(0,0,0)";
+  }
+  if (detailName=='ErrorLog')
+  {
+    	document.getElementById("errorlog").style.color="rgba(0,0,0,0.38)";  	
+    	document.getElementById("tourtabhead").style.color="rgb(0,0,0)";  	  	
+    	document.getElementById("clients").style.color="rgb(0,0,0)";    	
+    	document.getElementById("topic").style.color="rgb(0,0,0)";  	
+    	document.getElementById("ruletabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("dbtab").style.color="rgb(0,0,0)";
+    	document.getElementById("devtabhead").style.color="rgb(0,0,0)";
+    	document.getElementById("authentication").style.color="rgb(0,0,0)";
+  }
+}
+
+
+</script>
+
+<style>
+body {/*font-family: "Lato", sans-serif;*/
+font-family:'Source Sans Pro','Helvetica Neue',Helvetica,Arial,sans-serif;
+margin-left: -13px;
+margin-right: -13px;
+margin-top: -8px;
+margin-bottom: -8px;
+background-color: #ecf0f5;
+}
+
+/* Float the list items side by side */
+ul.tab li {float: left;}
+input[class="wdays"]:not(:checked), 
+input[class="wdays"]:checked {
+  position: absolute;
+  left: -9999%;
+}
+
+/*.tablinks {
+  width: 116px;
+  text-align: center;
+}*/
+input[class="wdays"] + label {
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer;
+  border: 1px solid black;
+  color: black;
+  background-color: white;
+  margin-bottom: 3px;
+}
+
+input[class="wdays"]:checked + label {
+  border: 1px solid white;
+  color: white;
+  background-color: gray;
+}
+
+
+.publishsubscribe
+{
+    top:30px;
+    width:100%;
+    overflow:hidden;
+}
+.publish
+{ 
+    width:60%;
+    float:left;
+   
+}
+.subscribe
+{
+    width:38%;
+    padding-left:15px;
+    float:right;
+}
+.connectdisconnect
+{
+    top:300px;
+    width:100%;
+    overflow:hidden;
+}
+.connect
+{
+    width:60%;
+    float:left;
+}
+.disconnect
+{
+    width:38%;
+    float:right;
+    padding-left:15px;
+}
+.graph
+{
+    top:450px;
+    width:100%;
+    overflow:hidden;
+}
+.messagegraph
+{
+    width:60%;
+    float:left;
+}
+.errorgraph
+{
+    width:38%;
+    float:right;
+    padding-left:15px;
+}
+
+td
+{
+    font-weight:bold;
+    width:150px;
+    text-align:center;
+}
+
+
+.btn-next{
+background-color:#47a847;
+color:#fff;
+font-weight:bold;
+}
+
+.btn-next:hover {
+  
+background-color:#47a847;
+color:#fff;
+}
+
+.btn-dwd {
+background-color:#f54d43;
+color:#fff;
+font-weight:bold;
+}
+
+.btn-dwd:hover {
+  
+background-color:#f54d43;
+color:#fff;
+}
+
+
+
+
+
+.btn-prev {
+font-weight:bold;
+
+}
+
+.image-container {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    background-position: 0 0;
+    background-image: url({{ static_url("images/background-image.png") }});
+   
+
+}
+
+.image-container .display-t, .image-container .display-tc {
+    z-index: 50 !important;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top:70px !important;
+    height: 600px;
+    width: 100%;
+}
+
+.align {
+  margin-bottom:30px;
+  font-size:50px;
+  font-weight:600;
+}
+
+.sub-align{
+  font-weight:500;
+  font-size:17px;
+  position: relative !important;
+  top:0px !important;
+  margin-left: 40px;
+}
+
+.btn-align {
+  position:absolute;
+  right:0;
+  top:450px;
+}
+
+.tab-pane {
+  position:relative;
+  min-height: :60px;
+}
+
+.x-align {
+    margin-top: 64px;
+    margin-right: 20px;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color:#ff0000;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 10px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #00c800;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #00c800;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(12px);
+  -ms-transform: translateX(12px);
+  transform: translateX(12px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+</style>
+
+<script>
+  $('input[name="datetime_txt"]').daterangepicker();
+  $('input[name="specific_date_txt"]').datepicker();
+$(function() {
+$("#editdialog" ).dialog({
+  width: 500,
+  height: 500,
+  autoOpen: false,
+  show: {
+    effect: "blind",
+    duration: 500
+  },
+  hide: {
+    effect: "blind",
+    duration: 500
+  }
+}); 
+});
+</script>
+<script>
+function startTime()
+{
+  startTime1();
+}
+function isNumber (o) {
+  return ! isNaN (o-0) && o != null && o != "";
+}
+function fnforward()
+{
+
+  var a=document.getElementById("prulecond_txt").value;
+  /*if (a=="1")
+  {
+  document.getElementById("eqpresmsg_txt").style.display="block";
+  document.getElementById("neqpresmsg_txt").style.display="none";
+  document.getElementById("ltpresmsg_txt").style.display="none";
+  document.getElementById("gtpresmsg_txt").style.display="none";
+  document.getElementById("presmsg_txt").style.display="none";
+  //document.getElementById("cltgroup").style.display="none";
+  }
+  else if (a=="2")
+  {
+  //document.getElementById("eqpresmsg_txt").style.display="none";
+  //document.getElementById("neqpresmsg_txt").style.display="block";
+  //document.getElementById("ltpresmsg_txt").style.display="none";
+  //document.getElementById("gtpresmsg_txt").style.display="none";
+  //document.getElementById("presmsg_txt").style.display="none";
+  }
+  else if (a=="3")
+  {
+  document.getElementById("eqpresmsg_txt").style.display="none";
+  document.getElementById("neqpresmsg_txt").style.display="none";
+  document.getElementById("ltpresmsg_txt").style.display="block";
+  document.getElementById("gtpresmsg_txt").style.display="none";
+  document.getElementById("presmsg_txt").style.display="none";
+  }
+  else if (a=="4")
+  {
+  document.getElementById("eqpresmsg_txt").style.display="none";
+  document.getElementById("neqpresmsg_txt").style.display="none";
+  document.getElementById("ltpresmsg_txt").style.display="none";
+  document.getElementById("gtpresmsg_txt").style.display="block";
+  document.getElementById("presmsg_txt").style.display="none";
+  }*/
+
+
+  
+}
+function fncopy()
+{
+}
+</script>
+</head>
+<body class="sidebar-mini skin-black-light fixed" data-spy="scroll" data-target="#scrollspy" style="height:auto;" onload="startTime();">
+    <header class="main-header"  id=bevylogo name=bevylogo>
+        <div class="logo">
+            <img src="/static/images/logo.png" style="width: 170px;">
+        </div>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <div id=connectmsg name=connectmsg class=nodevicemsg></div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav pull-left">
+                    <li><a style="cursor:pointer" id=dbtab name=dbtab class="tablinks" onclick="openDetail(event, 'Dashboard')"><script>localizehtml("dbtab" , "%dashmenu" , "Dashboard");</script><span class="sr-only">(current)</span></a></li>
+                    <li><a style="cursor:pointer" id=devtabhead name=devtabhead class="tablinks" onclick="openDetail(event, 'Devices')"><script>localizehtml("devtabhead" , "%devicemenu" , "Devices");</script></a></li>
+                    <li><a style="cursor:pointer" id=topic class="tablinks" onclick="openDetail(event, 'Topics')"><script>localizehtml("topic" , "%topic", "Topic");</script></a></li>
+                    <li><a style="cursor:pointer" id=ruletabhead name=ruletabhead class="tablinks" onclick="openDetail(event, 'RuleEngine')"><script>localizehtml("ruletabhead" , "%rulesmenu" , "Message Rules");</script></a></li>
+                    <li><a style="cursor:pointer" id='errorlog' name="errorlog" class="tablinks" onclick="openDetail(event, 'ErrorLog');"><script>localizehtml("errorlog" , "%errorlog" , "Error Log");</script></a></li>
+                    <li><a style="cursor:pointer" id='authentication' name="authentication" class="tablinks" onclick="openDetail(event, 'Authentication')"><script>localizehtml("authentication" , "%authentication" , "Authentication");</script></a></li>
+                    <li><a style="cursor:pointer" id='clients' name=clients class="tablinks" onclick="openDetail(event, 'Client')"><script>localizehtml("clients" , "%clients" , "MQTT Clients");</script></a></li>
+                     <li><a style="cursor:pointer" id=tourtabhead name=tourtabhead class="tablinks" onclick="openDetail(event, 'Tour')"><script>localizehtml("tourtabhead" , "%tour" , "Tour");</script></a></li>
+                     <li style="display:none"><input type=text id=auth_conf name=auth_conf value={{auth_enabled}}></li>
+                     
+                </ul>
+                <ul class="nav navbar-nav pull-right">
+<!-- Example single danger button -->
+
+        <li class="dropdown">
+          <a class="fa fa-user-circle-o fa-2x dropdown-toggle"  data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-hidden="true" style="color:#12b3f9;margin-right:10px;cursor: pointer"></a>
+          <ul class="dropdown-menu">
+            <li><a href="/logout">Logout</a></li>
+            <li><a style="cursor:pointer" onclick="$('#password-modal').attr('style', 'display: block');$('#password-modal').addClass('in');">Change Password</a></li>
+          </ul>
+        </li>
+                    <!--<li><a href="/logout"><input class="btn btn-primary" type="button" style="background-color:#12b3f9;border-color:#12b3f9;height:32px;width:55px;margin-top:-0.6rem;padding-top:2px;font-size:14px;" value="Logout" id=logout name=logout></a></li>         -->           
+                    <!--<li><a href="/logout"><input class="btn btn-lg btn-primary btn-block" type="button" style="background-color:#12b3f9;border-color:#12b3f9;height:32px;font-weight:bold;padding-top:2px;font-size:16px;" value="Logout" id=logout name=logout></a></li> -->
+                    <!--<li><input class="btn btn-primary" type="button" data-target="#password-modal" data-toggle="modal" style="background-color:#12b3f9;border-color:#12b3f9;margin-top:0.8rem;height:32px;font-weight:bold;padding-top:2px;font-size:16px;" value="Change Password" onclick="$('#password-modal').attr('style', 'display: block');$('#password-modal').addClass('in');"></li>-->
+                    <li><a href="https://www.bevywise.com/mqtt-broker/help/" target="_blank" style="padding: 0; margin-top: 4px;border-right: none;"><img src="/static/images/help.png" style="height:35px;margin-top:0.3rem;"></a></li>
+                     <!-- <li><a href="https://www.bevywise.com/mqtt-broker/download.html" style="padding: 0; margin-top: 4px;"><img src="/static/images/download.png"></a></li> --> 
+                </ul>
+            </div>
+            <div id="authen">
+                <div class="sameline authloc" style="display:none" id=authenabled name=authenabled></div>
+                <div  class="sameline brokerdetails" id=authdisabled name=authdisabled></div>
+            </div>
+            <div id="usertls">
+                <div  class="sameline userloc" style="display:none"  id=username name=username></div>
+                <div  class="sameline brokerdetails" id=tls name=tls> </div>
+            </div>
+            <div id="pwdport">
+                <div style="display:none" class="sameline pwdloc" id=password name=password></div>
+                <div  class="sameline brokerdetails" id=port name=port></div>
+            </div>
+    <!-- Navbar Right Menu -->
+        </nav>
+    </header>
+
+
+<div class="container">
+<div id="Client" name="Client" class="row tabcontent" style="margin-top: 70px">
+    <div class="col-md-5 box">
+        <div class="box-header" style="border:none">
+            <h2 class="box-title">MQTT Client</h2>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <td id=downos name=downos><script>localizehtml("downos" , "%download" , "Download for your OS");</script></td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://bevywise.com/local-mqtt-broker-clients/MQTTClientWin32.zip" id= win32bit name=win32bit download><script>localizehtml("win32bit" , "%win32" , "Windows 32 bit");</script></a></td>
+                    </tr>
+                    <tr>
+                        <td style="border: none !important;"><a href="https://bevywise.com/local-mqtt-broker-clients/MQTTClientWin64.zip" id=win64bit name=win64bit download><script>localizehtml("win64bit" , "%win64" , "Windows 64 bit");</script></a></td>
+                    </tr>
+                    <tr>
+                        <td style="border: none !important;"><a href="https://bevywise.com/local-mqtt-broker-clients/MQTTClientLinux.zip" id=linx name=linx download><script>localizehtml("linx" , "%linux" , "Linux");</script></a></td>
+                    </tr>
+                    <tr>
+                        <td style="border: none !important;"><a href="https://bevywise.com/local-mqtt-broker-clients/MQTT-ClientMac.zip" id=macos name=macos download><script>localizehtml("macos" , "%mac" , "Mac");</script></a></td>
+                    </tr>
+                    <tr>
+                        <td style="border: none !important;"><a href="http://bevywise.com/local-mqtt-broker-clients/ESPClient.zip" id= espcli name=espcli download><script>localizehtml("espcli" , "%esp" , "ESP");</script></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-6 box" style="height: 272px">
+        <div class="box-header" style="border:none">
+            <h2 class="box-title" id=help name=help><script>localizehtml("help" , "%mqtthelp" , "MQTT Client Help");</script></h2>
+        </div>
+        <div class="box-body no-padding">
+            <ul>
+                <li style="list-style-type: circle;font-size: 17px;" id=comp name=comp><script>localizehtml("comp" , "%compatible" , "Download the client code that is compatible with your OS.");</script></li>
+                <li style="list-style-type: circle;font-size: 17px;" id=install name=install><script>localizehtml("install" , "%python" , "Install python 2.7 for your machine / PC");</script></li>
+                <li style="list-style-type: circle;font-size: 17px;"id=change name=change><script>localizehtml("change" , "%changepara" , "Please change the following parameters as required.");</script>
+                    <ul>
+                        <li style="list-style-type: square;font-size: 15px;" id=clientid name=clientid ><script>localizehtml("clientid" , "%clientid" , "MQClientID");</script></li>
+                        <li style="list-style-type: square;font-size: 15px;" id=pub name=pub><script>localizehtml("pub" , "%publish" , "Publish_Topic_Name");</script></li>
+                        <li style="list-style-type: square;font-size: 15px;" id=pubmsg name=pubmsg><script>localizehtml("pubmsg" , "%publishmsg" , "Publish_Message");</script></li>
+                        <li style="list-style-type: square;font-size: 15px;"id=sub name=sub><script>localizehtml("sub" , "%subscribe" , "Subscribe_Topic_Name");</script></li>
+                    </ul>
+                </li>
+                <li style="list-style-type: circle;font-size: 17px;"id=you name=you><script>localizehtml("you" , "%youchg" , "You can change the QoS , Retain , and other parameters if needed.");</script></li>
+            </ul>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- <div class="container">
+  <div id="Settings" name="Settings" class="container row tabcontent" style="margin-top: 70px;">
+    <div style="width: 50%" class="container col-md-6 box">
+      <div class="box-body no-padding">
+        <h3 style="font-size:18px;margin-top:0px;">Authentication Setting</h3>
+          <div class="row">
+            <div class="col-md-7"></div>
+            <div class="col-md-3"><h5 style="font-size: initial;text-align:center;">Authentication</h5></div>
+            <div class="col-md-2">
+              <label class="switch" style="margin-top: 10px;">
+                <input type="checkbox" id="auth-en-btn"><span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+          <button style="margin: 15px 0 20px" class="btn btn-success pull-right" onclick="$('#warning-alert').attr('style', 'display: block');$('#warning-alert').addClass('in');"">Save</button>
+        </div>
+        <div id="auth-content" style="display: none">
+          <h2 type="" class="pull-right" data-toggle="modal" data-target="#add-user" style="margin-right:60px;cursor: pointer" onclick="$('#add-user').attr('style', 'display: block');$('#add-user').addClass('in');">+</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <td>Username</td>
+                <td>password</td>
+              </tr>
+            </thead>
+            <tbody id="user-table"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- <div class="container">
+  <div id="Settings" name="Settings" class="container row tabcontent" style="margin-top: 70px;">
+    <div style="width: 50%" class="container col-md-6 box">
+    
+      <div class="box-body no-padding">
+        <div class="row">
+          <div class="col-md-7"><h3 style="font-size:18px" id=brokerposet name=brokerposet><script>localizehtml("brokerposet" , "%brokersetting" , "Broker Port Settings");</script></h3></div>
+          <div class="col-md-3" style="margin-top: 10px"><h5 style="font-size: initial; text-align:center;" id=tlsena name=tlsena><script>localizehtml("tlsena" , "%tls_enable" , "TLS Enable");</script></h5></div>
+          <div class="col-md-2" style="margin-top: 20px"><label class="switch"><input type="checkbox" id="tls-en-btn"><span class="slider round"></span></label></div>
+        </div>
+        <script type="text/javascript">
+          $("#tls-en-btn").change(function() {
+            if($(this). prop("checked") == true){
+              $("#e-tls").removeAttr("style");
+              $("#e-tls").attr("style", "display: block");
+              $("#n-tls").attr("style", "display: none");
+            }
+            else{
+              $("#n-tls").attr("style", "display: block");
+              $("#e-tls").attr("style", "display: none");
+            }
+          })
+        </script>
+        <div id="n-tls">
+          <div class="row">
+            <div class="col-md-6">
+              <label style="font-size: initial" id=brokpo name=brokpo><script>localizehtml("brokpo" , "%brok_por" , "Broker Port :");</script></label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" name="" id="ntls-port" value="1883" class="form-control">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <label style="font-size:initial" id=wspo name=wspo><script>localizehtml("wspo" , "%ws_po" , "WS Port :");</script></label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" name="" id="ntls-ws-port" value="10443" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div id="e-tls" style="display: none">
+          <div class="row">
+            <div class="col-md-6">
+              <label style="font-size:initial" id=tlsbropo name=tlsbropo><script>localizehtml("tlsbropo" , "%tslbro_po" , "Broker TLS Port :");</script> </label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" name="" id="tls-port" value="8883" class="form-control">
+            </div>
+          </div>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <label style="font-size:initial" id=wsspo name=wsspo><script>localizehtml("wsspo" , "%wss_po" , "WSS Port :");</script></label>
+            </div>
+            <div class="col-md-6">
+              <input type="number" name="" id="tls-ws-port" value="11443" class="form-control">
+            </div>
+          </div>
+        </div><br><hr>
+        
+        <div class="row">
+          <div class="col-md-7"><h3 style="font-size:18px;margin-bottom:15px;" id=custoset name=custoset><script>localizehtml("custoset" , "%cussto_set" , "Custom Storage Settings");</script> <a href="#" data-toggle="tooltip" data-placement="bottom" style="margin-left: 10px;" title="Enabling this will call custom_store.py inside lib/ folder. You can customize this file to process data."><span class="badge">?</span></a></h3></div>
+          <div class="col-md-3" style="margin-top: 10px"><h5 style="font-size: initial;text-align:center;">Custom Storage </h5></div>
+          <div class="col-md-2" style="margin-top: 20px"><label class="switch"><input type="checkbox" id="cs-en-btn"><span class="slider round"></span></label></div>
+        </div>
+        <script type="text/javascript">
+          $("#cs-en-btn").change(function() {
+            if($(this). prop("checked") == true){
+              $("#cs-type").attr("style", "margin-top: 50px;display: block");
+            }
+            else{
+              $("#cs-type").attr("style", "margin-top: 50px;display: none");
+            }
+          })
+        </script>
+        <div class="row" id="cs-type" style="margin-top: 50px; display: none;">
+          <div style=" position:relative;width:65%;bottom:30px;">
+          <div class="col-md-3">
+            <input type="radio" name="storage" id="cs-1" value="Custom" checked> Custom
+          </div>
+          <div class="col-md-4">
+            <input type="radio" name="storage" id="cs-2" value="Elasticsearch"> Elasticsearch
+          </div></div>
+        </div><hr>
+        <div class="row">
+          <div class="col-md-7"><h3 style="font-size:18px;" id=authset name=authset><script>localizehtml("authset" , "%auth-set" , "Authentication Setting");</script></h3></div>
+          <div class="col-md-3" style="margin-top: 10px"><h5 style="font-size: initial;text-align:center;">Authentication</h5></div>
+          <div class="col-md-2" style="margin-top: 20px"><label class="switch"><input type="checkbox" id="auth-en-btn"><span class="slider round"></span></label></div>
+        </div> -->
+        <!-- <script type="text/javascript">
+          $("#auth-en-btn").change(function() {
+            if($(this). prop("checked") == true){
+              $("#auth-content").attr("style", "display: block");
+            }
+            else{
+              $("#auth-content").attr("style", "display: none");
+            }
+          })
+        </script> -->
+        <!-- <button style="margin: 15px 0 20px" class="btn btn-success pull-right" onclick="$('#warning-alert').attr('style', 'display: block');$('#warning-alert').addClass('in');" id=save><script>localizehtml("save" , "%save" , "Save");</script></button>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+    <div id="auth-content" class="container col-md-5 box">
+      <div class="box-body no-padding">
+        <h3 style="font-size:18px" id=authcred name=authcred><script>localizehtml("authcred" , "%auth-cred" , "Authentication Credentials");</script></h3>
+        <h2 type="" class="pull-right" data-toggle="modal" data-target="#add-user" style="margin-right:20px;cursor: pointer; margin-top: -35px;" onclick="$('#add-user').attr('style', 'display: block');$('#add-user').addClass('in');">+</h2>
+        <table class="table">
+          <thead>
+            <tr>
+              <td>Username</td>
+              <td>password</td>
+            </tr>
+          </thead>
+          <tbody id="user-table"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div id="Authentication" name="Authentication" class="row tabcontent" style="margin-top: 70px; width: 245%">
+    <div class="col-md-5 box">
+    <div class="box-header" style="border:none">
+      <h3 style="font-size:18px" id=authstatus name=authstatus><script>localizehtml("authstatus" , "%auth-status" , "Authentication");</script> <span class="authtext enabletext" style="background-color:#d9534f;margin-left:1rem;" id=auth-status name=auth-status>Disabled</span><span class="tooltiplogin badge" style="margin-left:1rem;margin-bottom:0.5rem;">?<span data-toggle="tooltip" title="" class="badge tooltiptextlogin">Authentication can be Enabled or Disabled <br>in Bevywise/ MQTTRoute/ conf/ broker.conf</span></span><!--<input type=button class="btn btn-danger" value="Disabled" id=auth-status name=auth-status onclick="alert('Authentication can be Enabled or Disabled in Bevywise/ MQTTRoute/ conf/ broker.conf');">--><!--<i class="fa fa-circle" id=auth-status name=auth-status  style="font-size: 22px;vertical-align: center;
+    margin: 1px 5px 0px 0px;""></i>--><!--<label class="switch"><input type="checkbox" id="auth-en-btn" style='pointer-events:none;'><span class="slider round"></span></label>--></h3>    
+      <h3 style="font-size:18px" id=authcred name=authcred><script>localizehtml("authcred" , "%auth-cred" , "Authentication Credentials");</script></h3>
+      <h2 type="" class="pull-right" data-toggle="modal" data-target="#add-user" style="margin-right:20px;cursor: pointer; margin-top: -35px;" onclick="$('#add-user').attr('style', 'display: block');">+</h2>
+    </div>
+      <div class="box-body no-padding">
+        <table class="table">
+          <thead>
+               <td>Username</td>
+              <td>Password</td>
+            </tr>
+          </thead>
+          <tbody id="user-table"></tbody> 
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="container">
+<div id="ErrorLog" name="Error Log" class="row tabcontent" style="margin-top: 70px; width: 245%">
+    <div class="col-md-5 box">
+        <div class="box-header" style="border:none">
+            <h2 class="box-title" id=errorlist name=errorlist><script>localizehtml("errorlist" , "%errorlog" , "Error Log");</script></h2>
+        </div>
+        <div class="box-body no-padding">
+            <table class="table">
+            <thead><tr><td id=cliid name=cliid><script>localizehtml("cliid" , "%cli-id" , "Client Id");</script></td><td id=frip name=frip><script>localizehtml("frip" , "%from_ip" , "From IP Address");</script></td><td id=errdet name=errdet><script>localizehtml("errdet" , "%err-details" , "Details");</script></td><td id=errtim name=errtim><script>localizehtml("errtim" , "%err_time" , "Time");</script></td></tr></thead>
+                <tbody id="error-log-table">
+                </tbody>
+            </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="add-user">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#add-user').removeAttr('style', 'display: block')"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="add-userLabel">Add User</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label class="control-label">Username:</label>
+            <input type="text" id="usr_name" class="form-control" required="" autofocus>
+          </div>
+          <div class="form-group">
+            <label class="control-label">Password:</label>
+            <input type="text" id="usr_pwd" class="form-control" required="">
+          </div>
+          <button class="btn btn-success" onclick="addUser()">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--change password modal-->
+<div class="modal fade" id="password-modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#password-modal').removeAttr('style', 'display: block')"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="changepwdLabel">Change Password</h4>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label class="control-label">Old Password:</label>
+            <input type="password" class="form-control" id="oldpassword" placeholder="Old Password" required autofocus>
+          </div>
+          <div class="form-group">
+            <label class="control-label">New Password:</label>
+            <input type="password" class="form-control" id="newpassword" placeholder="New Password" required>
+          </div>
+          <div class=text-center>
+            <button class="btn btn-primary" onclick="changePassword()">Reset</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--end of change password modal-->
+
+<div class="modal fade" id="warning-alert">
+  <div class="modal-dialog" role="document" style="margin-top: 250px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#warning-alert').removeAttr('style', 'display: block')"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="add-userLabel" style="font-size: xx-large;text-align: center;color: red;"> <i class="fa fa-warning" id=warn> </i><script>localizehtml("warn" , "%warning" , "Warning");</script></h4>
+      </div>
+      <div class="modal-body" style="font-size: 22px;text-align: center;" id=after><script>localizehtml("after" , "%after-save" , "After save changes need to restart MQTT Route");</script>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger" onclick="$('#warning-alert').removeAttr('style', 'display: block')" id=discardbut><script>localizehtml("discardbut" , "%discard" , "Discard");</script></button>
+        <button type="submit" class="btn btn-success" onclick="portDetails();" id=save-chg><script>localizehtml("save-chg" , "%savechg" , "Save Changes");</script></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  /*function portDetails() {
+    if($("#tls-port").val() == "" || $("#ntls-port").val() == "") {
+      alert("Broker port is empty");
+      return false;
+    }
+    if($("#ntls-ws-port").val() == "" || $("#tls-ws-port").val() == "") {
+      alert("Web Socket port is empty");
+      return false;
+    }
+    $('#warning-alert').removeAttr('style', 'display: block');
+    if($("#tls-en-btn").prop("checked") == true) {
+      var tls = true;
+      var broker_port = $("#tls-port").val();
+      var ws_port = $("#tls-ws-port").val();
+    }
+    else {
+      var tls = false;
+      var broker_port = $("#ntls-port").val();
+      var ws_port = $("#ntls-ws-port").val();
+    }
+    if($("#cs-en-btn").prop("checked") == true) {
+      var cs = true;
+      if($("#cs-1"). prop("checked") == true){
+        var cs_type = 0
+      }
+      else {
+        cs_type = 1
+      }
+    }
+    else {
+      var cs = false;
+      var cs_type = 0
+    }
+    if($("#auth-en-btn").prop("checked") == true) {
+      auth = true;
+    }
+    else {
+      auth = false;
+    }
+  data = {}
+  data["tls"] = tls;
+  data["broker_port"] = broker_port;
+  data["ws_port"] = ws_port;
+  data["cs"] = cs;
+  data["cs_type"] = cs_type;
+  data["auth"] = auth;
+  $.ajax({
+      url: '/portupdate',
+      type: "POST",
+      "data": data,
+      dataType: "text",
+      async:false,
+      success: function (result) {
+        result = JSON.parse(result);
+        
+      },
+      error: function () {
+      }
+    });
+}*/
+/*if(result["tls"] == 1) {
+          $("#tls-en-btn").attr("checked");
+          $("#tls-port").val(result["broker_port"]);
+          $("#tls-ws-port").val(result["ws_port"]);
+        }
+        else {
+          $("#tls-en-btn").removeAttr("checked");
+          $("#ntls-port").val(result["broker_port"]);
+          $("#ntls-ws-port").val(result["ws_port"]);
+        }*/
+/*function getPortDetails() {
+  $.ajax({
+      url: '/getportdetails',
+      type: "GET",
+      dataType: "text",
+      async:true,
+      success: function (result) {
+        result = JSON.parse(result);
+        if(result["tls"] == 1) {
+          $("#tls-en-btn").click();
+          $("#tls-port").val(result["broker_port"]);
+          $("#tls-ws-port").val(result["ws_port"]);
+        }
+        else {
+          $("#ntls-port").val(result["broker_port"]);
+          $("#ntls-ws-port").val(result["ws_port"]);
+        }
+        if(result["cs"] == 1) {
+          $("#cs-en-btn").click();
+          if(result["cs_type"] == 1) {
+            $("#cs-2").click();
+          }
+          else {
+            $("#cs-1").click();
+          }
+        }
+        if(result["auth"] == 1){
+          $("#auth-en-btn").click();
+          //$("#auth-content").attr("style", "display: block");
+        }
+        else {
+          //$("#auth-content").attr("style", "display: none");
+        }
+      },
+      error: function () {
+      }
+    });
+}*/
+function getuserdetails() {
+  $.ajax({
+    url: '/getuserdetails?curr_time='+new Date().getTime(),
+    type: "GET",
+    dataType: "text",
+    async:true,
+    success: function (msg) {
+      var obj=JSON.parse(msg);
+      result = obj["data"]
+      $("#user-table").html("");
+      for(var i = 0; i< result.length; i++) {
+        if(result[i]["usr"] != "" && result[i]["pwd"] != "") {
+          $("#user-table").append("<tr><td style='font-weight: initial;word-break:break-all;'>"+result[i]["usr"]+"</td><td style='font-weight: initial;word-break:break-all;'>"+result[i]["pwd"]+"</td><td><i style=cursor:pointer class='fa fa-times' onclick='deleteAuth("+result[i]["id"]+")'></i></td></tr>");
+        }
+      }
+    },
+    error: function () {
+      //alert("error");
+      //ErrorFunction();
+    }
+  });
+}
+
+function deleteAuth(id) {
+  $.ajax({
+    url: '/deleteuserdetails?curr_time='+new Date().getTime(),
+    type: "GET",
+    data : { "id" : id },
+    dataType: "text",
+    async:true,
+    success: function (msg) {
+      var obj=JSON.parse(msg);
+      if (obj["status"] == "Success") {
+        getuserdetails();
+      }
+      else {
+        alert(obj["status"]);
+      }
+    },
+    error: function () {
+      alert("Request Faild try after some times");
+    }
+  });
+}
+
+function changePassword()
+{
+  $('#password-modal').removeAttr('style','display:block');
+  data = {}
+  data["oldpassword"] = $("#oldpassword").val();
+  data["newpassword"] = $("#newpassword").val();
+  $.ajax({
+    url: "/api/save/password",
+    type: "POST",
+    "data": data,
+    dataType: "text",
+    async:false,
+    success: function (result) {
+      alert(result);
+      //getuserdetails();
+    }
+  });  
+}
+
+function addUser() {
+  if($("#usr_pwd").val()=="" || $("#usr_pwd").val()==" ") {
+    alert("Password is empty");
+    return;
+  }
+  if($("#usr_name").val()=="" || $("#usr_name").val()==" ") {
+    alert("Username is empty");
+    return;
+  }
+  $("#add-user").modal('hide');
+ var password = $("#usr_pwd").val()
+  var username=$("#usr_name").val()
+  var iChars = "!#$%^&*()+=-[]\\\';,/{}|\"<>";
+  var html="<>";
+  for(var i=0;i<username.length;i++)
+  { 
+    if(iChars.indexOf(username.charAt(i)) != -1){
+      alert("Invalid Username")
+      return
+    }
+  }
+    for(var i=0;i<password.length;i++)
+  { 
+    if(html.indexOf(password.charAt(i)) != -1){
+      alert("Password_invalid")
+      return
+    }
+  }
+  var data = {}
+  //alert($("#usr_name").val())
+  data["username"] = $("#usr_name").val();
+  data["password"] = $("#usr_pwd").val();
+  
+  $.ajax({
+    url: "/ui/addauth",
+    type: "POST",
+    "data": data,
+    dataType: "text",
+    async:false,
+    success: function (result) {
+      alert(result);
+      getuserdetails();
+    }
+  });
+}
+</script>
+
+<!--      DASHBOARD STARTS      -->
+
+<div id="Dashboard" name="Dashboard" class="tabcontent" style='display:block'>
+  <div class="content-wrapper"  style="min-height:100%;margin-bottom:0px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><!-- <i class="fa fa-files-o"> --></i><img style="margin-bottom:10px"  src="{{ static_url("images/BevywiseMessage.png") }}"></img></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text" id=eg name=eg><script>localizehtml("eg" , "%msglast30sec" , "Total Messages");</script></span>
+              <span class="info-box-number" id=avg_msg_rate name=avg_msg_rate>0</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><!-- <i class="fa fa-files-o" ></i> --><img  style="margin-bottom:10px" src="{{ static_url("images/BevywiseTopics.png") }}"></img></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text" id=acttops name=acttops><script>localizehtml("acttops" , "%activetopics" , "Active Topics");</script></span>
+              <span class="info-box-number" id=active_topic name=active_topic>0</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><!-- <i class="fa fa-files-o"></i> --><img  style="margin-bottom:10px" src="{{ static_url("images/BevywiseClients.png") }}"></img></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text" id=ctd-clnt name=ctd-clnt><script>localizehtml("ctd-clnt" , "%connect-client" , "Connected Clients");</script></span>
+              <span class="info-box-number" id=active_client name=active_client>0</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><!-- <i class="fa fa-files-o"></i> --><img  style="margin-bottom:10px" src="{{ static_url("images/BevywiseTime.png") }}"></img></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text" id=bkrtime name=bkrtime><script>localizehtml("bkrtime" , "%bkr-Uptime" , "Broker Uptime");</script></span>
+              <span class="info-box-number" id=uptime name=uptime>0</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header">
+              <!-- <h3 class="box-title" id=lst-act name=last-act><script>localizehtml("lst-act" , "%last-act-pub" , "Latest Published Messages");</script></h3> -->
+              <h3 class="box-title" id=lst-msg name=last-act><script>localizehtml("lst-msg" , "%lst-msg" , "Latest Published Messages");</script></h3>
+            </div>
+            <div class="box-body no-padding">
+              <table class="table table-responsive" id=pub_tbl name=pub_tbl>
+                <tbody><tr>
+                  <th id=dname name=dname><script>localizehtml("dname" , "%devicename" , "Device Name");</script></th>
+                  <th id=topic name=topic style="word-break:break-all;"><script>localizehtml("topic" , "%topic", "Topic");</script>Topic</th>
+                  <th id=mssg name=mssg style="word-break:break-all;"><script>localizehtml("mssg" , "%message" , "Message");</script></th>
+                  <th id=time name=time><script>localizehtml("time" , "%time" , "Time");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" style="max-height: 50%">
+          <div class="box" style="border-top: 3px solid #d2d6de; background-color: #f1f8ff;">
+            <div style="margin-top: -20px; height: 40px;border-bottom: 1px solid #d2d6de;background-color: white;color: #6e7184;"><h3 style="color: #444; font-size: 18px;padding-top: 7px; padding-left: 10px;" id=err1><script>localizehtml("err1" , "%errorlog" , "Error Log");</script></h3></div>
+            <div id="error-log" style="max-height: 235px;overflow: auto; min-height: 80px""></div>
+          </div>
+        </div>
+      </div>
+      <div class="row" style="display: none">
+        <div class="col-md-9">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=lstsub name=lstsub><script>localizehtml("lstsub" , "%last-act-sub" , "Last Active Subscribers");</script></h3>
+            </div>
+            <div class="box-body no-padding">
+              <table class="table" id=sub_tbl name=sub_tbl>
+                <tbody><tr>
+                  <th id=dname2 name=dname2><script>localizehtml("dname2" , "%devicename" , "Device Name");</script></th>
+                  <th id=topic2 name=topic2><script>localizehtml("topic2" , "%topic" , "Topic");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=rcntcon name=rcntcon><script>localizehtml("rcntcon" , "%recent-connect" , "Recently Connected");</script></h3>
+
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table" id=connect_tbl name=connect_tbl>
+                <tbody><tr>
+                  <th id=dname3 name=dname3><script>localizehtml("dname3" , "%devicename" , "Device Name");</script></th>
+                  <th id=cnct name=cnct><script>localizehtml("cnct" , "%connectat" , "Connected At");</script></th>
+                  <th id=ipaddr name=ipaddr><script>localizehtml("ipaddr" , "%ipaddr" , "From IP Address");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=rcntdis><script>localizehtml("rcntdis" , "%recent-disconnect" , "Recently Disconnected");</script></h3>
+
+            </div>
+            <div class="box-body no-padding">
+              <table class="table" id=disconnect_tbl name=disconnect_tbl>
+                <tbody><tr>
+                  <th id=dname4 name=dname4><script>localizehtml("dname4" ,  "%devicename", "Device Name");</script></th>
+                  <th id=discnct name=discnct><script>localizehtml("discnct" , "%disconnectat" , "Disconnected At");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="row">
+        <div class="col-md-9">
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=rcntdis><script>localizehtml("rcntdis" , "%recent-disconnect" , "Recently Disconnected");</script></h3>
+
+            </div>
+            <div class="box-body no-padding">
+              <table class="table" id=disconnect_tbl name=disconnect_tbl>
+                <tbody><tr>
+                  <th id=dname4 name=dname4><script>localizehtml("dname4" ,  "%devicename", "Device Name");</script></th>
+                  <th id=discnct name=discnct><script>localizehtml("discnct" , "%disconnectat" , "Disconnected At");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="col-md-6" style=display:none;>
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title" id=msgrate name=msgrate><script>localizehtml("msgrate" , "%Msg-rate" , "Message Rate");</script>Message Rate</h3>
+
+          </div>
+          <!-- /.box-header -->
+          <div class="box-body no-padding">
+            <table class="table" id=msgrate_tbl name=msgrate_tbl>
+              <tbody><tr>
+                <th id=tme name=tme><script>localizehtml("tme" , "%time" , "Time");</script></th>
+                <th id=msgrate2 name=msgrate2><script>localizehtml("msgrate2" , "%Msg-rate" , "Message Rate");</script></th>
+              </tr>
+            </tbody></table>
+          </div>
+          <!-- /.box-body -->
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<!--      DASHBOARD ENDS        -->
+
+
+<!--      DEVICES TAB STARTS      -->
+<div id="Devices" name="Devices" class="tabcontent">
+<form id="myform" name="myform" method="post" action='/'>
+
+<aside class="main-sidebar">
+  <!-- <div class="box-header with-border" style="text-align: center;width: 100%"><h3 class="box-title" id=devicelst name=devicelst><script>localizehtml("devicelst" , "%deviceslist" , "Devices List");
+</script></h3></div> -->
+
+
+
+<div class="box-header with-border" id="dev_head" style="text-align: center;width: 100%">
+    <h3 class="box-title" id=devicelst name=devicelst style="display: block;">
+        <script>localizehtml("devicelst" , "%deviceslist" , "Devices List");</script>
+    </h3>
+    <span id="search_lens" name="search_lens" class="pull-right pr10 fa fa-search" style="pointer-events: auto; margin-top: -17px;" onclick="show_searched_device('dev_head');"></span>
+</div>
+
+<div class="box-header with-border" id="dev_search" style="text-align: center;width: 100%;display: none;">
+    <input id="device_search" name="device_search" class="btn-search" placeholder="Search.." type="text" style="border: 0;outline: 0;background: transparent;border-bottom: 1px solid black;width: 140px;">
+    <span id="search_len" type="submit" name="search_len" class="pr10 fa fa-search" style="pointer-events: auto;" onclick="show_searched_device('dev_search');"></span>
+    <span id="search_cancel" name="search_cancel" class="pull-right pr10 fa fa-close" style="pointer-events: auto;" onclick="deviceReset()"></span>
+</div>
+
+
+        <!-- sidebar: style can be found in sidebar.less -->
+        <div class="slimScrollDiv" style="position: relative; overflow: auto; width: auto; height: 500px;"><div class="sidebar" id="scrollspy" style="height: auto; overflow: auto; width: auto;">
+
+<div class=showrecords style=display:none>
+<div class=nextrec>
+<button class="nextimgg" id=next name=next disabled=true />
+</div>
+<div id=rec_count class=cntrec>
+</div>
+    <div class=prevrec>
+<button class="previmg" id=prev name=prev disabled=true />
+    </div>
+    
+</div>
+        <input type=text id=next_clk_txt name=next_clk_txt value=0 style=display:none></input>
+      <!--<div class="devicemenu">-->
+
+      <div id=activedev name=activedev style="display:none;position:absolute;top:18px;left:120px;width:50px;z-index:10;cursor:pointer;" onclick="addactivedevices();"> (Active/ </div>
+    <div id=alldev name=alldev style="display:none;position:absolute;top:18px;left:165px;width:40px;z-index:10;cursor:pointer"            onclick="addalldevices();">All)</div>
+    <!-- <ul class="nav sidebar-menu">
+      <div id=device name=device class=devhead>Device List 
+      </div>
+    </ul> -->
+
+          <!-- sidebar menu: : style can be found in sidebar.less-->
+          <ul class="nav sidebar-menu" id="device" name="device" style="color:white" ><script>localizehtml("device" , "%devicelist" , "Device List");</script>
+          </ul>
+        </div>
+<img src="{{ static_url("images/plus.png") }}" id=devadd name=devadd class="devimg plusimg" style="display:none" onclick="f(this.id);"></img>
+            
+        </div>
+<div class="slimScrollBar" style="background: rgba(0, 0, 0, 0.2); width: 3px; position: absolute; top: 158px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 58.393px;"></div>
+<div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                <ul class="pagination pagination-sm no-margin pull-right" style="padding-right: 7px;/*position:absolute; top:640px; left:30px;*/" id=dev_track name=dev_track>
+               <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&raquo;</a></li>
+                </ul>
+        <!-- /.sidebar -->
+      </aside>
+<div class="content-wrapper" style="margin-left:231px;min-height: 916px;">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+
+<div class="row">
+<div class="col-md-6"> 
+<div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=dvcdet name=dvcdet><script>localizehtml("dvcdet" , "%device-details" , "Device Details");</script></h3>
+              <div class="pull-right"><b id=conn-status><script>localizehtml("conn-status" , "%connstatus" , "Connection Status :");</script></b><i id="con-status"></i></div>
+            </div>
+            <!-- /.box-header -->
+
+          <input type=text name=d_type id=d_type style="display:none" readonly=true value="  "/>
+          
+            <div class="box-body no-padding">
+              <table class="table" style='text-align:left'>
+                <tbody><tr>
+                  <th style='text-align: left' id=dvcpro name=dvcpro><script>localizehtml("dvcpro" , "%device-property" , "Device Property");</script></th>
+                  <th style="text-align: left" id=val name=val><script>localizehtml("val" , "%value" , "Value");</script></th>
+                </tr>
+                <tr>
+                  <td style='text-align:left;font-weight:normal' id=clntnme name=clntnme><script>localizehtml("clntnme" , "%client-name" , "Client Name");</script></td>
+                  <td style='text-align:left;font-weight:normal;'>
+      <input type=text name=d_name id=d_name style="border:none;width:200px;" tabindex=-1 readonly=true value=" "/>
+                  </td>
+                </tr>
+                <tr>
+                  <td style='text-align:left;font-weight:normal' id=devipaddr name=devipaddr><script>localizehtml("devipaddr" , "%from_ip", "From IP Address");</script>
+                  <td style='text-align:left;font-weight:normal'>
+                  <input type=text name=ipaddr-value id=ipaddr-value style="border:none;width:200px;" tabindex=-1 readonly=true value="  "/>
+                  </td>
+                  </tr>
+               <tr>
+                  <td style='text-align:left;font-weight:normal' id=cncton name=cncton><script>localizehtml("cncton" , "%connected-on" , "Connected On");</script></td>
+                  <td style='text-align:left;font-weight:normal'>
+      <input type=text name=d_desc id=d_desc style="border:none;width:200px;" tabindex=-1 readonly=true value="  "/>
+                  </td>
+                </tr>
+ 
+
+  
+
+
+  <tr>
+                  <td style='text-align:left;font-weight:normal' id =willtop name=willtop><script>localizehtml("willtop" , "%will-topic" , "WILL Topic");</script></td>
+                  <td style='text-align:left;font-weight:normal'>
+      <input type="text" name=will_topic id=will_topic style="border:none;align:left;font-weight:normal;width:200px;" tabindex=-1 readonly=true value="one"/>
+      
+                  </td>
+                </tr>
+                <tr>
+                  <td style='text-align:left;font-weight:normal' id=willmsg name=willmsg><script>localizehtml("willmsg" , "%will-msg" , "WILL Message");</script></td>
+                  <td style='text-align:left;font-weight:normal'>
+<input type="text" name=will_msg id=will_msg style="border:none;width:200px;" tabindex=-1 readonly=true value="one">      
+                  </td>
+                </tr>
+                <tr>
+                  <td style='text-align:left;font-weight:normal' id=willret name=willret><script>localizehtml("willret" , "%will-retain" , "WILL Retain");</script></td>
+                  <td style='text-align:left;font-weight:normal'>
+    <input type="text" name=will_retain id=will_retain  style="border:none;" tabindex=-1 readonly=true value="0"/>
+                  <!--</td>
+                </tr>-->
+
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          
+        </div>
+
+
+
+
+<input type=button name=edit id=edit class=hidden style='display:none;position:absolute;top:140px;left:1130px;' value="Edit" onclick="f(this.id);"></input>
+          <input type=button name=save id=save class=hidden style='display:none;position:absolute;top:180px;left:1180px;' value="Save"></input>
+</div>
+<div class="col-md-6">
+  <div class="box" style="height: 291px;">
+    <div class="box-header">
+      <h3 class="box-title" id=ins-msg name=ins-msg><script>localizehtml("ins-msg" , "%Command-Send" , "Command Send");</script></h3>
+    </div>
+    <div  class="box-body">
+      <div id="dev-off-content" style="display: none;"><span id=devoff><script>localizehtml("devoff" , "%device-off" , "Device is offline");</script></div>
+      <div id="dev-no-sub" style="display: none;"><span id=devsub><script>localizehtml("devsub" , "%device-sub" , "Device has no subscribe topic");</script></div>
+      <div id="dev-ind-msg" style="display: none;">
+        <label>Topic</label>
+        <select class="form-control" id="topic-selector" style="width: 60%">
+        </select>
+        <label>Message</label><textarea class="form-control" type="textarea" name="" id="ins-message" style="width: 60%"></textarea>
+        <button class="btn btn-success pull-right" style="margin-top: 10px;" onclick="sendInstMsg()" id=send><script>localizehtml("send" , "%send" , "Send");</script><i class="fa fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+$(".ins").click(function() {
+  if($("#con-status").text() == "Offline") {
+      alert("Device is Offline cannot Send a message");
+      return false;
+    }
+});
+  function sendInstMsg() {
+    
+      var topic = $("#topic-selector").val();
+      if(topic == "select_topic") {
+        alert("Please select a topic");
+        return false;
+      }
+      var message = $("#ins-message").val();
+      data={}
+      data["clientid"] = $("#d_name").val();
+      data["topic"] = topic;
+      data["message"] = message;
+      $.ajax({
+      url: '/ui/clientsend',
+      type: "POST",
+      dataType: "text",
+      data : data,
+      async:true,
+      success: function (msg) {
+        alert(JSON.stringify(msg));
+      },
+        error: function (msg) { 
+        alert(JSON.stringify(msg));   }
+    });
+      document.getElementById("ins-message").value="";
+  }
+</script>
+
+
+
+<div class="row">
+<div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=msg-rec name=msg-rec><script>localizehtml("msg-rec" , "%Messages-receive" , "Messages Received");</script></h3>
+<div class="box-tools">
+                <ul class="pagination pagination-sm no-margin pull-right" id=pub_track name=pub_track>
+               <!--<li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&raquo;</a></li>-->
+                </ul>
+              </div>
+<select name="choice" id="choice" style='display:none'>
+            <option value="add">Add</option>
+            <option value="update">Update</option>
+            <option value="adddevice">adddevice</option>
+            <option value="addpub">addpub</option>
+            <option value="addsub">addsub</option>
+            <option value="pubupdate">pubupdate</option>
+            <option value="subupdate">subupdate</option>
+            <option value="droppmsg">droppmsg</option>
+            <option value="dropsmsg">dropsmsg</option>
+            <option value="editrule">editrule</option>
+            <option value="droprule">droprule</option>
+            <option value="addrule">addrule</option>
+            <option value="updaterule_engine">updaterule_engine</option>
+          </select>
+
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table" id=pub_table name=pub_table> 
+                <tbody><tr>
+                  <th id=topic3 name=topic3 style="word-break:break-all;"><script>localizehtml("topic3" , "%topic" , "Topic");</script></th>
+                  <th id=mssg2 name=mssg2 style="word-break:break-all;"><script>localizehtml("mssg2" , "%message" , "Message");</script></th>
+                  <th id=qos name=qos ><script>localizehtml("qos" , "%Qos" , "QoS");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+</div>
+<div class="row">
+<div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=sub-tops name=sub-tops><script>localizehtml("sub-tops" , "%sub-topics" , "Subscribed Topics");</script></h3>
+<div class="box-tools">
+                <ul class="pagination pagination-sm no-margin pull-right"  id=sub_track name=sub_track>
+              <!-- <li><a href="#">&laquo;</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">&raquo;</a></li>-->
+                </ul>
+              </div>
+
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table" id=sub_table name=sub_table>
+                <tbody><tr>
+                  <th id=sub-top name=sub-top><script>localizehtml("sub-top" , "%sub-topics", "Subscribed Topic");</script> </th>
+                  <th id=qos2 name=qos2><script>localizehtml("qos2" , "%Qos" , "QoS");</script> </th>
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+</div>
+<div class="row">
+<div class="box">
+            <div class="box-header">
+              <h3 class="box-title" id=msg-pub name=msg-pub><script>localizehtml("msg-pub" , "%Msg-publish" , "Messages Published");</script></h3>
+    <div class="box-tools">
+<input type=button name=next_log id=next_log style='display:none;position:absolute;top:540px;left:920px;color:blue;border-style:none;' value="More..." onclick="next_log_disp();"></input>  
+                <ul class="pagination pagination-sm no-margin pull-right" id=log_track name=log_track>
+            <!--<li><a href="#">&laquo;</a></li>
+            <li><a onclick="next_log_disp(0);">1</a></li>
+            <li><a onclick="next_log_disp(1);">2</a></li>
+            <li><a onclick="next_log_disp(2);">3</a></li>
+            <li><a onclick="next_log_disp();">&raquo;</a></li>-->
+                </ul>
+              </div>
+
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body no-padding">
+              <table class="table" id=log_table name=log_table>
+                <tbody><tr>
+                  <th id=tme2 name=tme2><script>localizehtml("tme2" , "%time" , "Time");</script></th>
+                  <th  id=topic4 name=topic4 style="word-break:break-all;"><script>localizehtml("topic4" , "%topic" , "Topic");</script></th>
+                  <th id=mssg3 name=mssg3 style="word-break:break-all;"><script>localizehtml("mssg3" , "%message" , "Message");</script></th>
+                  
+                </tr>
+              </tbody></table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+</div>
+</section>
+</div>
+<input type=label id=deveditflag name=deveditflag value="10" style="display:none">
+<input type=label id=devtab name=devtab value=0 style="display:none">
+<input type=label id=ruletab name=ruletab value=0 style="display:none">
+<input type=label id=addactiveflag name=addactiveflag value="0" style="display:none">
+<input type=text id=ruletype name=ruletype value="0" style="display:none">
+<input type=text id=resmsg name=resmsg value="" style="display:none">
+<input type=text id=new_hr name=new_hr value="*" style="display:none;">
+<input type=text id=new_min name=new_min value="*" style="display:none;">
+<input type=text id=new_user name=new_user value="" style="display:none;">
+<input type=text id=new_start_date name=new_start_date value="*" style="display:none">
+<input type="text" name="new_end_date" id="new_end_date" value="*" style="display:none">
+<input type="text" name="new_days" id="new_days" value="*" style="display:none">
+
+
+</form>
+</div>
+
+
+
+<!--      DEVICES TAB ENDS      -->
+
+{% include 'topicPage.html' %}
+
+<!--      TOUR TAB START    -->
+
+<div id="Tour" name="Tour" class="tabcontent" style='display:none;'>
+  <div class="image-container" role="banner" data-stellar-background-ratio=".5" style="background-position: 0px 0px;">
+    <a href="#" id=dbtab name=dbtab class="tablinks" onclick="openDetail(event, 'Dashboard')"><span class="close x-align">&times;</span></a>
+   <div class="container"> 
+  <div class="col-md-10 col-md-offset-1">   
+      <div class="tab-content display-t">
+        <div class="display-tc">  
+       
+        <div class="tab-pane" id="step1">
+
+            <h1 class="align text-center"><span id=welcome name=welcome><script>localizehtml("welcome" , "%welcomebevy" , "Welcome to Bevywise MQTTRoute");</script></span></h1>
+            
+            <h4  style="text-align:center;font-weight:600;margin-bottom: 20px;overflow:hidden; font-size: 26px;"><span id=fasthigh name=fasthigh><script>localizehtml("fasthigh" , "%fast" , "The Fastest & highly extendable MQTT Broker");</script></span></h4>
+            <p style="margin-left: 100px" class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px;">&nbsp;&nbsp;<span id=connectcli name=connectcli><script>localizehtml("connectcli" , "%localhostcli" , "Connect your MQTT clients to the Bevywise MQTTBroker running in local machine");</script><!-- <a href="http://cn.mqttroute.com/">cn.mqttbroker.com</a> --></span></p>
+            <p style="margin-left: 100px" class="sub-align" ><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=start_down name=start_down><script>localizehtml("start_down" , "%start" , "Get Started by downloading MQTT Clients for your Operating System.");</script></span></p>
+           <div  class="btn-align" style="float:right">
+            <button type="button" class="btn btn-next next-step" data-value="step2" id=down_cli name=down_cli><script>localizehtml("down_cli" , "%down_button" , "Download Clients");</script></button>
+            </div>
+        </div>
+        <div class="tab-pane" id="step2" style="display:none;">
+           
+           <h1 class="align text-center mb20"id=down_pa name=down_pa><script>localizehtml("down_pa" , "%down_page" , "Download & connect  Clients");</script></h1>
+
+           <h4 style="text-align:center;font-weight:600;margin-bottom:20px;overflow:hidden; font-size: 26px;"id=conn_cli name=conn_cli><script>localizehtml("conn_cli" , "%connectdet" , "Connect your clients to the MQTT Broker or download it from the tab -");</script><a style="cursor:pointer" id='clients' name=clients class="tablinks" onclick="openDetail(event, 'Client')">MQTT Clients</a></h4>
+
+           <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px" >&nbsp;&nbsp;<span id=os name=os><script>localizehtml("os" , "%os" , "You will have the clients for Windows , Linux , Mac  & ESP. Looking for some other clients, contact");</script></span>&nbsp;&nbsp;<a href="https://bevywise.com/support.html" target="_blank" id=supp name=supp><script>localizehtml("supp" , "%support" , "Support");</script></a></p>
+
+           <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=conn_details name=conn_details><script>localizehtml("conn_details" , "%conn_details" , "Use the following Broker details to connect.");</script></span></p>
+
+           <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=bro_add name=bro_add><script>localizehtml("bro_add" , "%broker_add" , "Broker  address - localhost");</script></span></p>
+           <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=bro_port name=bro_port><script>localizehtml("bro_port" , "%brokerport" , "Broker Port - 1883");</script></span></p>
+           <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=tls_port name=tls_port> <script>localizehtml("tls_port" , "%tlsport" , "TLS/SSL Broker Port - 8883");</script></span></p>
+            <div class="btn-align" style="float:right;">
+            <button type="button" class="btn btn-prev prev-step" data-value="step1" style="margin-right:7px" id=introbut name=intobut><script>localizehtml("introbut" , "%introbutton" , "Introduction");</script></button>
+            <button type="button" class="btn btn-next next-step" data-value="step3" id=confbut name=confbut><script>localizehtml("confbut" , "%confbutton" , "Configure Rules");</script></button>
+            </div>
+          
+        </div>
+        <div class="tab-pane" id="step3" style="display:none;">
+          
+          <h1 class="align text-center mb20" id=conf_rule name=conf_rule><script>localizehtml("conf_rule" , "%confrules" , "Configure Rules");</script></h1>
+          <h4  style="font-weight:600;text-align:center;margin-bottom:20px;overflow:hidden; font-size: 26px;" id=rules name=rules><script>localizehtml("rules" , "%ruletour" , "Rules help you enable powerful M2M Communication between Devices.");</script></h4>
+          <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=event_rul name=event_rul><script>localizehtml("event_rul" , "%eventrule" , "Event based rules based on Message, Topic & Client.");</script></span></p>
+          <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=timer_rul name=timer_rul><script>localizehtml("timer_rul" , "%timer_rule" , "Timer based rules to automate scheduled events.");</script></span></p>
+         <h4  style="font-weight:600;text-align:center;margin-top:20px;overflow:hidden" id=vis name=vis><script>localizehtml("vis" , "%visit" , "Visit");</script><a style="cursor: pointer;" id=ruletabhead name=ruletabhead class="tablinks" onclick="openDetail(event,'RuleEngine')">Message Rules</a><span id=confmsg name=confmsg><script>localizehtml("confmsg" , "%confmessage" , "and configure Messages now.");</script></h4>
+            <div  class="btn-align" style="float:right">
+            <button type="button" class="btn btn-prev prev-step" data-value="step2" style="margin-right:7px" id=downcli_but name=downcli_but><script>localizehtml("downcli_but" , "%downclibutton" , "Download Clients");</script></button>
+            <button type="button" class="btn btn-next next-step" data-value="step4" id=view_data name=view_data><script>localizehtml("view_data" , "%viewbutton" , "View Data");</script></button>
+            </div>
+            
+         
+        </div>
+        <div class="tab-pane" id="step4" style="display:none;">
+        
+          <h1 class="align text-center mb20" id=view_dash name=view_dash><script>localizehtml("view_dash" , "%viewdash" , "View Dashboard  & Device Details");</script></h1>
+          <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px;overflow:hidden;">&nbsp;&nbsp;<span id=dash name=dash><script>localizehtml("dash" , "%quickdash" , "The Dashboard will give a quick view of what is happening with the device connected to the MQTTRoute.");</script></span></p>
+          <p  class="sub-align"><img src={{ static_url("images/tick.png") }}" style="width:17px">&nbsp;&nbsp;<span id=indiv name=indiv><script>localizehtml("indiv" , "%individual" , "The individual device details can be seen by visiting the Devices tab. The connection status and the messages published will be dynamically update.");</script></span></p> 
+
+
+          <div class="btn-align" style="float:right">
+           <button type="button" class="btn btn-prev prev-step" data-value="step3" style="margin-right:7px" id=conf_but name=conf_but><script>localizehtml("conf_but" , "%configbutton" , "Configure Rules");</script></button>
+          <button type="button" class="btn btn-next next-step" data-value="step5" id=advint name=advint><script>localizehtml("advint" , "%advintegration" , "Advanced Integration");</script></button>
+           </div>
+            
+        
+        </div>
+ <div class="tab-pane" id="step5" style="display:none;">
+        
+          <h1 class="align text-center mb20" id=get name=get><script>localizehtml("get" , "%getmore" , "Get More out of the MQTT Broker");</script></h1>
+          <h4 style="text-align:center;font-weight:600;margin-bottom:20px;overflow:hidden; font-size: 26px;" id=routcap name=routcap><script>localizehtml("routcap" , "%rout_cap" , "MQTTRoute is capable of doing much more than just handing MQTT Messages.");</script> </h4>
+        <ul  class="sub-align" style="list-style-type: none;margin-left:5px;" >
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=com name=com><script>localizehtml("com" , "%complete" , "Complete MQTT Support");</script></span></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=tls_support name=tls_support><script>localizehtml("tls_support" , "%tlssupport" , "TLS / SSL Support");</script></span></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=mqtt_auth name=mqtt_auth><script>localizehtml("mqtt_auth" , "%mqttauthen" , "MQTT Authentication");</script></span></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=intbig name=intbig><script>localizehtml("intbig" , "%int_bigdata" , "Integrate with any Big Data Engine");</script></span> <a href="https://github.com/bevywise-networks/mqttroute-elasticsearch-connector" target="_blank">Elastic Search</a> | <a href="https://github.com/bevywise-networks/mqttroute-mongodb-connector/" target="_blank"">Mongo DB</a> | <a href="https://www.bevywise.com/blog/introducing-ready-use-mqttroute-plugin/" target="_blank">Custom Store</a></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=visual name=visual><script>localizehtml("visual" , "%visualdata" , "Visualize Data with");</script></span><a href="https://www.bevywise.com/blog/mqtt-broker-tableau-integration-data-analysis/" target="_blank"">Tableau</a> | <a href="https://www.bevywise.com/blog/visualize-iot-data-elasticsearch/" target="_blank">Elastic Search</a></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=restapi name=restapi><script>localizehtml("restapi" , "%restfulapi" , "RESTful API to manage your Devices");</script></span></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=uicust name=uicust><script>localizehtml("uicust" , "%uicustom" , "UI Customization & Live Updates on interface");</script></span></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<a href="https://www.bevywise.com/blog/localize-mqtt-broker-language/" target="_blank" id=locali name=locali><script>localizehtml("locali" , "%localilang" , "Localize to your language");</script></a></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<span id=allos name=allos><script>localizehtml("allos" , "%allsupport" , "Support for Linux, Mac, Windows / Windows Server , Raspberry PI");</script></span></li>
+          <li><img src={{ static_url("images/tick.png") }}" style="width:15px">&nbsp;&nbsp;<a href="https://www.bevywise.com/blog/integrate-mqtt-broker-application/" target="_blank" id=clointe name=clointe><script>localizehtml("clointe" , "%closeintegration" , "Closer Integration with your Application");</script></a></li>
+        </ul> 
+        <!-- <div class="text-center">
+ <a href="https://www.bevywise.com/mqtt-broker/download.html" target="_blank"><button type="button" class="btn btn-dwd" style="margin-top:15px;">Download Now</button></a>
+</div> -->
+
+ 
+          
+<div  class="btn-align" style="float:right">
+ <button type="button" class="btn btn-prev prev-step" data-value="step4" style="margin-right:7px" id=viewbut name=viewbut><script>localizehtml("viewbut" , "%viewdatabutton" , "View Data");</script></button>
+
+<a style="cursor:pointer" id=dbtab name=dbtab class="tablinks" onclick="openDetail(event, 'Dashboard')">
+            <button type="button" class="btn btn-next" id=godash name=godash><script>localizehtml("godash" , "%go_dash" , "Go to Dashboard");</script></button></a>
+           
+      
+       
+      </div>
+    </div>
+    </div>
+  
+  </div>
+  
+</div>
+</div>
+</div>
+</div>
+
+<!--      TOUR TAB  END     -->
+
+
+
+<!--      RULE ENGINE TAB STARTS      -->
+<div id="RuleEngine" name="RuleEngine" class="tabcontent" style=border:none>
+
+<div class="content-wrapper" style='overflow-x:auto;overflow-y:auto;margin-top:0px;'>
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+
+<div class="row"  style='border:none'>
+<div class="box">
+            <div class="box-header" style=border:none>
+              <h2 class="box-title" id=ruldata name=ruldata><script>localizehtml("ruldata" , "%ruledata" , "Rule Data");</script></h2>
+<button class="btn btn-info pull-right" name=add_rule id=add_rule  onclick=fnaddrule() ><script>localizehtml("add_rule" , "%add-rule" , "Add Rule");</script></button>
+            <div class="box-body no-padding">
+              <table class="table" id=rule_table name=rule_table>
+                <tbody><tr>
+                  <th style=display:none id=ruleid name=ruleid><script>localizehtml("ruleid" , "%rule-id" , "Rule ID");</script></th>
+                  <th id=cond name=cond><script>localizehtml("cond" , "%condition" , "Condition");</script></th>
+                  <th id=act name=act><script>localizehtml("act" , "%action" , "Action");</script></th>
+                  <th id=rultype name=rultype><script>localizehtml("rultype" , "%rule-type" , "Rule Type");</script></th>
+                  <th id=edt name=edt><script>localizehtml("edt" , "%edit" , "Edit");</script></th>
+                  <th id=del name=del><script>localizehtml("del" , "%delete" , "Delete");</script></th>
+                </tr>
+              </tbody></table>
+            </div>
+
+
+            </div>
+            <!-- /.box-header -->
+            <!-- /.box-body -->
+</div>
+
+</div>
+
+
+
+
+<div id="editdialog" name="editdialog" title="Add Rule" style="background-color:#ffffff;width:550px;height:600px;min-height: 92px;max-height:none;height:auto;display:none">
+
+<div style="display:none;" id="dialog_wrapper" name="dialog_wrapper" style="background-color:#ffff00">
+    <!-- Content Header (Page header) -->
+    <section class="content-header" style="width:350px;background-color:#ffff00;border:none">
+
+  <div class="row" style=margin-top:-48px;width:350px;background-color:#fff;border:none> 
+        <!-- left column --> 
+          <div class="col-md-6" style=background-color:#fff> 
+            <!-- general form elements --> 
+            <div style=background-color:#fff;border:none> 
+              <div class="box-header" style=margin-top:20px;background-color:#fff;border:none> 
+                <h3 class="box-title" id=rule_heading name=rule_heading style=display:none><script>localizehtml("rule_heading" , "%add-rule" , "Add Rule");</script></h3> 
+              </div> 
+              <!-- /.box-header --> 
+              <!-- form start --> 
+              <div> 
+                <div class="box-body" style="border:none"> 
+      <div class="devdialog" style="display:none" id=pubd1 name=pubd1>
+        <div id=pa name=pa class="form-group" style="display:none">
+          <label for="a" id=ruleid2 name=ruleid2><script>localizehtml("ruleid2" , "%rule-id" , "Rule ID");</script></label>
+          <input type=textbox class="form-control" id=paid_txt name=paid_txt style="display:none" placeholder="Rule ID"></input>
+        </div>
+        <span id=prtype name=prtype class="form-group" style=width:400px>
+          <label for="b" id=rule-pat name=rule-pat><script>localizehtml("rule-pat" , "%rule-pattern" , "Rule Pattern");</script></label>
+          <select name=pruletype_txt id=pruletype_txt  class="form-control"  style=width:200px;float:right onchange=fnruletype(this.value) tabindex=1>
+            <option value=1 id=clnttop name=clnttop><script>localizehtml("clnttop" , "%client-topic" , "Client-Topic");</script></option>
+            <option value=2 id=topmsg name=topmsg><script>localizehtml("topmsg" , "%topic-message" , "Topic-Message");</script></option>
+            <option value=3 id=cltopmsg name=cltopmsg><script>localizehtml("cltopmsg" , "%client-topic-message" , "Client-Topic-Message");</script></option>
+            <option value=4 id=tmr name=tmr><script>localizehtml("tmr" , "%timer" , "Timer");</script></option>            
+          </select>
+        </span>
+                   <div class="form-group" id=puser name=puser style=width:400px;display:none> 
+                        <label for="c" id="lbl_user" name="lbl_user"><script>localizehtml("lbl_user" , "%username" , "UserName");</script></label>
+                        <input type="textbox" class="form-control" style=width:200px;float:right tabindex=2 id="uname_txt" name="uname_txt" placeholder="Enter username">
+                    </div> 
+
+                    <div class="form-group" id=pi name=pi style=width:400px> 
+                        <label for="c" id="publish" name="publish"><script>localizehtml("publish" , "%Device Id" , "Device Id");</script></label>
+                        <input type="textbox" class="form-control" style=width:200px;float:right tabindex=2 id="pid_txt" name="pid_txt" placeholder="Enter client name">
+                    </div> 
+              <span class="form-group" id=pt name=pt style=width:400px>
+                        <label for="d" id="pub-top" name=pub-top><script>localizehtml("pub-top" , "%published-topic" , "Published Topic");</script></label> 
+                        <input type="textbox" class="form-control" style=width:200px;float:right  tabindex=3 id="preqtopic_txt" name="preqtopic_txt" placeholder="Enter Topic "> 
+                    </span> 
+                    <div class="form-group" id=pm name=pm style=width:400px> 
+                        <label for="e" id="pub-msg" name="pub-msg"><script>localizehtml("pub-msg" , "%published-message" , "Published Message");</script></label> 
+        <!--<div  id=prcond name=prcondn class="form-group" style=display:none>-->
+            <!--<div class="input-group">-->
+
+          <select name=prulecond_txt id=prulecond_txt  tabindex=4 class="selectpicker form-control" data-live-search="false" style="width:63px;float:right;font-weight:200" onchange=fnforward();>
+            <option id=eq name=eq value=1>=</option>
+            <option id=uneq name=uneq value=2>!=</option>
+            <option id=lt name=lt value=3><</option>
+            <option id=gt name=gt value=4>></option>
+          </select>
+                        <input type="textbox" class="form-control" tabindex=5 style=width:135px;float:right  id="preqmsg_txt" name="preqmsg_txt" placeholder="Enter Message" onblur=fncopy();> 
+
+           <!-- </div>
+        </div>-->
+
+                    </div> 
+
+                  <div class="form-group" id=pq name=pq style=width:400px> 
+                        <label for="f" id=lbl_fwd_topic name=lbl_fwd_topic><script>localizehtml("lbl_fwd_topic" , "%forwarding-topic" , "Forwarding Topic");</script></label> 
+                        <input type="textbox" class="form-control" style=width:200px;float:right tabindex=6 id="prestopic_txt" name="prestopic_txt" placeholder="Enter Topic"> 
+                    </div> 
+                  <div class="form-group" id=pr name=pr style=width:400px> 
+                        <label for="g" id=lbl_fwd_msg name=lbl_fwd_msg><script>localizehtml("lbl_fwd_msg" , "%forwarding-message" , "Forwarding Message");</script></label>
+                                <span style="background-color:white">
+          <input type="checkbox" id="samemsg" name="samemsg" tabindex=8 style=float:right;width:41px;height:31px;background-color:#ffffff title="Send as received message" onclick=fnsamemsg();></input></span>
+
+
+<input type="textbox" class="form-control" style=width:160px;float:right; id="presmsg_txt" name="presmsg_txt" tabindex=7 placeholder="Enter Message"></input>
+
+</div>
+
+      <div class="form-group" id=schedule_div name=schedule_div style=width:400px;display:none> 
+            <label for="f" id=lbl_schedule name=lbl_schedule><script>localizehtml("lbl_schedule" , "%schedule-for" , "Schedule For:");</script></label> 
+            <select class="form-control" style=width:200px;float:right tabindex=6 id="schedule" name="schedule" onchange=fnschedule(this.value);>
+            <option value=1 selected id=spcdata name=spcdata><script>localizehtml("spcdata" , "%specific-date" , "Specific Date");</script></option>
+            <option value=2 id=drange name=drange><script>localizehtml("drange" , "%date-range" , "Date Range");</script></option>
+            <option value=3 id=dweek name=dweek><script>localizehtml("dweek" , "%day-of-week" , "Day of week");</script></option> 
+            </select>
+    </div> 
+
+                <div class="form-group" id=specific_date_div name=specific_date_div style=width:400px;display:none> 
+                        <label for="f" id=lbl_date name=lbl_date><script>localizehtml("lbl_date" , "%scheduled-date:" , "Scheduled Date:");</script></label> 
+                        <input type="textbox" class="form-control" style=width:200px;float:right tabindex=6 id="specific_date_txt" name="specific_date_txt" data-date-format="YYYY-MM-DD"> 
+                    </div> 
+
+
+
+                    <div class="form-group" id=datetime name=datetime style=width:400px;display:none> 
+                        <label for="f" id=lbl_datetime name=lbl_datetime><script>localizehtml("lbl_datetime" , "%scheduled-dates:" , "Scheduled Dates:");</script></label> 
+                        <input type="textbox" class="form-control" style=width:200px;float:right tabindex=6 id="datetime_txt" name="datetime_txt" placeholder="Enter Schedule"> 
+                    </div> 
+
+          <!--<div id=cltgroup name=cltgroup  style=width:200px;float:right>-->
+<span id=tm name=tm class="form-group" style="padding-bottom:20px;width:400px;display:none">
+          <label for="a" id=pub_lbl name=pub_lbl style="float:left;width:200px"><script>localizehtml("pub_lbl" , "%publishat:" , "Publish At:");</script></label>
+          <select id=hr name=hr style="width:52px;float:left;display:block" tabindex=22>
+          <option class="form-control" value=*>*</option>
+          <option class="form-control" value=0>0th</option>
+          <option class="form-control" value=1>1st</option>
+          <option class="form-control" value=2>2nd</option>
+          <option class="form-control" value=3>3rd</option>
+          <option class="form-control" value=4>4th</option>
+          <option class="form-control" value=5>5th</option>
+          <option class="form-control" value=6>6th</option>
+          <option class="form-control" value=7>7th</option>
+          <option class="form-control" value=8>8th</option>
+          <option class="form-control" value=9>9th</option>
+          <option class="form-control" value=10>10th</option>
+          <option class="form-control" value=11>11th</option>
+          <option class="form-control" value=12>12th</option>
+          <option class="form-control" value=13>13th</option>
+          <option class="form-control" value=14>14th</option>
+          <option class="form-control" value=15>15th</option>
+          <option class="form-control" value=16>16th</option>
+          <option class="form-control" value=17>17th</option>
+          <option class="form-control" value=18>18th</option>
+          <option class="form-control" value=19>19th</option>
+          <option class="form-control" value=20>20th</option>
+          <option class="form-control" value=21>21st</option>
+          <option class="form-control" value=22>22nd</option>
+          <option class="form-control" value=23>23rd</option>
+          </select>
+          <label for="lbl13" id=lbl1 name=lbl1 style="width:35px;padding-left:5px;padding-right:5px;float:left;display:block"><script>localizehtml("lbl1" , "%hour" , "hour");</script></label>
+          <select id=min name=min style="width:52px;float:left;display:block" tabindex=23>
+          <option class="form-control" value=*>*</option>
+                <option class="form-control" value=0>0th</option>
+          <option class="form-control" value=5>5th</option>
+          <option class="form-control" value=10>10th</option>
+          <option class="form-control" value=15>15th</option>
+          <option class="form-control" value=20>20th</option>
+          <option class="form-control" value=25>25th</option>
+          <option class="form-control" value=30>30th</option>
+          <option class="form-control" value=35>35th</option>
+          <option class="form-control" value=40>40th</option>
+          <option class="form-control" value=45>45th</option>
+          <option class="form-control" value=50>50th</option>
+          <option class="form-control" value=55>55th</option>
+
+          </select>
+                    <label for="lbl14" id=lbl2 name=lbl2 style="width:35px;padding-left:5px;float:left;display:block"><script>localizehtml("lbl2" , "%minute" , "minute");</script></label>
+                  </span>
+                    <span class="form-group" id=days name=days style=width:390px;display:none> 
+                        <label for="g" id=lbl_days name=lbl_days><script>localizehtml("lbl_days" , "%repeat" , "Repeat:");</script></label>
+                                <span style="padding-left:40px;background-color:white">
+          <input type="checkbox" class="wdays" id="alldays" name="alldays" tabindex=8 style=float:right;width:20px;height:61px;background-color:#ffffff><label for=alldays title="All Days" onclick=fnalldays();><script>localizehtml("alldays" , "%all" , "All");</script></label></input>
+
+         <input type="checkbox" class="wdays" id="monday" name="monday" tabindex=8 style=float:right;width:20px;height:21px;background-color:#ffffff><label for=monday title="Monday"><script>localizehtml("monday" , "%mon" , "Mon");</script></label></input>
+         <input type="checkbox" class="wdays" id="tuesday" name="tuesday" tabindex=8 style=float:right;width:30px;height:21px;background-color:#ffffff><label for=tuesday title="Tuesday"><script>localizehtml("tuesday" , "%tue" , "Tue");</script></label></input>
+           <input type="checkbox" class="wdays" id="wednesday" name="wednesday" tabindex=8 style=float:right;width:30px;height:21px;background-color:#ffffff ><label for=wednesday title="Wednesday"><script>localizehtml("wednesday" , "%wed" , "Wed");</script></label></input>
+          <input type="checkbox" class="wdays" id="thursday" name="thursday" tabindex=8 style=float:right;width:30px;height:21px;background-color:#ffffff><label for=thursday title="Thursday"><script>localizehtml("thursday" , "%thu" , "Thu");</script></label></input>
+
+ <input type="checkbox" id="friday" class="wdays" name="friday" tabindex=8 style=float:right;width:30px;height:21px;background-color:#ffffff title="Friday"><label for=friday title="Friday"><script>localizehtml("friday" , "%fri" , "Fri");</script></label></input>
+        <input type="checkbox" class="wdays" id="saturday" name="saturday" tabindex=8 style=float:right;width:30px;height:21px;background-color:#ffffff><label for=saturday title="Saturday"><script>localizehtml("saturday" , "%sat" , "Sat");</script></label></input>         
+       <input type="checkbox" class="wdays" id="sunday" name="sunday" tabindex=8 style=float:right;width:30px;height:21px;background-color:#ffffff><label for=sunday title="Sunday"><script>localizehtml("sunday" , "%sun" , "Sun");</script></label></input>
+
+         
+                  </span>
+
+</span>
+ 
+
+                      </div> 
+        </div>
+              <!-- /.box-body --> 
+            <!-- /.box-body --> 
+ 
+    <div class="box-footer" style="width:220px;border:none">
+                  <button class="btn btn-default" id=rule_cancel style=position:absolute;top:330px;left:100px name=rule_cancel onclick=fnrulecancel(); tabindex=9><script>localizehtml("rule_cancel" , "%cancel" , "Cancel");</script></button>
+                  <input type=button class="btn pull-right" value=Save style=position:absolute;top:330px;left:240px  id=pub_update name=pub_update tabindex=10 onclick=fnpubupdate();></input>
+                </div>
+
+            </div> 
+          </div>
+</div>
+</div>
+</div>
+<section>
+</div>
+</div>
+<!--      RULE ENGINE TAB ENDS      -->
+<script>
+
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+  //jQuery(document).ready(function() {
+
+
+function checkCookie() {
+    var user=document.cookie.indexOf("mqtt_cookie=")!=-1;
+   
+    if (user==true) {
+       return;
+    } else {
+       //user = prompt("Please enter your name:","");
+       document.cookie = "mqtt_cookie" + "=" + "viewed";
+       jQuery('#tourtabhead').click();
+       //openDetail(event, 'Tour');
+    }
+}
+  
+</script>
+
+</body>
+</html>
+

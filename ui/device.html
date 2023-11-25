@@ -1,0 +1,67 @@
+<div class="mt-3 page page-device" style="display: none;">
+	<div class="card card-outline bg-cont">
+		<div class="card-header">
+			<div class="row">
+				<div class="col-md-4">
+					<label class="form-check-inline lato">
+						<div id="device_list_all" class="iradio_flat-green checked" aria-checked="false" aria-disabled="false">
+							<input value="all" type="radio" class="flat-red" name="device_list_status" checked="">
+						</div>
+						All
+					</label>
+					<label class="form-check-inline lato">
+						<div id="device_list_active" class="iradio_flat-green" aria-checked="false" aria-disabled="false">
+							<input type="radio" class="flat-red" name="device_list_status" value="act">
+						</div>
+						Active
+					</label>
+					<label class="form-check-inline lato">
+						<div id="device_list_inactive" class="iradio_flat-green" aria-checked="false" aria-disabled="true">
+							<input type="radio" class="flat-red" name="device_list_status" value="inact">
+						</div>
+						Inactive
+					</label>
+				</div>
+				<div class="col-md-4 input-group lato">
+					<div class="input-group-prepend">
+						<i class="input-group-text fa fa-search" ></i>
+					</div>
+					<input id="device_search" type='text' placeholder="Search Device" class="form-control form-control-sm">
+				</div>
+				<div class="col-md-4">
+					<div class="dataTables_paginate paging_simple_numbers">
+						<ul class="pagination pagination-sm m-0 float-right">
+							<li class="paginate_button page-item previous" id="example1_previous">
+								<a href="javascript: changeDeviceListPage(-1);" class="page-link">
+									<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+								</a>
+							</li>
+							<li class="paginate_button page-item next" id="example1_next">
+								<a href="javascript: changeDeviceListPage(1);" class="page-link">
+									<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card-body  table-responsive p-0 lato">
+			<div class="dataTables_wrapper dt-bootstrap4">
+				<table class="table">
+					<thead class="text-info table-info">
+						<tr>
+							<th>Device Name</th>
+							<th>Device Id</th>
+							<th>Status</th>
+							<th>IP</th>
+							<th>Status Time</th>
+							<th>Clean Queue</th>
+						</tr>
+					</thead>
+					<tbody id="device-list"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,263 @@
+#######################################################################################
+#       			@Bevywise.com IOT Initiative. All rights reserved     		  	  #
+#         			 www.bevywise.com Email - support@bevywise.com     				  #
+#                                                             						  # 
+#######################################################################################
+#                      			      MQTT Route                            		  #
+#######################################################################################
+
+# For Linux and MAC Users
+
+	# START MQTTRoute
+
+	   1. Open Terminal and go to ./Bevywise/MQTTRoute/bin
+	   2. Run sh runbroker.sh 
+
+
+	# START GateWay
+
+	   1. Open Terminal and go to ./Bevywise/MQTTRoute/bin.
+	   2. Run sh rungateway.sh in Terminal.
+	   3. Now Gateway is ready to listen SN Clients in Bluetooth and UDP mode.[Gateway will not work without Bluetooth, for more info Please contact support@bevywise.com]
+	   4. There's also an option to communicate with MQTT or MQTT with TLS/SSL clients.
+	   5. For example client please use SNClient.py in ./Bevywise/MQTTRoute/examples
+	   
+	# Config settings go to ./Bevywise/MQTTRoute/conf folder. 
+
+	  ->Broker.conf
+
+	     1.  For TLS communication set TLS_ENABLED to true and set TLS_PORT_NO to 88xx. By default, TLS will be set in 8883
+	     2.  For Secured WebServer set the port value in WSS_PORT_NO. By default, secured WebServer will set in 11443
+	     3.  For Authentication set AUTHENTICATION_ENABLED to YES. For username and password, use Authentication Tab in UI.
+	     4.  For UI set the port value in UI_HTTP_PORT. By default, UI start in 8080 port
+
+	  ->data_store.conf
+
+	       1. Set PERSISTENCE_ENABLED field TRUE to store data in DB.
+
+	       2. There are two options SQLITE and MYSQL choose your own. By Default MQTTBroker run with SQLite	       
+
+	  	   # SQLITE
+
+	       		1. For SQLITE then data are stored in ./Bevywise/MQTTRoute/data once you start the MQTTBroker
+
+	       # MYSQL
+
+	   			1. Open Terminal and go to ./Bevywise/MQTTRoute/bin
+	   			2. Run sh installer.sh , this file will install all dependence and  mysql-connector
+	   			3. Install MySQL 5.7 server or higher and then set MYSQL username and password in data_store.conf file.
+
+		   5. If you are planning for storing the data in your own engine. you need to implement the following method as specified in custom_store.py in lib/ folder
+
+	  ->gateway.conf
+
+	       1.  For TLS communication with broker set SERVER_TLS_ENABLED to True.
+	       2.  To restrict broker access by enabling SERVER_AUTHENTICATION_ENABLED to True.
+	       3.  To Communicate with MQTTSN clients set GW_MQTT_SN_ENABLED to True.
+	       4.  To Communicate with MQTT clients set GW_MQTT_ENABLED to True.
+	       5.  To Communicate with MQTT clients in TLS mode set GW_TLS_ENABLED to True.
+	       6.  Give the file path in PATH_TO_PREDEF_TOPIC field to set predefined TopicIds.
+	       7.  Topic Id file must be like <TOPIC_NAME><<TAB>><TOPIC_ID>.
+
+	# User Interface
+
+	   1. You can View details of the Broker in any browser using url:127.0.0.1:8080
+	   
+	   2. DASHBOARD   - Information like Number of connected clients, Number of Messages in 
+	   last 30 seconds, Active topics , Broker uptime can be viewed.
+	  
+	   3. DEVICES     - The devices communicated with broker are listed and their details 
+	   like published topic, message, subscribed topic and log can be viewed.
+
+	   4. DEVICE LOG - The Device Log tab contains a list of errors that occur while connecting a device to Bevywise MQTTBroker. It helps you to identify the reason for the error.Logging can be configured in the Log configuration section of the Broker.conf.
+           
+       5. TOPICS - A detailed view on the list of topics last published & active subscribed.
+	 
+	   6. MESSAGE RULES - You can set Message Rules by the below combinations, rules should have Forward_topic and Forward_message
+	     1. Client-Topic- Any Message from Client in particular Topic.
+	     2. Topic-Message- Mentioned Message arrived in Topic.
+	     3. Client-Topic-Message- Exact Message from Client in particular Topic.
+	     4. Timer Rule - Send message to the topic based on the give date and time.
+
+	     Note:Setting this combination will send assigned Forward_messages to the assigned Forward_topics if the rule satisfied.
+
+       7. AUTHENTICATION - Add and remove username and password for Authentication.
+
+       8. MQTT Client - Python Client libaries for MAC, Linux, Windows and ESP. User can download the libaries and connect to the MQTTBroker
+
+	   
+
+	# STOP MQTTRoute
+
+	   1. Open terminal and go to ./Bevywise/MQTTRoute/bin
+	   2. Run sh stopbroker.sh 
+
+
+   # CREATE/START MQTTRoute as Service
+
+   1. Open terminal and go to ./Bevywise/MQTTRoute/bin/ and Run the file RunAsService.sh 
+   2. This will create symbolic link and MQTTRoute service enable with systemd service.
+
+   		After that we can,
+
+   		 To start with command - sudo systemctl start mqttroute.service
+   		 To stop with command - sudo systemctl stop mqttroute.service
+   		 To check status with command - sudo systemctl status mqttroute.service
+
+	# Testing tool is available in ./Bevywise/MQTTRoute/examples folder.
+
+	   1. Library files libmqttclient  and libmqttsclient are available in this folder.
+	   2. Follow HELP file and communicate with our broker.
+	   3. Provided examples will make testing much more convenient. 
+
+	# For Demo Videos follow bevywise Networks in Youtube.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# For Windows/Windows server Users
+
+	#  START MQTTRoute
+
+	   1. Go to ./Bevywise/MQTTRoute/bin
+	   2. Double click runbroker.bat or run it in Command prompt
+
+	#  GateWay
+
+		Gateway doesn't support in windows.
+
+	# Config settings go to ./Bevywise/MQTTRoute/conf folder. 
+
+	  ->Broker.conf
+
+	     1.  For TLS communication set TLS_ENABLED to true and set TLS_PORT_NO to 88xx. By default, TLS will be set in 8883
+	     2.  For Secured WebServer set the port value in WSS_PORT_NO. By default, secured WebServer will set in 11443
+	     3.  For Authentication set AUTHENTICATION_ENABLED to YES. For username and password, use Authentication Tab in UI.
+	     4.  For UI set the port value in UI_HTTP_PORT. By default, UI start in 8080 port
+
+	  ->data_store.conf
+
+	       1. Set PERSISTENCE_ENABLED field TRUE to store data in DB.
+
+	       2. There are two options SQLITE and MYSQL choose your own. By Default MQTTBroker run with SQLite	       
+
+	  	   # SQLITE
+
+	       		1. For SQLITE then data are stored in ./Bevywise/MQTTRoute/data once you start the MQTTBroker
+
+	       # MYSQL
+
+	       		1. Download and install WGET from [ https://eternallybored.org/misc/wget/ ] . In that webpage download wget.exe [version 1.20]
+	       		2. Set Environment Variable for WGET - Open MyComputer -> properties -> Advance system settings -> Advanced -> Environment Variable
+	       		3. In that window, select "Path" under "System variables" and click edit.
+	       		4. In "Edit System variable" window give the ";<wget.exe path>" and click ok
+	   			5. Open cmd and go to ./Bevywise/MQTTRoute/bin
+	   			3. Run installer.bat , this file will install all dependence and mysql-connector
+	   			4. Install MySQL 5.7 server or higher and then set MYSQL username and password in data_store.conf file.	
+
+		   5. The MQTTRoute has an option to store data to Elastic search and It has an extension where in you can hook the received payload and 
+			  store the data into any of your analytics / big data engine. 
+
+		   6. If you are planning for storing the data in your own engine. you need to implement the following method as specified in custom_store.py in lib/ folder
+
+	# User Interface
+
+	   1. You can View details of the Broker in any browser using url:127.0.0.1:8080
+	   
+	   2. DASHBOARD   - Information like Number of connected clients, Number of Messages in 
+	   last 30 seconds, Active topics , Broker uptime can be viewed.
+	  
+	   3. DEVICES     - The devices communicated with broker are listed and their details 
+	   like published topic, message, subscribed topic and log can be viewed.
+           
+       4. DEVICE LOG - The Device Log tab contains a list of errors that occur while connecting a device to Bevywise MQTTBroker. It helps you to identify the reason for the error.Logging can be configured in the Log configuration section of the Broker.conf.
+           
+       5. TOPICS - A detailed view on the list of topics last published & active subscribed.
+	 
+	   6. MESSAGE RULES - You can set Message Rules by the below combinations, rules should have Forward_topic and Forward_message
+	     1. Client-Topic- Any Message from Client in particular Topic.
+	     2. Topic-Message- Mentioned Message arrived in Topic.
+	     3. Client-Topic-Message- Exact Message from Client in particular Topic.
+	     4. Timer Rule - Send message to the topic based on the give date and time.
+
+	     Note:Setting this combination will send assigned Forward_messages to the assigned Forward_topics if the rule satisfied.
+
+	    7. AUTHENTICATION - Add and remove username and password for Authentication.
+
+	   	8. MQTT Client - Python Client libaries for MAC, Linux, Windows and ESP. User can download the libaries and connect to the MQTTBroker
+
+	   
+
+	# STOP MQTTRoute
+
+	   1. Open terminal and go to ./Bevywise/MQTTRoute/bin
+	   2. Double click stopbroker.bat or run it on command prompt
+
+
+	# Debugging MQTTRoute Crash (Crash Debug Setup Enable & Disable)
+
+	  1.broker_dump_enable.bat - Setup generating crash dumps for debugging of MQTTRoute Broker.    
+
+	    a) Open command prompt as an Administrator mode and cd to C:\Bevywise\MQTTRoute\bin
+
+
+	    b) Run the bat file broker_dump_enable.bat
+
+	    In case of any crash happens while running broker, the Dump file will be generated into the folder 		       C:\Bevywise\MQTTRoute\CrashDumps
+
+
+	  2.broker_dump_disable.bat - Removing crash dumps setup of MQTTRoute broker 
+	 
+
+	    a) Open command prompt as an Administrator mode and cd to C:\Bevywise\MQTTRoute\bin
+
+
+	    b) Run the bat file broker_dump_disable.bat
+
+	# CREATE/START MQTTRoute as Service
+	   1. Open command prompt in administrator mode, cd to ./Bevywise/MQTTRoute/bin and  run CreateMQTTRouteSvc.bat
+	   2. This will create the MQTTRoute service and start the same. After that we can stop/start/restart from "Services" app
+
+	# STOP/DELETE MQTTRoute Service
+	   1. Open command prompt in administrator mode, cd to ./Bevywise/MQTTRoute/bin and run RemoveMQTTRouteSvc.bat . 
+	   2. This will stop the broker and removes it from services
+
+
+
+	# Testing tool is available in ./Bevywise/MQTTRoute/examples folder.
+
+	   1. Library files libmqttclient  and libmqttsclient are available in this folder.
+	   2. Follow HELP file and communicate with our broker.
+	   3. Provided examples will make testing much more convenient. 
+
+	# For Demo Videos follow bevywise Networks in Youtube.	 
+
+
+##########################################################################
+#                          Custom Storage                         		 #
+##########################################################################  
+
+	1. The MQTTRoute has an option to store data to Elastic search and It has an python extension called custom_store where you can hook the received payload and 
+	   store the data into any of your analytics / big data engine. 
+	2. If you are planning for storing the data in your own engine, you need to implement the following method as specified in custom_store.py in extension/ folder
+			
+			"def handle_Received_Payload(data)"
+		
+	3. You can implement this method in your own file and then specify the path here. 
+	4. For Elastic, the value of DATASTORE need to specified as ELASTIC
+
+	#Custom_store configuration
+
+		1. Open terminal and go to ./Bevywise/MQTTRoute/conf
+		2. open data_store.conf
+		3. To Enable Custom Store, set CUSTOMSTORAGE = ENABLED , DATASTORE = CUSTOM
+		4. To Enable Elastic, set CUSTOMSTORAGE = ENABLED , DATASTORE = ELASTIC
+		5. If Elastic enabled, set the HOSTNAME = <host ipaddress>, Port = <Elastic run Port>, IDEX_NAME = <idex name>
+
+	#REST API
+
+		1. Bevywise MQTTBRoker RESTful API help you call the broker for managing any specific device or device as a whole. 
+		2. This restful API will also help in querying the connected devices list and related APIs to manage the broker as well as the edge devices.
+		3. For more reference, Please refer API document - [ https://www.bevywise.com/mqtt-broker/mqtt-broker-api.html ]
+
+
+###############################################################  Thanks for choosing me    #####################################################################################

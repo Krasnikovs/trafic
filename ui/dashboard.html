@@ -1,0 +1,340 @@
+<div class="mt-3 page page-dashboard" style="display: none;">
+	<div class="row lato">
+
+	<div class="col-md-3 col-sm-6 col-6">
+            <div class="info-box">
+              <span class="info-box-icon text-success"><i class="fa fa-rss"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Active Devices</span>
+                <span class="info-box-number" id="dashboard-active-device-count">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6">
+            <div class="info-box">
+              <span class="info-box-icon text-primary"><i class="fa fa-code-fork"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Total Devices</span>
+                <span class="info-box-number" id="dashboard-total-device-count">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6">
+            <div class="info-box">
+              <span class="info-box-icon text-warning"><i class="fa fa-envelope-o"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Events</span>
+                <span class="info-box-number" id="dashboard-pub-msg-count">0</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-6 col-6">
+            <div class="info-box">
+              <span class="info-box-icon text-danger"><i class="fa fa-paper-plane"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Commands</span>
+                <span class="info-box-number" id="dashboard-sent-msg-count">0</span>
+              </div>
+            </div>
+          </div>
+	<!-- <div class="col-lg-4 col-md-4 col-12">
+		<div class="small-box bg-success">
+			<div class="inner">
+			<div class="row">
+				<div class="col-6">
+					<h3 id="dashboard-active-device-count">0</h3>
+					<p>Active Count</p>
+				</div>
+				<div class="col-6">
+					<h3 id="dashboard-total-device-count">0</h3>
+					<p>Total Count</p>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div> -->
+
+
+
+	<!-- <div class="icon">
+				<i class="fa fa-link"></i>
+			</div> -->
+		 <!-- <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>  -->
+
+
+
+	<!--<div class="col-lg-3 col-md-3 col-12">
+	   small box 
+		<div class="small-box bg-danger">
+			<div class="inner">
+				<h3 id="dashboard-inactive-device-count">0</h3>
+
+				<p>Inactive Device Count</p>
+			</div>
+			<div class="icon">
+				<i class="fa fa-unlink"></i>
+			</div>
+	<a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a> 
+		</div>
+	</div>-->
+	<!-- <div class="col-lg-4 col-md-4 col-12">
+		<div class="small-box bg-primary">
+			<div class="inner">
+				<h3 id="dashboard-pub-msg-count">0</h3>
+
+				<p>Received Events</p>
+			</div>
+			<div class="icon">
+				<i class="fa fa-arrow-circle-down"></i>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4 col-md-4 col-12">
+		<div class="small-box bg-info">
+			<div class="inner">
+				<h3 id="dashboard-sent-msg-count">0</h3>
+
+				<p>Send Commands</p>
+			</div>
+			<div class="icon">
+				<i class="fa fa-arrow-circle-up"></i>
+			</div>
+		</div>
+	</div> -->
+		<!-- <div class="col-lg-4 col-12">
+			<div class="small-box bg-cont">
+				<div class="inner">
+					<h2 class="row"><i class="col-6 fa fa-link" id="dashboard-active-device-count"> 7</i><i class="col-6 fa fa-unlink" id="dashboard-inactive-device-count"> 7</i></span></h2>
+					<span class="row"><p class="col-6">Active Device</p><p class="col-6">Inactive Device</p></span>
+				</div>
+				<div class="icon">
+					<i class="ion ion-bag"></i>
+				</div>
+			</div>
+		</div> -->
+		<!-- <div class="col-lg-4 col-12">
+			<div class="small-box bg-cont">
+				<div class="inner">
+					<h2 class="row"><i class="col-6 fa fa-arrow-circle-down" id="dashboard-pub-msg-count"> 7</i><i class="col-6 fa fa-arrow-circle-up" id="dashboard-sent-msg-count"> 7</i></span></h2>
+					<span class="row"><p class="col-6">Received Message</p><p class="col-6">Sent Message</p></span>
+				</div>
+				<div class="icon">
+					<i class="ion ion-stats-bars"></i>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-4 col-12">
+			<div class="small-box bg-cont">
+				<div class="inner">
+					<h2 class="row"><i class="col-12 fa fa-hashtag" id="dashboard-active-topic-count"> 7</i></h2>
+					<p>Subscribe Topic</p>
+				</div>
+				<div class="icon">
+					<i class="ion ion-person-add"></i>
+				</div>
+			</div>
+		</div> -->
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header roboto">
+					<h5>Recent Events</h5>
+				</div>
+				<div class="card-body table-responsive p-0 lato">
+					<table class="table">
+						<thead class="text-info text-center" style="background-color: #fff">
+							<tr>
+								<th>Device Id</th>
+								<th>Topic</th>
+								<th style="width:35%">Message</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody id="dashboard-recv-msg" class="text-center"></tbody>
+						<tfoot><tr><td id="nodata-recv-msg" class="text-danger" colspan="4" align="center">No Data Found</td></tr></tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div class="card">
+				<div class="card-header roboto">
+					<h5>Recent Device Log</h5>
+				</div>
+				<div class="card-body lato">
+					<table class="table">
+						<thead class="text-info text-center" style="background-color: #fff">
+							<tr>
+								<th>Device Id</th>
+								<th>IP</th>
+								<th>Status</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody id="dashboard-error-log" class="text-center"></tbody>
+						<tfoot><tr><td id="nodata-error-log" class="text-danger" colspan="4" align="center">No Data Found</td></tr></tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-6 col-12">
+			<div class="card">
+				<div class="card-header roboto">
+					<h5>Recent Connections</h5>
+				</div>
+				<div class="card-body lato">
+					<table class="table">
+						<thead class="text-info text-center" style="background-color: #fff">
+							<tr>
+								<th>Device Id</th>
+								<th>IP</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody id="dashboard-con-device" class="text-center"></tbody>
+						<tfoot><tr><td id="nodata-con-device" class="text-danger" colspan="3" align="center">No Data Found</td></tr></tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-6 col-12">
+			<div class="card">
+				<div class="card-header roboto">
+					<h5>Recent Disconnections</h5>
+				</div>
+				<div class="card-body lato">
+					<table class="table">
+						<thead class="text-info text-center" style="background-color: #fff">
+							<tr>
+								<th>Device Id</th>
+								<th>IP</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody id="dashboard-discon-device" class="text-center"></tbody>
+						<tfoot><tr><td id="nodata-discon-device" class="text-danger" colspan="3" align="center">No Data Found</td></tr></tfoot>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<style type="text/css">
+	.cardbpad{
+		padding: 1.25rem;
+	}
+	.card-header.cardhead{
+		border-bottom: none !important;
+	}
+	.nav-pills .nav-link{
+		font-size: .9em!important;
+	}
+	.pubsub-nav > .nav-link{
+		padding: .25rem 1rem!important;
+	}
+	.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+	    color: #fff!important;
+	    background-color: #123b60!important;
+	    font-size: .9em;
+	}
+</style>
+<!-- Topic Page -->
+<div class="mt-3 page page-topic1" id="topic1_page" style="display: none;">
+	<div class="card card-outline card-outline-success">
+		<div class="card-header cardhead lato">
+		<ul class="nav nav-pills">
+		    <li class="card-title nav-item pubsub-nav"><a data-toggle="pill" class="nav-link active" href="#menu1">Publish Topics</a></li>
+		    <li class="card-title nav-item pubsub-nav"><a data-toggle="pill" class="nav-link" href="#menu2">Active Subscriptions</a></li>
+		</ul>
+		</div>
+		<div class="card-body cardbpad table-responsive lato">
+		  <div class="tab-content">
+		    <div id="menu1" class="tab-pane fade show active">
+		      	<table class="table table-hover text-dark">
+					<thead class="text-info text-center">
+						<tr>
+							<th>Topic</th>
+							<th>Device Id</th>
+							<th>Last Published Message</th>
+							<th>Last Published Time</th>
+						</tr>
+					</thead>
+					<tbody id="pub-act-topic" class="text-center"></tbody>
+					<tfoot>
+						<tr>
+							<td id="nodata-pub-act-topic" class="text-danger" colspan="5" align="center">No Data Found</td>
+						</tr>
+					</tfoot>
+				</table>
+		    </div>
+		    <div id="menu2" class="tab-pane fade">
+		      	<table class="table table-hover">
+					<thead class="text-info text-center">
+						<tr>
+							<th>Topic</th>
+							<th>Device Id</th>
+							<th>QoS</th>
+						</tr>
+					</thead>
+					<tbody id="sub-act-topic" class="text-center"></tbody>
+					<tfoot>
+						<tr>
+							<td id="nodata-sub-act-topic" class="text-danger" colspan="3" align="center">No Data Found</td>
+						</tr>
+					</tfoot>
+				</table>
+		    </div>
+		  </div>
+		 </div>
+	</div>
+</div>
+<!-- Topic Page -->
+
+<!-- Plan section -->
+
+<div class="mt-3 page page-plan-update" style="display: none">
+	<div class="card card-outline card-outline-success">
+		<div class="card-body">
+			<!-- <div class="m-3"> -->
+				<div class="row">
+					<div class="col-md-4"></div>
+					<div class="col-md-4">
+						<img src="static/images/plan_update.png" height="450.33px" width="450.33px">
+						<h5 align="center">Please upgrade your plan!</h5>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+				
+				
+
+			<!-- </div> -->
+			
+		</div>	
+	</div>	
+</div>
+
+<!-- Plan section -->
+
+<div class="modal fade" id="rt-modal">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      
+      <div class="modal-header" id="rt-modal-title">
+      	Bevywise MQTTRoute 4.0
+      	<!-- <div class="modal-title roboto" id="rt-modal-title"></div> -->
+      </div>
+      <div class="modal-body lato" id="rt-modal-text">
+      </div>
+
+    </div>
+  </div>
+</div>

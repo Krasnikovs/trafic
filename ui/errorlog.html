@@ -1,0 +1,37 @@
+<div class="mt-3 page page-error-log" style="display: none;">
+	<div class="card bg-cont">
+		<div class="card-header">
+			<h5 class="pull-left" style="font-family:'LatoWeb'">Device Log</h5>			
+			<ul class="pagination pagination-sm m-0 float-right">
+				<li class="paginate_button page-item previous" id="example1_previous">
+					<a href="javascript: changeErrorLogPage(-1)" class="page-link">
+						<i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+					</a>
+				</li>
+
+				<li class="paginate_button page-item next">
+					<a href="javascript: changeErrorLogPage(1)" class="page-link">
+						<i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+					</a>
+				</li>
+				</ul>
+		</div>
+		<div class="card-body  table-responsive p-0 lato">
+			<div class="dataTables_wrapper dt-bootstrap4">
+				<table class="table">
+					<thead class="text-info table-info">
+						<tr>
+							<th>Device Id</th>
+							<th>Error</th>
+							<th>IP Address</th>
+							<th>Time</th>
+						</tr>
+					</thead>
+					<tbody id="error-log-table">
+						
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

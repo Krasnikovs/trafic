@@ -1,0 +1,131 @@
+<div class="row page page-topic" style="display: none;">
+	<nav class="col-md-2 d-none d-md-block sidebar" style="height: 750px; box-shadow: 0px 0px 7px 0px;">
+		<div class="sidebar-sticky">
+			<div class="card-header with-border roboto">
+				<h3 class="card-title">Topics</h3>
+				<span id="search-topic" class="pull-right fa fa-search" onclick="searchTopic('search-topic');"></span>
+			</div>
+			<div class="card-header with-border" id="topic-search-cont" style="display: none;">
+				<input id="search-text" class="btn-search" placeholder="Search.." type="text">
+				<span id="search-topic" type="submit" class="fa fa-search" onclick="showSearchedTopic(this);"></span>
+				<span id="search-cancel" class="pull-right fa fa-close" onclick="searchTopic('search-cancel')"></span>
+			</div>
+			<div class="slimScrollDiv">
+				<div class="sidebar" id="scrollspy">
+					<ul class="nav nav-pills nav-sidebar flex-column" id="topic-list"></ul>
+				</div>
+			</div>
+			<div>
+				<ul class="pagination pagination-sm no-margin pull-right"></ul>
+			</div>
+		</div>
+	</nav>
+	<section class="mt-3 col-md-9 ml-sm-auto col-lg-10 px-4">
+		<div class="row">
+			<div class="col-12">
+				<div class="info-box mb-3">
+					<span class="info-box-icon">
+						<i class="fa fa-circle-o-notch"></i>
+					</span>
+					<div class="info-box-content">
+						<span class="info-box-text">Topic : 
+							<b id=selected-topic></b>
+						</span>
+						<span class="info-box-text">
+							Total Messages : 
+							<b id="topic-pub-msg-cnt">0</b>
+						</span>
+						<!-- <div class="progress">
+							<div class="progress-bar" style="width: 100%"></div>
+						</div> -->
+						<span class="info-box-text">
+							Messages in last hour : 
+							<b id="topic-pub-hr-msg-cnt">0</b>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 card">
+				<div class="card-header roboto">
+					<h3 class="card-title">Devices creating Events</h3>
+					<div class="card-tools">
+						<ul class="pagination pagination-sm no-margin pull-right" id="topic-pub-pagi" style="color: #0f2f6d;">
+						</ul>
+					</div>
+				</div>
+				<div class="card-body no-padding lato">
+					<!-- <nav class="navbar">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="#" id="all-pub" class="tablinks pub-status" onclick="publisherStatusModifier(2, this);">
+								</a>
+							</li>
+							<li>
+								<a href="#" id="active-pub" class="tablinks pub-status" onclick="publisherStatusModifier(1, this);">
+								</a>
+							</li>
+							<li>
+								<a href="#" id="inactive-pub" class="tablinks pub-status" onclick="publisherStatusModifier(0, this);">
+								</a>
+							</li>
+						</ul>
+					</nav> -->
+					<table class="table">
+						<thead class="text-info table-info">
+							<tr>
+								<th>Device Id</th>
+								<th>IP</th>
+								<th>Status</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody id="pub-dev" class="nostyle"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12 card">
+				<div class="card-header roboto">
+					<h3 class="card-title">Devices listening to Command</h3>
+					<div class="card-tools">
+						<ul class="pagination pagination-sm no-margin pull-right" id="topic-sub-pagi" style="color: #0f2f6d;">
+						</ul>
+					</div>
+				</div>
+				<div class="card-body lato">
+					<!-- <nav class="navbar">
+						<ul class="nav navbar-nav">
+							<li>
+								<a href="#" id="all-sub" class="tablinks sub-status" onclick="subscriberStatusModifier(2, this)">
+									<span class="sr-only">(current)</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" id="active-sub" class="tablinks sub-status" onclick="subscriberStatusModifier(1, this)">
+								</a>
+							</li>
+							<li>
+								<a href="#" id="inactive-sub" class="tablinks sub-status" onclick="subscriberStatusModifier(0, this)">
+								</a>
+							</li>
+						</ul>
+					</nav> -->
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Device Id</th>
+								<th>IP</th>
+								<th>Status</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody id="sub-dev"></tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

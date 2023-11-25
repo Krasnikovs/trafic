@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MQTTROUTE | Login</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" href="static/css/adminlte.min.css">
+    <link rel="stylesheet" href="static/css/font-awesome.css">
+    <link rel="stylesheet" href="static/fonts/LATO/Lato/latofonts.css">
+    <link rel="stylesheet" href="static/fonts/roboto/style.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/util.css">
+
+<style>
+
+</style>
+
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <img class="brand-icon" src="{{ static_url('images/Bevywise-login.png')}}" alt="Site Logo" width="50%">
+  </div>
+  <!-- /.login-logo -->
+  <div class="card lato">
+    <div class="card-body login-card-body">
+<!--       <p class="login-box-msg">Sign in to Pace DPR</p> -->
+
+        <span class="font font-weight-bold">Web Login <i class="ml-3 fa fa-info-circle text-primary" data-toggle="tooltip" title="Authentication" style="cursor: pointer"></i></span>
+
+            <form class="form-signin mt-3" action="/login" method="post" role="form">
+                    <div class="wrap-input100 form-group">
+                        <input class="input100 lato" id="username" name="username" class="form-control" value="{{username}}" placeholder="Username" required autofocus>
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+
+                    <div class="wrap-input100 form-group">
+                        <input class="input100 lato" id="password" type="password" name="password" class="form-control" value="{{password}}" placeholder="Password" required>
+                        <span class="focus-input100-1"></span>
+                        <span class="focus-input100-2"></span>
+                    </div>
+
+                    <div class="custom-control custom-checkbox mb-3">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                        <label class="custom-control-label lato font-weight-normal" for="customCheck1">Remember Password</label>
+                    </div>
+                            
+
+                    <div class="container-login100-form-btn m-t-20">
+                        <button class="login100-form-btn btn  btn-primary text-uppercase lato" type="submit">Sign in</button>
+                    </div>
+                            <br>
+                    {% if validity == 'invalid' %}
+                    <b class="lato ml-5 text-danger">Invalid Username/ Password</b>
+                    {% else %}
+                    {% end %}
+
+                </form>
+      <!-- <p class="mb-1">
+        <a href="#">I forgot my password</a>
+      </p> -->
+    </div>
+    
+  </div>
+</div>
+
+
+
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/adminlte.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() { 
+            $('#username').focus();
+        });
+    </script>
+</body>
+</html>
