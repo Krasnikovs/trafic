@@ -73,11 +73,12 @@ class Graph():
                 if car.position == position:
 
                     vctr = [
-                        {'topic':'data/vctr', 'payload': str(car.vehicle_vctr)}, 
-                        {'topic': 'data/position', 'payload': car.position}
+                        {'topic':'data/vctr', 'payload': str(car.vehicle_vctr), 'qos':0, 'retain':False}, 
+                        {'topic': 'data/position', 'payload': car.position, 'qos':0, 'retain':False}
                     ]
                     result = client.publish(
-                        vctr
+                        topic = str(position),
+                        payload = str(car.vehicle_vctr)
                     )
 
                     if result[0] == 0:
@@ -90,6 +91,7 @@ class Graph():
                     #     topic = 'data/mess', 
                     #     payload = position
                     # )
+
 
     def get_corner():
         position = int(input('Enter the vertex number: '))
