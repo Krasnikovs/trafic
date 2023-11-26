@@ -2211,3 +2211,726 @@
 [MQTTROUTE]-2023-11-22 14:43:23,835 INFO Received DISCONNECT from clientfd:42 clientid:mqtt-explorer-bc97a679. Disconnecting client
 [MQTTROUTE]-2023-11-22 14:43:23,837 INFO mqtt-explorer-bc97a679 disconnected
 [MQTTROUTE]-2023-11-22 14:47:42,336 INFO Shutting Down Server...
+[MQTTROUTE]-2023-11-26 00:43:06,128 INFO Config File Loaded Sucessfully.
+[MQTTROUTE]-2023-11-26 00:43:06,129 INFO Sucessfully Connected To MongoDB at port - 27017 
+[MQTTROUTE]-2023-11-26 00:43:06,165 INFO Bevywise MQTTRoute 4.0 - build 1122-001
+[MQTTROUTE]-2023-11-26 00:43:06,168 INFO You are using - MQTTRoute - DEVELOPER version
+[MQTTROUTE]-2023-11-26 00:43:06,173 INFO You can connect upto 10 clients
+[MQTTROUTE]-2023-11-26 00:43:06,174 INFO TCP Port - 1883 	 WebSocket Port - 10443 
+[MQTTROUTE]-2023-11-26 00:43:06,174 INFO View your connected devices via your browser at - http://localhost:8080 or http://192.168.0.107:8080
+[MQTTROUTE]-2023-11-26 00:43:06,175 INFO Custom Storage Enabled
+[MQTTROUTE]-2023-11-26 00:43:06,175 INFO Authentication Disabled
+[MQTTROUTE]-2023-11-26 00:43:06,175 INFO Remote Authentication Disabled
+[MQTTROUTE]-2023-11-26 00:50:51,151 INFO Shutting Down Server...
+[MQTTROUTE]-2023-11-26 15:27:23,749 INFO Config File Loaded Sucessfully.
+[MQTTROUTE]-2023-11-26 15:27:23,750 INFO Sucessfully Connected To MongoDB at port - 27017 
+[MQTTROUTE]-2023-11-26 15:27:23,762 INFO BW-IOT 003: POSTGRESQL Database cannot be connected
+[MQTTROUTE]-2023-11-26 15:27:50,910 INFO Config File Loaded Sucessfully.
+[MQTTROUTE]-2023-11-26 15:27:50,911 INFO Sucessfully Connected To MongoDB at port - 27017 
+[MQTTROUTE]-2023-11-26 15:27:51,123 INFO Bevywise MQTTRoute 4.0 - build 1122-001
+[MQTTROUTE]-2023-11-26 15:27:51,138 INFO You are using - MQTTRoute - DEVELOPER version
+[MQTTROUTE]-2023-11-26 15:27:51,143 INFO You can connect upto 10 clients
+[MQTTROUTE]-2023-11-26 15:27:51,149 INFO TCP Port - 1883 	 WebSocket Port - 10443 
+[MQTTROUTE]-2023-11-26 15:27:51,150 INFO View your connected devices via your browser at - http://localhost:8080 or http://192.168.0.107:8080
+[MQTTROUTE]-2023-11-26 15:27:51,150 INFO Authentication Disabled
+[MQTTROUTE]-2023-11-26 15:27:51,150 INFO Remote Authentication Disabled
+[MQTTROUTE]-2023-11-26 15:28:17,637 INFO New connection request from ip:127.0.0.1 on clientfd:17. Connected_Clients_Count:0
+[MQTTROUTE]-2023-11-26 15:28:17,637 INFO Received CONNECT on clientfd:17,clientid:mqttx_4758448b,will flag:0,clean session:1
+[MQTTROUTE]-2023-11-26 15:28:17,637 INFO mqttx_4758448b from ip:127.0.0.1 connected on clientfd:17 with username: password: cleansession:1
+[MQTTROUTE]-2023-11-26 15:28:17,637 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,637 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,637 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,638 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,646 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[6, 23] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,647 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[6, 23] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,648 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[6, 23] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,649 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[6, 23] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,650 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,651 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[6, 23] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[6, 23] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,652 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,653 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[106, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,654 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,655 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,656 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[57, 16] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[118, 44] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,657 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[65, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:11 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,658 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:14 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:14 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:14 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,659 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:14 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:14 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,660 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,661 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,662 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,663 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,664 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,665 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[9, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[83, 116] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[76, 119] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,666 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[88, 80] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[108, 125] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:17,667 ERROR ./Modules/MQTTbroker.c:run_broker():916 Received -1 Bytes on clientfd: 17
+[MQTTROUTE]-2023-11-26 15:28:17,667 INFO mqttx_4758448b disconnected
+[MQTTROUTE]-2023-11-26 15:28:37,822 INFO New connection request from ip:127.0.0.1 on clientfd:17. Connected_Clients_Count:0
+[MQTTROUTE]-2023-11-26 15:28:37,822 INFO Received CONNECT on clientfd:17,clientid:mqttx_4758448b,will flag:0,clean session:1
+[MQTTROUTE]-2023-11-26 15:28:37,822 INFO mqttx_4758448b from ip:127.0.0.1 connected on clientfd:17 with username: password: cleansession:1
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[41, 70] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,823 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,830 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[41, 70] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,831 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[41, 70] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,832 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[41, 70] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,833 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[41, 70] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,834 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,835 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,836 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,837 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,838 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,839 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,840 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[22, 33] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,841 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[36, 18] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[82, 126] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:11 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:11 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,842 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:12 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[0, 14] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[109, 99] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[54, 24] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[31, 90] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,843 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[96, 68] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[72, 27] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[31, 90] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[54, 24] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[109, 99] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,844 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[96, 68] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[72, 27] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[31, 90] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[54, 24] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,845 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[109, 99] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[96, 68] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[72, 27] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[54, 24] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[109, 99] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,846 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[96, 68] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[72, 27] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[31, 90] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[54, 24] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[109, 99] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,847 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[96, 68] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[72, 27] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:28:37,848 ERROR ./Modules/MQTTbroker.c:run_broker():916 Received -1 Bytes on clientfd: 17
+[MQTTROUTE]-2023-11-26 15:28:37,848 INFO mqttx_4758448b disconnected
+[MQTTROUTE]-2023-11-26 15:29:31,028 INFO New connection request from ip:127.0.0.1 on clientfd:17. Connected_Clients_Count:0
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO Received CONNECT on clientfd:17,clientid:mqttx_4758448b,will flag:0,clean session:1
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO mqttx_4758448b from ip:127.0.0.1 connected on clientfd:17 with username: password: cleansession:1
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,029 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,030 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,036 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,036 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,036 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 85] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,037 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 85] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,038 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,039 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 85] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:2 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,040 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 85] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,041 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:3 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:1 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,042 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,043 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 85] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,044 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 85] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,045 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:5 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,046 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[98, 97] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,047 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:7 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[128, 96] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,048 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:8 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:9 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[50, 37] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:10 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,049 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:11 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:12 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[103, 38] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:13 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[33, 74] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:0 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[20, 58] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,050 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[104, 111] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[44, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[73, 101] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:15 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[20, 58] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,051 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[104, 111] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[33, 74] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[44, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[73, 101] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:16 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[104, 111] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,052 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[20, 58] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[33, 74] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[44, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[73, 101] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:17 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[104, 111] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,053 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:4 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[20, 58] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[33, 74] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[44, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[73, 101] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,054 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:18 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[20, 58] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[104, 111] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[44, 46] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:vctr message:[73, 101] QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:intersection message:6 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 INFO PUBLISH pktid:0 RCVD from client:mqttx_4758448b topic:timeframe message:19 QoS:0 Retain:0
+[MQTTROUTE]-2023-11-26 15:29:31,055 ERROR ./Modules/MQTTbroker.c:run_broker():916 Received -1 Bytes on clientfd: 17
+[MQTTROUTE]-2023-11-26 15:29:31,056 INFO mqttx_4758448b disconnected
+[MQTTROUTE]-2023-11-26 15:57:24,448 INFO Shutting Down Server...

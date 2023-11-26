@@ -245,10 +245,17 @@ def oneminschedule():
 			es_payload["unixtime"] = int(time.time() * 1000)
 
 			elastic_search.index(index="bevywise-agg", doc_type = "5-min", body = es_payload)
+			
+			
+			#if topic == "data/vctr":
+				#vctr = json.dumps(es_payload["data"])
+			#if topic == "data/position":
+				#position = json.dumps(es_payload["data"])
 
 
 
-			data = { "work" : "agg", "id" : device, "topic" : topic, "msg" : json.dumps(es_payload["data"]), "time" : es_payload["unixtime"] }
+			#data = { "work" : "agg", "id" : device, "topic" : topic, "msg" : json.dumps(es_payload["data"]), "time" : es_payload["unixtime"] }
+			data = { "work" : "agg", "position" : topic, "vctr": json.dumps(es_payload["data"])}
 			# data = '{ "work" : "recv_pub",  "name" : "'+str(username)+'", "id" : "'+str(clientid)+'", "topic" : "'+str(topic_name)+'", "msg" : "'+str(message)+'", "qos" : "'+str(qos)+'", "retain" : "'+str(retain)+'", "packet" : "'+str(packetid)+'","status" : "'+str(status)+'", "time" : "'+str(time_stamp)+'" }'
 			web_socket.send_message_to_all(json.dumps(data).encode('utf-8'))
 			# print(json.dumps(es_data))

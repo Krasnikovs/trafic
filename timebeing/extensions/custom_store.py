@@ -44,6 +44,18 @@ global Client_obj
 
 sys.path.append(os.getcwd()+'/../extensions')
 
+import os, sys
+
+from pathlib import Path
+current_path = Path(os.getcwd())
+plugin_path = os.path.join(current_path.parent.absolute(),'extensions','mongo')
+sys.path.append(plugin_path)
+conf_path = os.path.join(plugin_path, './plugin.conf')
+from mongo import Mongo
+
+global Mon_inst
+Mon_inst = Mongo(conf_path)
+
 # Called on the initial call to set the SQL Connector
 
 def setsqlconnector(conf):
@@ -109,42 +121,21 @@ def handle_Received_Payload(data):
 	# print("print in the handle_received_payload",data)
 
 	# result = datasend.receive_data(data)
-
-	es_msg_type = {int : "message-integer", float : "message-float", str : "message-string", dict : "message-dict", list : "message-dict"}
-	try :
-		es_msg = ast.literal_eval(data["message"])
-	except Exception as e :
-		data["message"] = (data["message"]).replace('["0"]]', '[]')
-		try :
-			# print(data["message"])
-			es_msg = ast.literal_eval(data["message"])
-		except Exception as e :
-			es_msg_type = "message-string"
-			es_msg = data["message"]
-	try :
-		data[es_msg_type[type(es_msg)]] = es_msg
-		del data["message"]
-		# date_time = datetime.strptime(data["timestamp"], "%Y-%m-%d %H:%M:%S")
-		# print(date_time, type(date_time))
-		# data["timestamp"] = date_time
-		# print(data, data["message-dict"]["bid"], type(data["message-dict"]["bid"]))
-
-		data["timestamp"] = datetime.datetime.now()
-		elastic_search.index(index= "bevywise", doc_type = 'recv_payload', body = data)
-	except Exception as e :
+	try:
+		result = Mon_inst.data_consumer(data)
+		# if result is none then write failed
+	except Exception as e:
 		print(e)
-	# if result is none then write failed
-
 	
 def handle_Sent_Payload(data):
 
-	pass
+	#pass
 
 	#
 	# Write your code here. Use your connection object to 
 	# Send data to your data store
 
-	# print("print in the handle_Sent_payload",data)
+	print("print in the handle_Sent_payload",data)
 
 	# result = datasend.sent_data(data)
 
