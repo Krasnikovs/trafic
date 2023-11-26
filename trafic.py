@@ -66,16 +66,17 @@ class Graph():
                 else:
                     print(end='')
 
-    def get_vehicles(client):
+    def get_vehicles(client, episodes):
         for position in range(7):
             for car in Vehicle.cars:
                 if car.position == position:
                     result = client.publish('vctr', str(car.vehicle_vctr))
-                    if result[0] == 0:
-                        print(f'Sent')
-                    else:
-                        print(f'Failed')
+                    # if result[0] == 0:
+                    #     print(f'Sent')
+                    # else:
+                    #     print(f'Failed')
                     client.publish('intersection', car.position)
+                    client.publish('timeframe', episodes)
 
     def get_corner():
         position = int(input('Enter the vertex number: '))
@@ -94,15 +95,15 @@ class Graph():
         Vehicle.cars[Vehicle.caramount].next_stop()
 
     def connect():
-        def on_connect(client, userdate, flags, rc):
-            if rc == 0:
-                print('Suc')
-            else:
-                print('Failed and', rc)
-        client_id = f'publish-{ran.randint(0, 1000)}'
+        # def on_connect(client, userdate, flags, rc):
+        #     if rc == 0:
+        #         print('Suc')
+        #     else:
+        #         print('Failed and', rc)
+        client_id = f'mqttx_{4758448}b'
         client = mqtt.Client(client_id)
-        client.username_pw_set(username = 'edi', password = 'ediedi123')
-        client.on_connect = on_connect
+        # client.username_pw_set(username = 'edi', password = 'ediedi123')
+        # client.on_connect = on_connect
         client.connect('localhost', 1883)
         return client
 
@@ -123,6 +124,6 @@ for episodes in range(Graph.episodes):
             car.step()
             car.lifetime -= 1
     
-    Graph.get_vehicles(client)
+    Graph.get_vehicles(client, episodes)
         #
 client.loop_stop()
