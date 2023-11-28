@@ -1,7 +1,7 @@
 import numpy as np
 import random as ran
-from paho.mqtt import client as mqtt
-import paho.mqtt.publish as publish
+import requests
+import time
 
 class Vehicle():
     cars = []
@@ -67,30 +67,20 @@ class Graph():
                 else:
                     print(end='')
 
-    def get_vehicles(client):
+    def get_vehicles():
         for position in range(7):
             for car in Vehicle.cars:
                 if car.position == position:
+                    url = 'http://localhost:80/api/get_vehicle'
+                    vctr = {'position': str(position), 'vector': str(car.vehicle_vctr)}
+                       
+                    result = requests.post(url, json = vctr)
 
-                    vctr = [
-                        {'topic':'data/vctr', 'payload': str(car.vehicle_vctr), 'qos':0, 'retain':False}, 
-                        {'topic': 'data/position', 'payload': car.position, 'qos':0, 'retain':False}
-                    ]
-                    result = client.publish(
-                        topic = str(position),
-                        payload = str(car.vehicle_vctr)
-                    )
-
-                    if result[0] == 0:
-                        print(f'Sent')
-                    else:
-                        print(f'Failed')
-
-                    # position = {'position': car.position}
-                    # client.publish(
-                    #     topic = 'data/mess', 
-                    #     payload = position
-                    # )
+                    print(result.text)
+                    # if result[0] == 0:
+                    #     print(f'Sent')
+                    # else:
+                    #     print(f'Failed')
 
 
     def get_corner():
@@ -109,22 +99,6 @@ class Graph():
         
         Vehicle.cars[Vehicle.caramount].next_stop()
 
-    def connect():
-        def on_connect(client, userdate, flags, rc):
-            if rc == 0:
-                print('Suc')
-            else:
-                print('Failed and', rc)
-        client_id = f'publish-{ran.randint(0, 1000)}'
-        client = mqtt.Client(client_id)
-        # client.username_pw_set(username = 'edi', password = 'ediedi123')
-        client.on_connect = on_connect
-        client.connect('localhost', 1883)
-        return client
-
-
-client = Graph.connect()
-client.loop_start()
 
 for episodes in range(Graph.episodes):
     if Vehicle.caramount == -1:
@@ -139,6 +113,5 @@ for episodes in range(Graph.episodes):
             car.step()
             car.lifetime -= 1
     
-    Graph.get_vehicles(client)
-        #
-client.loop_stop()
+    Graph.get_vehicles()
+    time.sleep(5)
