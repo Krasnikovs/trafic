@@ -71,16 +71,13 @@ class Graph():
         for position in range(7):
             for car in Vehicle.cars:
                 if car.position == position:
-                    url = 'http://localhost:80/api/get_vehicle'
-                    vctr = {'position': str(position), 'vector': str(car.vehicle_vctr)}
-                       
+                    url = 'http://localhost:80/api/vehicle/set_vehicle'
+
+                    vctr = {'vector': str(car.vehicle_vctr),'position': str(position), 'timestamp': str(time.strftime('%Y-%m-%d %H:%M:%S'))}
+                    
                     result = requests.post(url, json = vctr)
 
                     print(result.text)
-                    # if result[0] == 0:
-                    #     print(f'Sent')
-                    # else:
-                    #     print(f'Failed')
 
 
     def get_corner():
